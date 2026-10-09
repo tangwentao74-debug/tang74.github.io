@@ -338,3 +338,24 @@ a:focus-visible,button:focus-visible{outline:3px solid #DAA21B;outline-offset:3p
  .wk-count{display:none}
  .wk-stack{padding-bottom:0}
 }
+
+/* POV doodles */
+.ill{display:none}
+.bob{animation:bob 5.5s ease-in-out infinite alternate;display:block;width:100%;height:auto;overflow:visible;filter:drop-shadow(0 12px 18px rgba(42,71,111,.16))}
+.ic:nth-child(2n) .bob{animation-duration:6.8s;animation-delay:-2s}
+.ic:nth-child(3n) .bob{animation-duration:7.6s;animation-delay:-4s}
+@keyframes bob{from{transform:translateY(-8px) rotate(-3deg)}to{transform:translateY(10px) rotate(3deg)}}
+.pico{width:clamp(52px,5vw,84px);margin:0 0 14px}
+@media (min-width:821px){
+ @supports (animation-timeline:view()){
+  .ill{display:block;position:absolute;inset:0;pointer-events:none;overflow:hidden}
+  .ic{position:absolute;width:clamp(96px,11vw,200px);animation-range:contain var(--r1) contain var(--r2)}
+  .kA{animation-name:kIA}.kB{animation-name:kIB}.kC{animation-name:kIC}
+  .ill-row{position:absolute;left:0;right:0;bottom:9%;display:flex;justify-content:center;gap:clamp(40px,9vw,170px)}
+  .ill-row .ic{position:relative;width:clamp(100px,11vw,190px)}
+ }
+}
+@media (max-width:820px){.pico{width:56px}}
+@keyframes kIA{0%{opacity:0;transform:scale(.2) rotate(-25deg) translateY(60px)}16%{opacity:1;transform:rotate(var(--rot,0deg))}70%{opacity:1;transform:rotate(var(--rot,0deg))}100%{opacity:0;transform:translateY(-110px) rotate(calc(var(--rot,0deg) + 12deg)) scale(.8)}}
+@keyframes kIB{0%{opacity:0;transform:scale(.2) translateY(80px)}20%{opacity:1;transform:rotate(var(--rot,0deg))}72%{opacity:1;transform:rotate(var(--rot,0deg))}100%{opacity:0;transform:translateY(-150px) scale(.7)}}
+@keyframes kIC{0%{opacity:0;transform:scale(.2) rotate(-30deg)}30%{opacity:1;transform:rotate(var(--rot,0deg))}100%{opacity:1;transform:rotate(var(--rot,0deg))}}
