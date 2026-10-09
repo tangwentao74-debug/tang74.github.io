@@ -394,3 +394,4 @@ a:focus-visible,button:focus-visible{outline:3px solid #DAA21B;outline-offset:3p
  50%{opacity:1;transform:translate(0,0) scale(1) rotate(var(--rot,0deg))}
  100%{opacity:1;transform:translate(var(--dx,0px),var(--dy,0px)) scale(var(--sc,.5)) rotate(0deg)}
 }
+.job-h .site{order:2;margin-left:auto}.job-h .when{order:3;margin-left:0}@media (max-width:820px){.job-h .site{margin-left:0}}
