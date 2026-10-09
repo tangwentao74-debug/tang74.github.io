@@ -34,10 +34,10 @@ function render(){
         '<h3 class="bebas" style="margin:0;font-size:clamp(64px,7vw,150px);line-height:.92">'+p.title.toUpperCase()+'</h3>'+
         '<p style="margin:0;font-size:20px;line-height:1.45;font-weight:300;max-width:430px;text-wrap:pretty">'+p.desc+'</p>'+
         '<div style="display:flex;flex-wrap:wrap;gap:8px">'+p.tags.map(function(t){return '<span class="chip">'+t+'</span>';}).join('')+'</div>'+
-        '<a class="pill" href="#work" style="margin-top:auto;align-self:flex-start;background:#2A476F;color:#fff;position:relative;z-index:4">View Case Study '+ARROW+'</a></div>';
+        '<a class="pill" href="work.html#project-'+['dot','desk','car','insight'][i]+'" style="margin-top:auto;align-self:flex-start;background:#2A476F;color:#fff;position:relative;z-index:4">View Case Study '+ARROW+'</a></div>';
       }else{
         pc.innerHTML='<button class="sel" aria-label="Open '+p.title+'"></button><div style="position:absolute;left:0;right:0;top:0;padding:28px 22px;display:flex;flex-direction:column;gap:18px;align-items:flex-start;z-index:2"><span class="bebas" style="font-size:30px;color:'+p.sub+'">'+p.num+'</span><span class="bebas vt">'+p.title+'</span></div>';
-        pc.querySelector('.sel').addEventListener('click',function(){active=i;render();});
+        pc.querySelector('.sel').addEventListener('click',function(){active=i;render();if(window.innerWidth<=820){setTimeout(function(){var t=document.querySelectorAll('.panel')[i];if(t){var y=t.getBoundingClientRect().top+window.scrollY-90;window.scrollTo({top:y,behavior:'smooth'})}},120)}});
       }
     }
   });
