@@ -380,3 +380,17 @@ a:focus-visible,button:focus-visible{outline:3px solid #DAA21B;outline-offset:3p
 @keyframes hintWig{50%{transform:rotate(-2deg) translateY(-5px)}}
 .rs-top.rs-solo{grid-template-columns:1fr}
 @media (prefers-reduced-motion:reduce){.flip-in{transition:none}}
+
+/* icons travel from the flow row into the column icons */
+@media (min-width:821px){
+ @supports (animation-timeline:view()){
+  .kM{animation-name:kIM}
+  .pico{opacity:0}
+ }
+}
+@keyframes kIM{
+ 0%{opacity:0;transform:translate(0,80px) scale(.2) rotate(0deg)}
+ 18%{opacity:1;transform:translate(0,0) scale(1) rotate(var(--rot,0deg))}
+ 50%{opacity:1;transform:translate(0,0) scale(1) rotate(var(--rot,0deg))}
+ 100%{opacity:1;transform:translate(var(--dx,0px),var(--dy,0px)) scale(var(--sc,.5)) rotate(0deg)}
+}
