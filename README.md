@@ -4,8 +4,8 @@
 
 ## 上线前要替换的占位
 在 `index.html` 里搜索这些词：
-- `[YOUR EMAIL]`、LinkedIn、`Resume (PDF)` / `View Resume` 的链接（目前是 `#`）
-- `[ROLE · YEARS]`（Tencent / TikTok / Kuaishou）
+- 英文简历 PDF 下载按钮（目前是灰色占位 "Download PDF"）
+- 四个作品的 "View Case Study" 链接（目前是页内占位）
 - `View Case Study` 目前跳回 `#work`，案例页做好后改成对应页面地址
 
 ## 免费上线
