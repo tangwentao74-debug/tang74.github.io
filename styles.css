@@ -568,5 +568,5 @@ a,button,.flip,.sel{-webkit-tap-highlight-color:transparent}
 @media (prefers-reduced-motion:reduce){.pl-in{animation:none}}
 
 /* fixed top bar (not floating) */
-header.wrap{position:sticky !important;top:0 !important;padding-top:0 !important;pointer-events:auto !important;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);box-shadow:0 0 0 100vmax rgba(255,255,255,.94);clip-path:inset(0 -100vmax);border-bottom:1px solid #E6EDF7}
+header.wrap{position:relative !important;top:0 !important;padding-top:0 !important;pointer-events:auto !important;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);box-shadow:0 0 0 100vmax rgba(255,255,255,.94);clip-path:inset(0 -100vmax);border-bottom:1px solid #E6EDF7}
 header.wrap .nav{background:transparent;border:0;box-shadow:none;border-radius:0;backdrop-filter:none;padding:6px 0}
