@@ -300,7 +300,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #DAA21B;outline-offset:3p
 
 /* work: stacked cards + reveals */
 .wk-stack{display:flex;flex-direction:column;gap:clamp(36px,9vh,110px);padding-bottom:12vh}
-.wk{position:sticky;top:calc(92px + var(--i,0) * 14px);will-change:transform;transform-origin:50% 0;min-height:clamp(480px,calc(100vh - 220px),760px);--ps:1.12;--py:0px;transform:translate3d(0,var(--sy,0px),0) scale(var(--ss,1))}
+.wk{position:sticky;top:calc(92px + var(--i,0) * 14px);will-change:transform;transform-origin:50% 0;min-height:clamp(440px,calc(100vh - 300px),580px);width:min(100%,1200px);margin-left:auto;margin-right:auto;border-radius:56px;--ps:1.12;--py:0px;transform:translate3d(0,var(--sy,0px),0) scale(var(--ss,1))}
 .wk.gal-in{animation:none}
 .wk::after{content:"";position:absolute;inset:0;z-index:5;pointer-events:none;background:#14233A;opacity:var(--dim,0);border-radius:inherit}
 .wk .pbg{transform:translate3d(0,var(--py),0) scale(var(--ps));transition:transform .9s cubic-bezier(.2,.8,.2,1)}
@@ -570,3 +570,6 @@ a,button,.flip,.sel{-webkit-tap-highlight-color:transparent}
 /* fixed top bar (not floating) */
 header.wrap{position:relative !important;top:0 !important;padding-top:0 !important;pointer-events:auto !important;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);box-shadow:0 0 0 100vmax rgba(255,255,255,.94);clip-path:inset(0 -100vmax);border-bottom:1px solid #E6EDF7}
 header.wrap .nav{background:transparent;border:0;box-shadow:none;border-radius:0;backdrop-filter:none;padding:6px 0}
+
+/* work page: heading aligns with the narrower project cards */
+body:has(#project-dot) .pg-hero{max-width:calc(1200px + 2 * clamp(16px,calc(3.2vw * var(--k,1)),80px))}
