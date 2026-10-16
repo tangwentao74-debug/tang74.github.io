@@ -21,7 +21,7 @@ function render(){
   P.forEach(function(p,i){
     var on=i===active, el=panels[i];
     el.className=on?'panel':'panel panel-c';
-    el.setAttribute('style','--fg:'+(on?6.5:1)+';--mh:'+(on?740:84)+'px;background:'+p.bg+';color:#14233A');
+    el.setAttribute('style','--fg:'+(on?6.5:1)+';--mh:'+(on?'clamp(500px,calc(100vh - 170px),740px)':'84px')+';background:'+p.bg+';color:#14233A');
     el.querySelector('.pov-ov').style.background=on?'linear-gradient(90deg, rgba('+p.rgb+',.94) 0%, rgba('+p.rgb+',.82) 42%, rgba('+p.rgb+',.22) 100%)':'rgba('+p.rgb+',.58)';
     var art=el.querySelector('.art');
     art.style.right=on?'24px':'8px'; art.style.setProperty('--as',on?1:0.4);
