@@ -166,7 +166,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #DAA21B;outline-offset:3p
   .povstage{position:sticky;top:0;height:clamp(700px,100vh,2400px);overflow:clip}
   .numlayer{display:block;position:absolute;left:0;right:0;top:0;bottom:0;overflow:hidden;-webkit-mask-image:linear-gradient(transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(transparent,#000 14%,#000 86%,transparent)}
   .ly{position:absolute;left:0;right:0;top:0;bottom:0;margin:0;max-width:none;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
-  .ly-cols{justify-content:center;padding-top:260px;text-align:left}
+  .ly-cols{justify-content:center;padding-top:150px;text-align:left}
   .ly-cols .pcols{width:100%;max-width:min(1200px,calc(100vw - 96px));margin-left:auto;margin-right:auto}
   .ly-cols .pfin{text-align:center;max-width:960px}
   .ly-a .pv-lead{margin-top:36px}
