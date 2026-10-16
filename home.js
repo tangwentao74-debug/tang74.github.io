@@ -29,9 +29,9 @@ function render(){
     if(pc.getAttribute('data-on')!==(on?'1':'0')){
       pc.setAttribute('data-on',on?'1':'0');
       if(on){
-        pc.innerHTML='<div class="panel-open" style="position:relative;z-index:2;min-width:560px;max-width:clamp(600px,44vw,960px);padding:clamp(40px,3.4vw,72px);display:flex;flex-direction:column;gap:18px;height:100%">'+
+        pc.innerHTML='<div class="panel-open" style="position:relative;z-index:2;min-width:560px;max-width:clamp(600px,calc(44vw * var(--k,1)),calc(960px * var(--k,1)));padding:clamp(40px,calc(3.4vw * var(--k,1)),calc(72px * var(--k,1)));display:flex;flex-direction:column;gap:18px;height:100%">'+
         '<div style="display:flex;align-items:baseline;gap:14px"><span class="bebas" style="font-size:38px;color:'+p.sub+'">'+p.num+'</span><span style="font-size:13px;font-weight:500;letter-spacing:.14em;color:'+p.sub+'">'+p.type.toUpperCase()+'</span></div>'+
-        '<h3 class="bebas" style="margin:0;font-size:clamp(64px,7vw,150px);line-height:.92">'+p.title.toUpperCase()+'</h3>'+
+        '<h3 class="bebas" style="margin:0;font-size:clamp(64px,calc(7vw * var(--k,1)),calc(150px * var(--k,1)));line-height:.92">'+p.title.toUpperCase()+'</h3>'+
         '<p style="margin:0;font-size:20px;line-height:1.45;font-weight:300;max-width:430px;text-wrap:pretty">'+p.desc+'</p>'+
         '<div style="display:flex;flex-wrap:wrap;gap:8px">'+p.tags.map(function(t){return '<span class="chip">'+t+'</span>';}).join('')+'</div>'+
         '<a class="pill" href="work.html#project-'+['dot','desk','car','insight'][i]+'" style="margin-top:auto;align-self:flex-start;background:#2A476F;color:#fff;position:relative;z-index:4">View Case Study '+ARROW+'</a></div>';
