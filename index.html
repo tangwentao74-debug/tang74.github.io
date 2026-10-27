@@ -124,7 +124,7 @@ a{color:inherit;text-decoration:none}
 
 /* ---------- motion for the page: slow, editorial ---------- */
 .in{opacity:0;animation:inUp 1.3s var(--ease) both}
-.d1{animation-delay:.1s}.d2{animation-delay:.3s}.d3{animation-delay:.1s}.d4{animation-delay:2.4s}
+.d1{animation-delay:.1s}.d2{animation-delay:.3s}.d3{animation-delay:.1s}.d4{animation-delay:.5s}
 @keyframes inUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 @supports (animation-timeline:view()){
 .rv{animation:rvIn linear both;animation-timeline:view();animation-range:entry 0% entry 35%}
@@ -156,28 +156,26 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 .art,.mg .ph,.mg>div:not(.ph),.wk,.rd,.h2.rv,.lead.rv,.pj{animation:rvIn linear both;animation-timeline:view();animation-range:entry 0% entry 30%}
 .ab .art{animation:none}
 .hp3{animation:inUp 1.2s var(--ease) .1s both}
-.hp4{animation:inUp 1.3s var(--ease) 2.4s both}
+.hp4{animation:inUp 1.2s var(--ease) .5s both}
 .hp3 .art{animation:none}
 }
 @media (prefers-reduced-motion:reduce){.art,.ph,.mg>div,.wk,.rd,.h2,.lead,.hp3,.hp4{animation:none!important;opacity:1!important}}
 
 /* ---------- name entrance: letters rise out of a mask, then spring on hover ---------- */
 .chw{display:inline-block;overflow:hidden;padding:.14em .08em .3em;margin:-.14em -.08em -.3em}
-.ch{display:inline-block;transform:translateY(112%) rotate(7deg);transform-origin:0 100%;animation:rise 1.15s cubic-bezier(.16,.84,.24,1) forwards;animation-delay:calc(1.45s + var(--i)*.09s);transition:translate .55s cubic-bezier(.34,1.56,.64,1),rotate .55s cubic-bezier(.34,1.56,.64,1),color .4s ease}
-@keyframes rise{to{transform:none}}
+.ch{display:inline-block;transition:translate .55s cubic-bezier(.34,1.56,.64,1),rotate .55s cubic-bezier(.34,1.56,.64,1),color .4s ease}
 .chw:hover .ch{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
-@media (prefers-reduced-motion:reduce){.ch{transform:none!important;animation:none!important}}
 
 /* ---------- progressive blur fixed to the bottom of the viewport ---------- */
-.vfade{position:fixed;left:0;right:0;bottom:0;height:300px;z-index:15;pointer-events:none}
+.vfade{position:fixed;left:0;right:0;bottom:0;height:170px;z-index:15;pointer-events:none}
 .vfade i{position:absolute;inset:0}
 .vfade i:nth-child(1){backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 40%);mask-image:linear-gradient(to bottom,transparent 0%,#000 40%)}
 .vfade i:nth-child(2){backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);-webkit-mask-image:linear-gradient(to bottom,transparent 30%,#000 70%);mask-image:linear-gradient(to bottom,transparent 30%,#000 70%)}
 .vfade i:nth-child(3){backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);-webkit-mask-image:linear-gradient(to bottom,transparent 55%,#000 90%);mask-image:linear-gradient(to bottom,transparent 55%,#000 90%)}
 .vfade i:nth-child(4){display:none}
-.vfade i:nth-child(5){background:linear-gradient(to bottom,rgba(255,255,255,0) 15%,rgba(255,255,255,.55) 60%,rgba(255,255,255,.95) 100%)}
+.vfade i:nth-child(5){background:linear-gradient(to bottom,rgba(255,255,255,0) 20%,rgba(255,255,255,.4) 65%,rgba(255,255,255,.8) 100%)}
 @supports (animation-timeline:scroll()){
-.vfade{animation:vfOut linear both;animation-timeline:scroll(root block);animation-range:calc(100% - 320px) 100%}
+.vfade{animation:vfOut linear both;animation-timeline:scroll(root block);animation-range:calc(100% - 200px) 100%}
 @keyframes vfOut{from{opacity:1}to{opacity:0}}
 }
 
@@ -200,12 +198,14 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 <!-- HERO -->
 <section style="position:relative;height:clamp(680px,100svh,1100px);overflow:hidden">
 <div style="position:relative;max-width:1440px;height:100%;margin:0 auto">
-<div class="disp" aria-label="Wentao" style="position:absolute;left:-1vw;top:clamp(50px,7vh,90px);z-index:1;white-space:nowrap;font-size:clamp(200px,29vw,430px);line-height:.8;letter-spacing:-.07em;color:#2A476F"><span class="chw" aria-hidden="true"><span class="ch" style="--i:0">W</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:1">e</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:2">n</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:3">t</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:4">a</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:5">o</span></span></div>
-<div class="disp" aria-label="Tang" style="position:absolute;right:-1vw;top:calc(clamp(50px,7vh,90px) + 26vw);z-index:1;white-space:nowrap;font-size:clamp(200px,29vw,430px);line-height:.8;letter-spacing:-.07em;color:#5E77A3"><span class="chw" aria-hidden="true"><span class="ch" style="--i:6">T</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:7">a</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:8">n</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:9">g</span></span></div>
+<div style="position:absolute;left:-1vw;right:-1vw;top:clamp(50px,7vh,90px);z-index:1;font-size:clamp(200px,29vw,430px);line-height:.8;letter-spacing:-.07em;white-space:nowrap">
+<div class="disp" aria-label="Wentao" style="font-size:inherit;line-height:inherit;color:#2A476F"><span class="chw" aria-hidden="true"><span class="ch" style="--i:0">W</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:1">e</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:2">n</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:3">t</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:4">a</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:5">o</span></span></div>
+<div class="disp" aria-label="Tang" style="font-size:inherit;line-height:inherit;color:#5E77A3;text-align:right;margin-top:-.11em"><span class="chw" aria-hidden="true"><span class="ch" style="--i:6">T</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:7">a</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:8">n</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:9">g</span></span></div>
+</div>
 <div class="in d3 hp3" style="position:absolute;left:50%;bottom:0;width:min(62vw,900px);transform-origin:50% 100%;margin-left:calc(min(62vw,900px) / -2);z-index:2">
 <div class="art k-wave " style="width:100%;aspect-ratio:1254/1254" role="img" aria-label="Line drawing of Wentao waving hello"><img class="base" src="assets/new/wave_base.png" alt=""><img class="L blink n-spark" src="assets/new/wave_spark.png" alt="" style="left:15.39%;top:33.41%;width:9.57%;height:8.13%"><img class="L hand n-hand" src="assets/new/wave_hand.png" alt="" style="left:20.57%;top:36.84%;width:15.79%;height:15.47%;transform-origin:51.5% 96.9%"></div>
 </div>
-<div class="in d4 hp4" style="position:absolute;left:48px;bottom:200px;max-width:380px;z-index:7">
+<div class="in d4 hp4" style="position:absolute;left:48px;bottom:110px;max-width:380px;z-index:7">
 <p class="lead rv" style="margin:0;font-size:22px">I work between business and product — turning market and user insights into things worth building.</p>
 <div style="margin-top:18px;font-size:13px;letter-spacing:.16em;font-weight:600;color:#5E77A3">STRATEGY × PRODUCT × DESIGN</div>
 </div>

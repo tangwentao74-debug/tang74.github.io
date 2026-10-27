@@ -124,7 +124,7 @@ a{color:inherit;text-decoration:none}
 
 /* ---------- motion for the page: slow, editorial ---------- */
 .in{opacity:0;animation:inUp 1.3s var(--ease) both}
-.d1{animation-delay:.1s}.d2{animation-delay:.3s}.d3{animation-delay:.1s}.d4{animation-delay:2.4s}
+.d1{animation-delay:.1s}.d2{animation-delay:.3s}.d3{animation-delay:.1s}.d4{animation-delay:.5s}
 @keyframes inUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 @supports (animation-timeline:view()){
 .rv{animation:rvIn linear both;animation-timeline:view();animation-range:entry 0% entry 35%}
@@ -156,28 +156,26 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 .art,.mg .ph,.mg>div:not(.ph),.wk,.rd,.h2.rv,.lead.rv,.pj{animation:rvIn linear both;animation-timeline:view();animation-range:entry 0% entry 30%}
 .ab .art{animation:none}
 .hp3{animation:inUp 1.2s var(--ease) .1s both}
-.hp4{animation:inUp 1.3s var(--ease) 2.4s both}
+.hp4{animation:inUp 1.2s var(--ease) .5s both}
 .hp3 .art{animation:none}
 }
 @media (prefers-reduced-motion:reduce){.art,.ph,.mg>div,.wk,.rd,.h2,.lead,.hp3,.hp4{animation:none!important;opacity:1!important}}
 
 /* ---------- name entrance: letters rise out of a mask, then spring on hover ---------- */
 .chw{display:inline-block;overflow:hidden;padding:.14em .08em .3em;margin:-.14em -.08em -.3em}
-.ch{display:inline-block;transform:translateY(112%) rotate(7deg);transform-origin:0 100%;animation:rise 1.15s cubic-bezier(.16,.84,.24,1) forwards;animation-delay:calc(1.45s + var(--i)*.09s);transition:translate .55s cubic-bezier(.34,1.56,.64,1),rotate .55s cubic-bezier(.34,1.56,.64,1),color .4s ease}
-@keyframes rise{to{transform:none}}
+.ch{display:inline-block;transition:translate .55s cubic-bezier(.34,1.56,.64,1),rotate .55s cubic-bezier(.34,1.56,.64,1),color .4s ease}
 .chw:hover .ch{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
-@media (prefers-reduced-motion:reduce){.ch{transform:none!important;animation:none!important}}
 
 /* ---------- progressive blur fixed to the bottom of the viewport ---------- */
-.vfade{position:fixed;left:0;right:0;bottom:0;height:300px;z-index:15;pointer-events:none}
+.vfade{position:fixed;left:0;right:0;bottom:0;height:170px;z-index:15;pointer-events:none}
 .vfade i{position:absolute;inset:0}
 .vfade i:nth-child(1){backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 40%);mask-image:linear-gradient(to bottom,transparent 0%,#000 40%)}
 .vfade i:nth-child(2){backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);-webkit-mask-image:linear-gradient(to bottom,transparent 30%,#000 70%);mask-image:linear-gradient(to bottom,transparent 30%,#000 70%)}
 .vfade i:nth-child(3){backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);-webkit-mask-image:linear-gradient(to bottom,transparent 55%,#000 90%);mask-image:linear-gradient(to bottom,transparent 55%,#000 90%)}
 .vfade i:nth-child(4){display:none}
-.vfade i:nth-child(5){background:linear-gradient(to bottom,rgba(255,255,255,0) 15%,rgba(255,255,255,.55) 60%,rgba(255,255,255,.95) 100%)}
+.vfade i:nth-child(5){background:linear-gradient(to bottom,rgba(255,255,255,0) 20%,rgba(255,255,255,.4) 65%,rgba(255,255,255,.8) 100%)}
 @supports (animation-timeline:scroll()){
-.vfade{animation:vfOut linear both;animation-timeline:scroll(root block);animation-range:calc(100% - 320px) 100%}
+.vfade{animation:vfOut linear both;animation-timeline:scroll(root block);animation-range:calc(100% - 200px) 100%}
 @keyframes vfOut{from{opacity:1}to{opacity:0}}
 }
 
@@ -203,19 +201,19 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 <a class="logo" href="index.html">Wentao Tang</a><div class="vfade" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
 
 <section style="padding:190px 48px 0">
-<div style="max-width:1200px;margin:0 auto">
+<div style="max-width:1280px;margin:0 auto">
 <div style="font-size:13px;letter-spacing:.16em;font-weight:600;color:#5E77A3;margin-bottom:28px">ABOUT</div>
-<h1 class="h2 rv" style="margin:0;max-width:960px">Wentao Tang looks for the person inside the number.</h1>
+<h1 class="h2 rv" style="margin:0;max-width:1100px">Wentao Tang looks for the person inside the number.</h1>
 </div>
 </section>
 
 <section style="padding:140px 48px 140px">
-<div class="ab" style="max-width:1200px;margin:0 auto;align-items:start">
+<div class="ab" style="max-width:1280px;margin:0 auto;align-items:start">
 <div style="grid-column:1/5;position:sticky;top:48px">
 <div style="width:100%;max-width:340px"><div class="art k-head" style="width:100%;aspect-ratio:693/777" role="img" aria-label="Line drawing portrait of Wentao"><img class="base tilt" src="assets/new/me_head.png" alt=""></div></div>
 <div class="note" style="margin-top:14px;font-size:18px;color:#5E77A3">hi, it’s me :)</div>
 </div>
-<div style="grid-column:6/12">
+<div style="grid-column:6/13">
 <p style="font-size:26px;line-height:1.45;font-weight:500;letter-spacing:-.015em;color:#14233A;margin-bottom:44px">Why do advertisers leave after their first campaign? At TikTok, the data said small education advertisers were pulling back, and the dashboard called it “retention.” Wentao went to visit them and heard what the dashboard never showed: they couldn’t make sense of their own ad reports. The numbers told him what happened. Only the people could tell him why.</p>
 <p class="rd rv">He has trained for both halves. With a degree in Quantitative Economics from UC Irvine and monetization strategy internships at Kuaishou, TikTok and Tencent, he reads numbers at scale: at Tencent, he mapped China’s online advertising market for the first half of 2026, from the biggest platforms to the long tail, and tested his findings with industry experts, earning strong recognition from the Head of Tencent Ads.</p>
 <p class="rd rv">Numbers could tell him what happened, but not how it felt, so he started designing for the people behind them. His projects DotDot and Dotty Desk Beacon are a pair: a mixed-reality focus companion and a physical desk beacon, both built to keep you company instead of policing your attention. Now at Northwestern’s Engineering Design Innovation program, he adds research, prototyping and design to that analytical base. His belief: “I don’t want numbers to be the end of my work.”</p>
