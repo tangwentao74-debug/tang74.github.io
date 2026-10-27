@@ -152,20 +152,32 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 .mg .no{font-weight:600;letter-spacing:-.06em;line-height:.85;font-size:clamp(72px,9vw,140px);color:#2A476F}
 .mg .nm{font-weight:600;letter-spacing:-.04em;line-height:1;font-size:clamp(32px,3.4vw,48px);margin-top:14px}
 
-/* ---------- parallax: background / middle / foreground drift at different speeds ---------- */
+/* ---------- progressive blur at the foot of the hero ---------- */
+.fade{position:absolute;left:0;right:0;bottom:0;height:260px;z-index:5;pointer-events:none}
+.fade i{position:absolute;inset:0}
+.fade i:nth-child(1){backdrop-filter:blur(1px);-webkit-backdrop-filter:blur(1px);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 25%,#000 40%,transparent 55%);mask-image:linear-gradient(to bottom,transparent 0%,#000 25%,#000 40%,transparent 55%)}
+.fade i:nth-child(2){backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);-webkit-mask-image:linear-gradient(to bottom,transparent 20%,#000 45%,#000 60%,transparent 75%);mask-image:linear-gradient(to bottom,transparent 20%,#000 45%,#000 60%,transparent 75%)}
+.fade i:nth-child(3){backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);-webkit-mask-image:linear-gradient(to bottom,transparent 40%,#000 65%,#000 80%,transparent 92%);mask-image:linear-gradient(to bottom,transparent 40%,#000 65%,#000 80%,transparent 92%)}
+.fade i:nth-child(4){backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);-webkit-mask-image:linear-gradient(to bottom,transparent 60%,#000 85%);mask-image:linear-gradient(to bottom,transparent 60%,#000 85%)}
+.fade i:nth-child(5){background:linear-gradient(to bottom,rgba(255,255,255,0) 40%,rgba(255,255,255,.92) 100%)}
+
+/* ---------- parallax: far / middle / near layers move at clearly different speeds ---------- */
 @supports (animation-timeline:view()){
-@keyframes pxB{from{translate:0 -70px}to{translate:0 70px}}
-@keyframes pxM{from{translate:0 -26px}to{translate:0 26px}}
-@keyframes pxF{from{translate:0 56px}to{translate:0 -56px}}
-@keyframes hpB1{from{translate:0 0}to{translate:0 190px}}
-@keyframes hpB2{from{translate:0 0}to{translate:0 120px}}
-@keyframes hpM{from{translate:0 0}to{translate:0 50px}}
-@keyframes hpF{from{translate:0 0}to{translate:0 -90px}}
-.art,.mg .ph{animation:pxM linear both;animation-timeline:view()}
-.ft .h2{animation:pxB linear both;animation-timeline:view()}
-.ab .lead{animation:pxF linear both;animation-timeline:view()}
+@keyframes pxB{from{translate:0 -150px}to{translate:0 150px}}
+@keyframes pxM{from{translate:0 -60px}to{translate:0 60px}}
+@keyframes pxF{from{translate:0 130px}to{translate:0 -130px}}
+@keyframes hpB1{from{translate:0 0}to{translate:0 400px}}
+@keyframes hpB2{from{translate:0 0}to{translate:0 270px}}
+@keyframes hpM{from{translate:0 0}to{translate:0 130px}}
+@keyframes hpF{from{translate:0 0}to{translate:0 -280px}}
+.art{animation:pxM linear both;animation-timeline:view()}
+.mg .ph{animation:pxB linear both;animation-timeline:view()}
+.mg>div{animation:pxF linear both;animation-timeline:view()}
+.wk{animation:pxM linear both;animation-timeline:view()}
+.h2.rv{animation:rvIn linear both,pxF linear both;animation-timeline:view(),view();animation-range:entry 0% entry 35%,cover 0% cover 100%}
+.lead.rv{animation:rvIn linear both,pxM linear both;animation-timeline:view(),view();animation-range:entry 0% entry 35%,cover 0% cover 100%}
+.ft .h2.rv{animation:rvIn linear both,pxB linear both;animation-timeline:view(),view();animation-range:entry 0% entry 35%,cover 0% cover 100%}
 .ab .art{animation:none}
-.hp1,.hp2,.hp3,.hp4{animation-timeline:auto,view();animation-range:normal,exit 0% exit 100%}
 .hp1{animation:inUp 1.3s var(--ease) .1s both,hpB1 linear both}
 .hp2{animation:inUp 1.3s var(--ease) .3s both,hpB2 linear both}
 .hp3{animation:inUp 1.3s var(--ease) .5s both,hpM linear both}
@@ -173,7 +185,7 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 .hp1,.hp2,.hp3,.hp4{animation-timeline:auto,view();animation-range:normal,exit 0% exit 100%}
 .hp3 .art{animation:none}
 }
-@media (prefers-reduced-motion:reduce){.art,.ph,.no,.nm,.hp1,.hp2,.hp3,.hp4{animation:none!important;opacity:1!important}}
+@media (prefers-reduced-motion:reduce){.art,.ph,.mg>div,.wk,.h2,.lead,.hp1,.hp2,.hp3,.hp4{animation:none!important;opacity:1!important}}
 
 .ab{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
 .ab p{margin:0 0 30px}

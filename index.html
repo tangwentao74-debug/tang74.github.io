@@ -152,20 +152,32 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 .mg .no{font-weight:600;letter-spacing:-.06em;line-height:.85;font-size:clamp(72px,9vw,140px);color:#2A476F}
 .mg .nm{font-weight:600;letter-spacing:-.04em;line-height:1;font-size:clamp(32px,3.4vw,48px);margin-top:14px}
 
-/* ---------- parallax: background / middle / foreground drift at different speeds ---------- */
+/* ---------- progressive blur at the foot of the hero ---------- */
+.fade{position:absolute;left:0;right:0;bottom:0;height:260px;z-index:5;pointer-events:none}
+.fade i{position:absolute;inset:0}
+.fade i:nth-child(1){backdrop-filter:blur(1px);-webkit-backdrop-filter:blur(1px);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 25%,#000 40%,transparent 55%);mask-image:linear-gradient(to bottom,transparent 0%,#000 25%,#000 40%,transparent 55%)}
+.fade i:nth-child(2){backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);-webkit-mask-image:linear-gradient(to bottom,transparent 20%,#000 45%,#000 60%,transparent 75%);mask-image:linear-gradient(to bottom,transparent 20%,#000 45%,#000 60%,transparent 75%)}
+.fade i:nth-child(3){backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);-webkit-mask-image:linear-gradient(to bottom,transparent 40%,#000 65%,#000 80%,transparent 92%);mask-image:linear-gradient(to bottom,transparent 40%,#000 65%,#000 80%,transparent 92%)}
+.fade i:nth-child(4){backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);-webkit-mask-image:linear-gradient(to bottom,transparent 60%,#000 85%);mask-image:linear-gradient(to bottom,transparent 60%,#000 85%)}
+.fade i:nth-child(5){background:linear-gradient(to bottom,rgba(255,255,255,0) 40%,rgba(255,255,255,.92) 100%)}
+
+/* ---------- parallax: far / middle / near layers move at clearly different speeds ---------- */
 @supports (animation-timeline:view()){
-@keyframes pxB{from{translate:0 -70px}to{translate:0 70px}}
-@keyframes pxM{from{translate:0 -26px}to{translate:0 26px}}
-@keyframes pxF{from{translate:0 56px}to{translate:0 -56px}}
-@keyframes hpB1{from{translate:0 0}to{translate:0 190px}}
-@keyframes hpB2{from{translate:0 0}to{translate:0 120px}}
-@keyframes hpM{from{translate:0 0}to{translate:0 50px}}
-@keyframes hpF{from{translate:0 0}to{translate:0 -90px}}
-.art,.mg .ph{animation:pxM linear both;animation-timeline:view()}
-.ft .h2{animation:pxB linear both;animation-timeline:view()}
-.ab .lead{animation:pxF linear both;animation-timeline:view()}
+@keyframes pxB{from{translate:0 -150px}to{translate:0 150px}}
+@keyframes pxM{from{translate:0 -60px}to{translate:0 60px}}
+@keyframes pxF{from{translate:0 130px}to{translate:0 -130px}}
+@keyframes hpB1{from{translate:0 0}to{translate:0 400px}}
+@keyframes hpB2{from{translate:0 0}to{translate:0 270px}}
+@keyframes hpM{from{translate:0 0}to{translate:0 130px}}
+@keyframes hpF{from{translate:0 0}to{translate:0 -280px}}
+.art{animation:pxM linear both;animation-timeline:view()}
+.mg .ph{animation:pxB linear both;animation-timeline:view()}
+.mg>div{animation:pxF linear both;animation-timeline:view()}
+.wk{animation:pxM linear both;animation-timeline:view()}
+.h2.rv{animation:rvIn linear both,pxF linear both;animation-timeline:view(),view();animation-range:entry 0% entry 35%,cover 0% cover 100%}
+.lead.rv{animation:rvIn linear both,pxM linear both;animation-timeline:view(),view();animation-range:entry 0% entry 35%,cover 0% cover 100%}
+.ft .h2.rv{animation:rvIn linear both,pxB linear both;animation-timeline:view(),view();animation-range:entry 0% entry 35%,cover 0% cover 100%}
 .ab .art{animation:none}
-.hp1,.hp2,.hp3,.hp4{animation-timeline:auto,view();animation-range:normal,exit 0% exit 100%}
 .hp1{animation:inUp 1.3s var(--ease) .1s both,hpB1 linear both}
 .hp2{animation:inUp 1.3s var(--ease) .3s both,hpB2 linear both}
 .hp3{animation:inUp 1.3s var(--ease) .5s both,hpM linear both}
@@ -173,7 +185,7 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 .hp1,.hp2,.hp3,.hp4{animation-timeline:auto,view();animation-range:normal,exit 0% exit 100%}
 .hp3 .art{animation:none}
 }
-@media (prefers-reduced-motion:reduce){.art,.ph,.no,.nm,.hp1,.hp2,.hp3,.hp4{animation:none!important;opacity:1!important}}
+@media (prefers-reduced-motion:reduce){.art,.ph,.mg>div,.wk,.h2,.lead,.hp1,.hp2,.hp3,.hp4{animation:none!important;opacity:1!important}}
 
 </style>
 
@@ -186,18 +198,19 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 <a class="logo" href="index.html">Wentao Tang</a>
 
 <!-- HERO -->
-<section style="position:relative;height:900px;overflow:hidden">
+<section style="position:relative;height:clamp(680px,100svh,1100px);overflow:hidden">
 <div style="position:relative;max-width:1440px;height:100%;margin:0 auto">
 <div class="disp in d1 hp1" style="position:absolute;left:-1vw;top:50px;z-index:1;white-space:nowrap;font-size:clamp(200px,29vw,430px);line-height:.8;letter-spacing:-.07em;color:#2A476F">Wentao</div>
 <div class="disp in d2 hp2" style="position:absolute;right:-1vw;top:340px;z-index:1;white-space:nowrap;font-size:clamp(200px,29vw,430px);line-height:.8;letter-spacing:-.07em;color:#5E77A3">Tang</div>
 <div class="in d3 hp3" style="position:absolute;left:50%;bottom:0;margin-left:-450px;z-index:2">
 <div class="art k-wave " style="width:900px;aspect-ratio:1254/1254" role="img" aria-label="Line drawing of Wentao waving hello"><img class="base" src="assets/new/wave_base.png" alt=""><img class="L blink n-spark" src="assets/new/wave_spark.png" alt="" style="left:15.39%;top:33.41%;width:9.57%;height:8.13%"><img class="L hand n-hand" src="assets/new/wave_hand.png" alt="" style="left:20.57%;top:36.84%;width:15.79%;height:15.47%;transform-origin:51.5% 96.9%"></div>
 </div>
-<div class="in d4 hp4" style="position:absolute;left:48px;bottom:56px;max-width:380px;z-index:3">
+<div class="fade" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<div class="in d4 hp4" style="position:absolute;left:48px;bottom:56px;max-width:380px;z-index:7">
 <p class="lead rv" style="margin:0;font-size:22px">I work between business and product — turning market and user insights into things worth building.</p>
 <div style="margin-top:18px;font-size:13px;letter-spacing:.16em;font-weight:600;color:#5E77A3">STRATEGY × PRODUCT × DESIGN</div>
 </div>
-<div class="note" style="position:absolute;right:48px;bottom:56px;z-index:3;font-size:18px;color:#5E77A3">keep scrolling ↓</div>
+<div class="note" style="position:absolute;right:48px;bottom:56px;z-index:7;font-size:18px;color:#5E77A3">keep scrolling ↓</div>
 </div>
 </section>
 
