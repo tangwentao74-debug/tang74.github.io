@@ -56,7 +56,7 @@ a{color:inherit;text-decoration:none}
 
 /* ---------- illustrations: quiet idle, distinct hover ---------- */
 :root{--ease:cubic-bezier(.22,.61,.36,1)}
-.art{position:relative;filter:url(#boil);cursor:default}
+.art{position:relative;cursor:default}
 .art img{position:absolute;display:block;-webkit-user-drag:none;user-select:none}
 .art .base{inset:0;width:100%;height:100%;transform-origin:50% 100%;animation:breathe 9s ease-in-out infinite}
 @keyframes breathe{0%,100%{transform:scale(1,1)}50%{transform:scale(1.002,1.005)}}
@@ -169,15 +169,15 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 @media (prefers-reduced-motion:reduce){.ch{transform:none!important;animation:none!important}}
 
 /* ---------- progressive blur fixed to the bottom of the viewport ---------- */
-.vfade{position:fixed;left:0;right:0;bottom:0;height:150px;z-index:15;pointer-events:none}
+.vfade{position:fixed;left:0;right:0;bottom:0;height:300px;z-index:15;pointer-events:none}
 .vfade i{position:absolute;inset:0}
-.vfade i:nth-child(1){backdrop-filter:blur(1px);-webkit-backdrop-filter:blur(1px);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 30%,#000 45%,transparent 60%);mask-image:linear-gradient(to bottom,transparent 0%,#000 30%,#000 45%,transparent 60%)}
-.vfade i:nth-child(2){backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);-webkit-mask-image:linear-gradient(to bottom,transparent 20%,#000 50%,#000 65%,transparent 80%);mask-image:linear-gradient(to bottom,transparent 20%,#000 50%,#000 65%,transparent 80%)}
-.vfade i:nth-child(3){backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);-webkit-mask-image:linear-gradient(to bottom,transparent 40%,#000 70%,#000 85%,transparent 95%);mask-image:linear-gradient(to bottom,transparent 40%,#000 70%,#000 85%,transparent 95%)}
-.vfade i:nth-child(4){backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);-webkit-mask-image:linear-gradient(to bottom,transparent 60%,#000 90%);mask-image:linear-gradient(to bottom,transparent 60%,#000 90%)}
-.vfade i:nth-child(5){background:linear-gradient(to bottom,rgba(255,255,255,0) 45%,rgba(255,255,255,.75) 100%)}
+.vfade i:nth-child(1){backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 40%);mask-image:linear-gradient(to bottom,transparent 0%,#000 40%)}
+.vfade i:nth-child(2){backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);-webkit-mask-image:linear-gradient(to bottom,transparent 30%,#000 70%);mask-image:linear-gradient(to bottom,transparent 30%,#000 70%)}
+.vfade i:nth-child(3){backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);-webkit-mask-image:linear-gradient(to bottom,transparent 55%,#000 90%);mask-image:linear-gradient(to bottom,transparent 55%,#000 90%)}
+.vfade i:nth-child(4){display:none}
+.vfade i:nth-child(5){background:linear-gradient(to bottom,rgba(255,255,255,0) 15%,rgba(255,255,255,.55) 60%,rgba(255,255,255,.95) 100%)}
 @supports (animation-timeline:scroll()){
-.vfade{animation:vfOut linear both;animation-timeline:scroll(root block);animation-range:calc(100% - 260px) 100%}
+.vfade{animation:vfOut linear both;animation-timeline:scroll(root block);animation-range:calc(100% - 320px) 100%}
 @keyframes vfOut{from{opacity:1}to{opacity:0}}
 }
 
@@ -193,18 +193,19 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 <body>
 
 <div style="background:#FFFFFF;color:#14233A;font-family:'Figtree',system-ui,sans-serif;position:relative;overflow-x:clip">
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="boil" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="2" seed="1" result="n"><animate attributeName="seed" values="1;2;3;4;5;6;7" dur="1.4s" calcMode="discrete" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="2" xChannelSelector="R" yChannelSelector="G"/></filter><filter id="boil2" x="-10%" y="-10%" width="125%" height="125%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="3" result="n"><animate attributeName="seed" values="1;2;3;4;5;6;7" dur="1.4s" calcMode="discrete" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="2" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="boil" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="2" seed="1" result="n"></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="2" xChannelSelector="R" yChannelSelector="G"/></filter><filter id="boil2" x="-10%" y="-10%" width="125%" height="125%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="3" result="n"></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="2" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
 <div class="mn" tabindex="0"><div class="ln"></div><div class="mb"><i></i>Menu<span class="note">home</span></div><div class="in2"><div class="pt note">where to? :)</div><a class="mi on" href="index.html"><span class="mn1 note">01</span><span class="mn2">Home</span><span class="chip">&#8594;</span></a><a class="mi" href="work.html"><span class="mn1 note">02</span><span class="mn2">Work</span><span class="chip">&#8594;</span></a><a class="mi" href="about.html"><span class="mn1 note">03</span><span class="mn2">About</span><span class="chip">&#8594;</span></a><a class="mi" href="#contact"><span class="mn1 note">04</span><span class="mn2">Contact</span><span class="chip">&#8594;</span></a><div class="pf2"><a class="mailc" href="mailto:wentaotang2028@u.northwestern.edu">wentaotang2028@u.northwestern.edu</a><div class="soc"><a class="chip" href="https://www.linkedin.com/in/wentaotang/">in</a><a class="chip" href="mailto:wentaotang2028@u.northwestern.edu">@</a></div><div class="cp">&copy; Wentao Tang</div></div></div></div>
 <a class="logo" href="index.html">Wentao Tang</a><div class="vfade" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
 
 <!-- HERO -->
 <section style="position:relative;height:clamp(680px,100svh,1100px);overflow:hidden">
 <div style="position:relative;max-width:1440px;height:100%;margin:0 auto">
-<div class="disp" aria-label="Wentao" style="position:absolute;left:-1vw;top:clamp(60px,9vh,110px);z-index:1;white-space:nowrap;font-size:clamp(200px,29vw,430px);line-height:.8;letter-spacing:-.07em;color:#2A476F"><span class="chw" aria-hidden="true"><span class="ch" style="--i:0">W</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:1">e</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:2">n</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:3">t</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:4">a</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:5">o</span></span></div>
+<div class="disp" aria-label="Wentao" style="position:absolute;left:-1vw;top:clamp(50px,7vh,90px);z-index:1;white-space:nowrap;font-size:clamp(200px,29vw,430px);line-height:.8;letter-spacing:-.07em;color:#2A476F"><span class="chw" aria-hidden="true"><span class="ch" style="--i:0">W</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:1">e</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:2">n</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:3">t</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:4">a</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:5">o</span></span></div>
+<div class="disp" aria-label="Tang" style="position:absolute;right:-1vw;top:calc(clamp(50px,7vh,90px) + 26vw);z-index:1;white-space:nowrap;font-size:clamp(200px,29vw,430px);line-height:.8;letter-spacing:-.07em;color:#5E77A3"><span class="chw" aria-hidden="true"><span class="ch" style="--i:6">T</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:7">a</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:8">n</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:9">g</span></span></div>
 <div class="in d3 hp3" style="position:absolute;left:50%;bottom:0;width:min(62vw,900px);transform-origin:50% 100%;margin-left:calc(min(62vw,900px) / -2);z-index:2">
 <div class="art k-wave " style="width:100%;aspect-ratio:1254/1254" role="img" aria-label="Line drawing of Wentao waving hello"><img class="base" src="assets/new/wave_base.png" alt=""><img class="L blink n-spark" src="assets/new/wave_spark.png" alt="" style="left:15.39%;top:33.41%;width:9.57%;height:8.13%"><img class="L hand n-hand" src="assets/new/wave_hand.png" alt="" style="left:20.57%;top:36.84%;width:15.79%;height:15.47%;transform-origin:51.5% 96.9%"></div>
 </div>
-<div class="in d4 hp4" style="position:absolute;left:48px;bottom:56px;max-width:380px;z-index:7">
+<div class="in d4 hp4" style="position:absolute;left:48px;bottom:200px;max-width:380px;z-index:7">
 <p class="lead rv" style="margin:0;font-size:22px">I work between business and product — turning market and user insights into things worth building.</p>
 <div style="margin-top:18px;font-size:13px;letter-spacing:.16em;font-weight:600;color:#5E77A3">STRATEGY × PRODUCT × DESIGN</div>
 </div>
