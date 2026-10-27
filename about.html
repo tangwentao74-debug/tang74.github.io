@@ -2,60 +2,236 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>About — Wentao Tang</title>
-<meta name="description" content="Wentao Tang works between business and product — turning market and user insights into things worth building.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&amp;family=Bebas+Neue&amp;family=Outfit:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Architects+Daughter&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:inherit;text-decoration:none}
+.big{transition:opacity .6s}.big:hover{opacity:.75}
+.note{font-family:'Architects Daughter',cursive}
+.disp{font-weight:600;letter-spacing:-.06em;line-height:.88;font-size:clamp(96px,14vw,210px)}
+.h2{font-weight:600;letter-spacing:-.05em;line-height:.95;font-size:clamp(56px,7vw,104px)}
+.h3{font-weight:600;letter-spacing:-.03em;line-height:1.1;font-size:26px}
+.lead{font-weight:500;letter-spacing:-.015em;line-height:1.4;font-size:24px}
+.body{font-size:18px;line-height:1.6}
+.hl{box-shadow:inset 0 -.3em 0 #DAA21B}
+/* ---------- hand-drawn menu: one shape that grows from button to panel ---------- */
+:root{--morph:cubic-bezier(.7,0,.2,1)}
+.logo{position:absolute;top:30px;left:32px;font-size:15px;font-weight:600;z-index:9}
+.mn{position:absolute;top:20px;right:32px;z-index:20;outline:none;color:#14233A;width:126px;height:46px;transition:width .8s var(--morph),height .8s var(--morph)}
+.mn:hover,.mn:focus-within{width:330px;height:478px}
+.ln{position:absolute;inset:0;background:#fff;border:2.5px solid #14233A;box-sizing:border-box;border-radius:24px 22px 26px 20px / 21px 26px 20px 24px;box-shadow:3px 4px 0 #2A476F;filter:url(#boil2);transition:border-radius .8s var(--morph),box-shadow .8s var(--morph)}
+.mn:hover .ln,.mn:focus-within .ln{border-radius:34px 28px 36px 26px / 28px 36px 26px 34px;box-shadow:7px 8px 0 #2A476F}
+.mb{position:absolute;left:0;top:0;width:100%;height:46px;display:flex;align-items:center;justify-content:center;gap:10px;font-size:15px;font-weight:600;cursor:pointer;transition:opacity .25s ease .1s}
+.mb i{width:18px;height:11px;border-top:2px solid #14233A;border-bottom:2px solid #14233A;position:relative;border-radius:2px}
+.mb i:after{content:'';position:absolute;left:1px;right:-2px;top:3px;border-top:2px solid #14233A;border-radius:2px}
+.mb .note{display:none}
+.mn:hover .mb,.mn:focus-within .mb{opacity:0;transition:opacity .15s ease;pointer-events:none}
+.in2{position:absolute;left:0;top:0;width:330px;box-sizing:border-box;padding:22px 33px 30px 26px;opacity:0;visibility:hidden;transition:opacity .2s ease,visibility 0s .2s}
+.mn:hover .in2,.mn:focus-within .in2{opacity:1;visibility:visible;transition:opacity .45s ease .35s,visibility 0s .35s}
+.in2 .pt,.in2 .mi,.in2 .pf2{opacity:0;transform:translateY(8px);transition:opacity .2s ease,transform .2s ease}
+.mn:hover .in2 .pt,.mn:hover .in2 .mi,.mn:hover .in2 .pf2,.mn:focus-within .in2 .pt,.mn:focus-within .in2 .mi,.mn:focus-within .in2 .pf2{opacity:1;transform:none;transition:opacity .6s var(--ease),transform .7s var(--ease)}
+.mn:hover .in2 .pt,.mn:focus-within .in2 .pt{transition-delay:.35s}
+.mn:hover .in2 .mi:nth-of-type(1),.mn:focus-within .in2 .mi:nth-of-type(1){transition-delay:.42s}
+.mn:hover .in2 .mi:nth-of-type(2),.mn:focus-within .in2 .mi:nth-of-type(2){transition-delay:.48s}
+.mn:hover .in2 .mi:nth-of-type(3),.mn:focus-within .in2 .mi:nth-of-type(3){transition-delay:.54s}
+.mn:hover .in2 .mi:nth-of-type(4),.mn:focus-within .in2 .mi:nth-of-type(4){transition-delay:.6s}
+.mn:hover .in2 .pf2,.mn:focus-within .in2 .pf2{transition-delay:.68s}
+.pt{font-size:16px;color:#5E77A3;margin-bottom:6px}
+.mi{display:flex;align-items:center;gap:14px;padding:13px 0;border-top:1.5px dashed #C9D6E8;color:#14233A}
+.mn1{width:30px;font-size:16px;color:#5E77A3}
+.mn2{flex:0 1 auto;font-size:30px;font-weight:600;letter-spacing:-.04em;line-height:1;padding-bottom:3px;background:linear-gradient(#DAA21B,#DAA21B) 0 100%/0 3px no-repeat;transition:background-size .6s var(--ease)}
+.mi:hover .mn2,.mi.on .mn2{background-size:100% 3px}
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 4px;box-sizing:border-box;font-size:15px;font-weight:600;border:2px solid #14233A;border-radius:55% 45% 52% 48% / 48% 54% 46% 52%;background:#fff;transition:background .5s var(--ease)}
+.mi .chip{margin-left:auto;visibility:hidden}
+.mi:hover .chip,.mi.on .chip{visibility:visible;background:#E0F1FF}
+.pf2{border-top:1.5px dashed #C9D6E8;padding-top:16px;display:flex;flex-direction:column;gap:12px}
+.mailc{font-size:14px;font-weight:500;box-shadow:inset 0 -1px 0 #14233A;align-self:flex-start}
+.soc{display:flex;gap:10px}
+.soc .chip:hover{background:#DAA21B}
+.cp{font-size:13px;color:#5E77A3}
+@media (prefers-reduced-motion:reduce){.mn,.ln,.in2,.in2 *{transition:none!important}}
+
+/* ---------- illustrations: quiet idle, distinct hover ---------- */
+:root{--ease:cubic-bezier(.22,.61,.36,1)}
+.art{position:relative;filter:url(#boil);cursor:default}
+.art img{position:absolute;display:block;-webkit-user-drag:none;user-select:none}
+.art .base{inset:0;width:100%;height:100%;transform-origin:50% 100%;animation:breathe 9s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:scale(1,1)}50%{transform:scale(1.002,1.005)}}
+.L{will-change:transform,opacity}
+.L.sway{transform-origin:50% 0;animation:swayL 8s ease-in-out infinite}
+@keyframes swayL{0%,100%{transform:rotate(-.8deg)}50%{transform:rotate(.8deg)}}
+.L.blink{transform-origin:50% 50%;animation:sparkL 6s ease-in-out infinite}
+@keyframes sparkL{0%,60%,100%{opacity:1}74%,86%{opacity:.15}}
+.L.heart{transform-origin:50% 100%;opacity:0;animation:heartL 7s var(--ease) infinite}
+@keyframes heartL{0%{opacity:0;transform:translateY(8px)}18%{opacity:1}45%,100%{opacity:0;transform:translateY(-22px)}}
+.L.float{animation:floatL 9s ease-in-out infinite}
+.L.float.b{animation-delay:-3s}.L.float.c{animation-delay:-6s}
+@keyframes floatL{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.L.z{transform-origin:0 100%;animation:zL 8s var(--ease) infinite}
+.L.z2{animation-delay:-2.7s}.L.z3{animation-delay:-5.4s}
+@keyframes zL{0%{opacity:0;transform:translate(0,8px)}25%{opacity:1}70%,100%{opacity:0;transform:translate(12px,-20px)}}
+.L.pulse{transform-origin:50% 50%;animation:pulseL 8s ease-in-out infinite}
+@keyframes pulseL{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+.L.hand{animation:handL 7s var(--ease) infinite}
+@keyframes handL{0%,55%,100%{transform:rotate(0)}65%{transform:rotate(-7deg)}75%{transform:rotate(3deg)}85%{transform:rotate(-4deg)}}
+.L.brush{animation:brushL 8s ease-in-out infinite}
+@keyframes brushL{0%,100%{transform:rotate(-1deg)}50%{transform:rotate(1.2deg)}}
+.tilt{transform-origin:50% 100%;animation:tiltL 10s ease-in-out infinite}
+@keyframes tiltL{0%,100%{transform:rotate(-.6deg)}50%{transform:rotate(.6deg)}}
+
+/* hover: each character answers differently */
+/* wave -- leans in and waves properly */
+.k-wave:hover .base{animation:waveLean 2.4s ease-in-out infinite}
+@keyframes waveLean{0%,100%{transform:rotate(0)}50%{transform:rotate(-.9deg)}}
+.k-wave:hover .L.hand{animation:waveHi 1.5s ease-in-out infinite;transform-origin:50% 100%}
+@keyframes waveHi{0%,100%{transform:rotate(2deg)}30%{transform:rotate(-14deg)}60%{transform:rotate(6deg)}80%{transform:rotate(-8deg)}}
+.k-wave:hover .L.blink{animation-duration:1.4s}
+/* charts -- the pieces drift apart, like a layout being arranged */
+.k-charts .L{transition:transform 1s var(--ease)}
+.k-charts:hover .L.float{animation-play-state:paused}
+.k-charts:hover .n-bar{transform:translate(-14px,-10px)}
+.k-charts:hover .n-line{transform:translate(12px,-12px)}
+.k-charts:hover .n-doc{transform:translate(10px,10px)}
+.k-charts:hover .n-pie{transform:translate(-12px,12px) rotate(8deg)}
+.k-charts:hover .n-numl{transform:translate(-18px,0)}
+.k-charts:hover .n-numr{transform:translate(18px,-4px)}
+/* cat -- hearts rise, a small nod */
+.k-cat:hover .L.heart{animation:heartHi 2.6s var(--ease) infinite}
+@keyframes heartHi{0%{opacity:0;transform:translateY(8px) scale(.96)}25%{opacity:1}100%{opacity:0;transform:translateY(-34px) scale(1.06)}}
+.k-cat:hover .base{animation:nod 2.6s ease-in-out infinite}
+@keyframes nod{0%,100%{transform:scale(1)}50%{transform:scale(1.004,.992)}}
+/* easel -- the brush paints, the sun warms */
+.k-easel:hover .L.brush{animation:paint 1.8s ease-in-out infinite}
+@keyframes paint{0%,100%{transform:rotate(-4deg) translate(-3px,2px)}50%{transform:rotate(5deg) translate(4px,-3px)}}
+.k-easel:hover .L.pulse{animation:glow 2.4s ease-in-out infinite}
+@keyframes glow{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.1) rotate(8deg)}}
+/* sleep -- deeper breath, the Zs drift up faster */
+.k-sleep:hover .base{animation:deep 3.6s ease-in-out infinite}
+@keyframes deep{0%,100%{transform:scale(1)}50%{transform:scale(1.004,1.014)}}
+.k-sleep:hover .L.z{animation-duration:3.4s}
+/* typing -- keys busy, notes flutter */
+.k-typing:hover .L.sway{animation:flutter 1.6s ease-in-out infinite}
+@keyframes flutter{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2.2deg)}}
+.k-typing:hover .base{animation:type 1.1s ease-in-out infinite;transform-origin:50% 100%}
+@keyframes type{0%,100%{transform:translateY(0)}50%{transform:translateY(1.5px)}}
+.k-typing:hover .L.blink{animation-duration:1.2s}
+/* head -- turns to look at you */
+.k-head .base{transition:transform .9s var(--ease)}
+.k-head:hover .base{animation:none;transform:rotate(-3deg) translateY(-6px)}
+
+/* ---------- motion for the page: slow, editorial ---------- */
+.in{opacity:0;animation:inUp 1.3s var(--ease) both}
+.d1{animation-delay:.1s}.d2{animation-delay:.3s}.d3{animation-delay:.5s}.d4{animation-delay:.8s}
+@keyframes inUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@supports (animation-timeline:view()){
+.rv{animation:rvIn linear both;animation-timeline:view();animation-range:entry 0% entry 35%}
+@keyframes rvIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+}
+a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
+.pj{display:block}
+.pj .ph,.wk .ph{position:relative;aspect-ratio:4/3;border-radius:28px;overflow:hidden;background:#E0F1FF}
+.pj .ph img,.wk .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.22,.61,.36,1)}
+.pj:hover .ph img,.wk:hover .ph img{transform:scale(1.025)}
+.scroller{display:flex;gap:24px;overflow-x:auto;padding:0 48px 24px;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#14233A transparent}
+.scroller .pj{flex:0 0 min(680px,78vw);scroll-snap-align:start}
+.pf{position:relative;width:300px;height:380px;border-radius:36px;background:#DAA21B;overflow:hidden}
+.pf img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .5s ease}
+.pf .b{opacity:0;background:#E0F1FF}
+.pf:hover .b{opacity:1}
+.pf:hover .a{opacity:0}
+.ft a.u{box-shadow:inset 0 -.12em 0 #14233A}
+@media (prefers-reduced-motion:reduce){.art .base,.L,.in,.rv{animation:none!important;opacity:1!important}.L.heart{opacity:0!important}}
+.mg{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
+.mg .ph{position:relative;overflow:hidden;border-radius:28px;background:#E0F1FF}
+.mg .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.22,.61,.36,1)}
+.mg .ph:hover img{transform:scale(1.025)}
+.mg .no{font-weight:600;letter-spacing:-.06em;line-height:.85;font-size:clamp(72px,9vw,140px);color:#2A476F}
+.mg .nm{font-weight:600;letter-spacing:-.04em;line-height:1;font-size:clamp(32px,3.4vw,48px);margin-top:14px}
+
+/* ---------- parallax: background / middle / foreground drift at different speeds ---------- */
+@supports (animation-timeline:view()){
+@keyframes pxB{from{translate:0 -70px}to{translate:0 70px}}
+@keyframes pxM{from{translate:0 -26px}to{translate:0 26px}}
+@keyframes pxF{from{translate:0 56px}to{translate:0 -56px}}
+@keyframes hpB1{from{translate:0 0}to{translate:0 190px}}
+@keyframes hpB2{from{translate:0 0}to{translate:0 120px}}
+@keyframes hpM{from{translate:0 0}to{translate:0 50px}}
+@keyframes hpF{from{translate:0 0}to{translate:0 -90px}}
+.art,.mg .ph{animation:pxM linear both;animation-timeline:view()}
+.ft .h2{animation:pxB linear both;animation-timeline:view()}
+.ab .lead{animation:pxF linear both;animation-timeline:view()}
+.ab .art{animation:none}
+.hp1,.hp2,.hp3,.hp4{animation-timeline:auto,view();animation-range:normal,exit 0% exit 100%}
+.hp1{animation:inUp 1.3s var(--ease) .1s both,hpB1 linear both}
+.hp2{animation:inUp 1.3s var(--ease) .3s both,hpB2 linear both}
+.hp3{animation:inUp 1.3s var(--ease) .5s both,hpM linear both}
+.hp4{animation:inUp 1.3s var(--ease) .8s both,hpF linear both}
+.hp1,.hp2,.hp3,.hp4{animation-timeline:auto,view();animation-range:normal,exit 0% exit 100%}
+.hp3 .art{animation:none}
+}
+@media (prefers-reduced-motion:reduce){.art,.ph,.no,.nm,.hp1,.hp2,.hp3,.hp4{animation:none!important;opacity:1!important}}
+
+.ab{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
+.ab p{margin:0 0 30px}
+.rd{font-size:19px;line-height:1.75;color:#3C5478}
+.lk{box-shadow:inset 0 -1px 0 #14233A}
+@media (max-width:820px){.ab{display:block}}
+</style>
 
 </head>
 <body>
-<div id="app" style="position:relative;isolation:isolate;background:#fff;overflow-x:clip">
-<canvas class="brush" aria-hidden="true" style="position:fixed;left:0;top:0;pointer-events:none;z-index:-1"></canvas>
-<header class="wrap" style="position:sticky;top:12px;z-index:50;padding-top:16px;pointer-events:none">
-<div class="nav">
-<a href="index.html" class="hand logo" style="font-size:24px;color:#2A476F;min-height:44px;display:inline-flex;align-items:center">Wentao Tang</a>
-<nav class="navlinks" style="display:flex;gap:2px;margin-left:auto" aria-label="Primary">
-<a class="navlink" href="index.html">HOME</a>
-<a class="navlink" href="work.html">WORK</a>
-<a class="navlink on" aria-current="page" href="about.html">ABOUT</a>
-<a class="navlink" href="index.html#contact" style="background:#14233A;color:#fff">CONTACT</a>
-</nav>
+
+<div style="background:#FFFFFF;color:#14233A;font-family:'Figtree',system-ui,sans-serif;position:relative;overflow-x:clip">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="boil" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="2" seed="1" result="n"><animate attributeName="seed" values="1;2;3;4;5;6;7" dur="1.4s" calcMode="discrete" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="2" xChannelSelector="R" yChannelSelector="G"/></filter><filter id="boil2" x="-10%" y="-10%" width="125%" height="125%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="3" result="n"><animate attributeName="seed" values="1;2;3;4;5;6;7" dur="1.4s" calcMode="discrete" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="2" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
+<div class="mn" tabindex="0"><div class="ln"></div><div class="mb"><i></i>Menu<span class="note">about</span></div><div class="in2"><div class="pt note">where to? :)</div><a class="mi" href="index.html"><span class="mn1 note">01</span><span class="mn2">Home</span><span class="chip">&#8594;</span></a><a class="mi" href="work.html"><span class="mn1 note">02</span><span class="mn2">Work</span><span class="chip">&#8594;</span></a><a class="mi on" href="about.html"><span class="mn1 note">03</span><span class="mn2">About</span><span class="chip">&#8594;</span></a><a class="mi" href="#contact"><span class="mn1 note">04</span><span class="mn2">Contact</span><span class="chip">&#8594;</span></a><div class="pf2"><a class="mailc" href="mailto:wentaotang2028@u.northwestern.edu">wentaotang2028@u.northwestern.edu</a><div class="soc"><a class="chip" href="https://www.linkedin.com/in/wentaotang/">in</a><a class="chip" href="mailto:wentaotang2028@u.northwestern.edu">@</a></div><div class="cp">&copy; Wentao Tang</div></div></div></div>
+<a class="logo" href="index.html">Wentao Tang</a>
+
+<section style="padding:190px 48px 0">
+<div style="max-width:1200px;margin:0 auto">
+<div style="font-size:13px;letter-spacing:.16em;font-weight:600;color:#5E77A3;margin-bottom:28px">ABOUT</div>
+<h1 class="h2 rv" style="margin:0;max-width:960px">Wentao Tang looks for the person inside the number.</h1>
 </div>
-</header>
-<main>
-<section id="profile" class="wrap pg-hero prof" style="scroll-margin-top:60px">
-<div class="prof-head pg-in">
-<div><h1 class="bebas">ABOUT</h1>
-<div class="pg-in pg-in3" style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin:12px 0 0">
-<span class="bebas" style="font-size:var(--f-3);color:#5E77A3">ECONOMICS</span><svg viewBox="0 0 120 60" width="clamp(40px,3.3vw,59px)" aria-hidden="true"><path d="M6 34 C30 24 56 40 82 28 C94 23 104 28 112 30 M96 12 C104 20 110 26 114 31 C108 38 102 44 94 50" fill="none" stroke="#2A476F" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="bebas" style="font-size:var(--f-3);color:#5E77A3">STRATEGY</span><svg viewBox="0 0 120 60" width="clamp(40px,3.3vw,59px)" aria-hidden="true"><path d="M6 34 C30 24 56 40 82 28 C94 23 104 28 112 30 M96 12 C104 20 110 26 114 31 C108 38 102 44 94 50" fill="none" stroke="#2A476F" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="bebas" style="font-size:var(--f-3);color:#2A476F">PRODUCT</span><svg viewBox="0 0 120 60" width="clamp(40px,3.3vw,59px)" aria-hidden="true"><path d="M6 34 C30 24 56 40 82 28 C94 23 104 28 112 30 M96 12 C104 20 110 26 114 31 C108 38 102 44 94 50" fill="none" stroke="#2A476F" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="bebas" style="font-size:var(--f-3);color:#2A476F">DESIGN</span>
-</div></div>
+</section>
+
+<section style="padding:140px 48px 140px">
+<div class="ab" style="max-width:1200px;margin:0 auto;align-items:start">
+<div style="grid-column:1/5;position:sticky;top:48px">
+<div style="width:100%;max-width:340px"><div class="art k-head" style="width:100%;aspect-ratio:693/777" role="img" aria-label="Line drawing portrait of Wentao"><img class="base tilt" src="assets/new/me_head.png" alt=""></div></div>
+<div class="note" style="margin-top:14px;font-size:18px;color:#5E77A3">hi, it’s me :)</div>
+</div>
+<div style="grid-column:6/12">
+<p style="font-size:26px;line-height:1.45;font-weight:500;letter-spacing:-.015em;color:#14233A;margin-bottom:44px">Why do advertisers leave after their first campaign? At TikTok, the data said small education advertisers were pulling back, and the dashboard called it “retention.” Wentao went to visit them and heard what the dashboard never showed: they couldn’t make sense of their own ad reports. The numbers told him what happened. Only the people could tell him why.</p>
+<p class="rd rv">He has trained for both halves. With a degree in Quantitative Economics from UC Irvine and monetization strategy internships at Kuaishou, TikTok and Tencent, he reads numbers at scale: at Tencent, he mapped China’s online advertising market for the first half of 2026, from the biggest platforms to the long tail, and tested his findings with industry experts, earning strong recognition from the Head of Tencent Ads.</p>
+<p class="rd rv">Numbers could tell him what happened, but not how it felt, so he started designing for the people behind them. His projects DotDot and Dotty Desk Beacon are a pair: a mixed-reality focus companion and a physical desk beacon, both built to keep you company instead of policing your attention. Now at Northwestern’s Engineering Design Innovation program, he adds research, prototyping and design to that analytical base. His belief: “I don’t want numbers to be the end of my work.”</p>
+<p class="rd rv">That is why he is aiming for product management in internet advertising or consumer technology. A product manager decides what to build, and that decision needs both: the number that shows the problem, and the person who explains it.</p>
+<div style="margin-top:56px;padding-top:24px;border-top:1px solid #14233A;display:flex;gap:28px;flex-wrap:wrap;font-size:16px;font-weight:500">
+<span style="color:#5E77A3">Download PDF · coming soon</span>
+<a class="lk" href="mailto:wentaotang2028@u.northwestern.edu">wentaotang2028@u.northwestern.edu</a>
+<a class="lk" href="https://www.linkedin.com/in/wentaotang/">LinkedIn ↗</a>
+</div>
+</div>
+</div>
+</section>
+
+<div style="max-width:820px;margin:0 auto;padding:0 48px 40px">
+<div class="art k-typing " style="width:100%;aspect-ratio:1254/1254" role="img" aria-label="Line drawing of Wentao working at a laptop"><img class="base" src="assets/new/typing_base.png" alt=""><img class="L sway n-notes" src="assets/new/typing_notes.png" alt="" style="left:7.66%;top:20.57%;width:25.20%;height:25.92%"><img class="L blink n-spark" src="assets/new/typing_spark.png" alt="" style="left:28.15%;top:41.87%;width:4.70%;height:4.63%"></div>
+</div>
+<section id="contact" class="ft" style="border-top:1px solid #14233A;margin:0 48px;padding:56px 0 40px">
+<div style="display:flex;justify-content:space-between;gap:48px;flex-wrap:wrap;align-items:flex-end">
+<h2 class="h2" style="margin:0;font-size:clamp(56px,7.4vw,112px)">Let’s make something <span class="hl">useful.</span></h2>
+<div style="display:flex;flex-direction:column;gap:10px;font-size:18px;font-weight:500;min-width:260px">
+<span class="note" style="font-size:20px;color:#5E77A3">or just say hi :)</span>
+<a class="u" href="mailto:wentaotang2028@u.northwestern.edu" style="align-self:flex-start">wentaotang2028@u.northwestern.edu</a>
+<div style="display:flex;gap:20px"><a class="u" href="https://www.linkedin.com/in/wentaotang/">LinkedIn</a></div>
+</div>
+</div>
+<div style="margin-top:72px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:14px;color:#5E77A3"><span>© Wentao Tang</span><span>serious about the work, not too serious about myself</span></div>
+</section>
 </div>
 
-<div class="pl pl1" id="pl1">
-<div class="p1-fig"><div class="flip-wrap"><div class="flip" role="button" tabindex="0" aria-pressed="false" aria-label="Flip the card: sketch portrait or real photo"><div class="flip-in"><div class="face front"><div class="f-blob"></div><img src="assets/portrait.webp" alt="Hand-drawn portrait of Wentao Tang"><p class="hand f-note">hi, it’s me :)</p></div><div class="face back"><div class="b-bg"></div><div class="b-sun"></div><img class="b-cut" src="assets/me-cutout.webp" alt="Photo of Wentao Tang" width="1000" height="1046"><p class="hand f-note b">the real me</p></div></div></div><p class="hand flip-hint">touch the card ↻</p><svg class="flip-star" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 2 C54 34 66 46 98 50 C66 54 54 66 50 98 C46 66 34 54 2 50 C34 46 46 34 50 2Z" fill="#DAA21B"/></svg></div></div>
-<div class="p1-txt"><h2 class="bebas ph">Wentao Tang looks for the <em class="hl">person</em> inside the number.</h2>
-<p class="lede">Why do advertisers leave after their first campaign? At TikTok, the data said small education advertisers were pulling back, and the dashboard called it “retention.” Wentao went to visit them and heard what the dashboard never showed: they couldn’t make sense of their own ad reports. The numbers told him what happened. Only the people could tell him why.</p><p>He has trained for both halves. With a degree in Quantitative Economics from UC Irvine and monetization strategy internships at Kuaishou, TikTok and Tencent, he reads numbers at scale: at Tencent, he mapped China’s online advertising market for the first half of 2026, from the biggest platforms to the long tail, and tested his findings with industry experts, earning strong recognition from the Head of Tencent Ads.</p><p>Numbers could tell him what happened, but not how it felt, so he started designing for the people behind them. His projects DotDot and Dotty Desk Beacon are a pair: a mixed-reality focus companion and a physical desk beacon, both built to keep you company instead of policing your attention. Now at Northwestern’s Engineering Design Innovation program, he adds research, prototyping and design to that analytical base. His belief: “I don’t want numbers to be the end of my work.”</p><p>That is why he is aiming for product management in internet advertising or consumer technology. A product manager decides what to build, and that decision needs both: the number that shows the problem, and the person who explains it.</p><div class="prof-actions">
-<div class="prof-btns"><a class="pill" href="#resume" style="background:#2A476F;color:#fff">View Resume ↓</a><span class="pill soft" aria-disabled="true">Download PDF · coming soon</span></div>
-<div class="prof-chips"><a class="chip" href="mailto:wentaotang2028@u.northwestern.edu">✉ wentaotang2028@u.northwestern.edu</a><a class="chip" href="https://www.linkedin.com/in/wentaotang/" target="_blank" rel="noopener">in LinkedIn ↗</a></div>
-</div></div>
-</div>
-</section>
-<section id="resume" class="wrap" style="padding-top:clamp(72px,calc(9vw * var(--k,1)),calc(140px * var(--kc,1)));scroll-margin-top:60px"><h2 class="bebas rv" style="margin:0 0 28px;font-size:var(--f-2);line-height:.92;color:#2A476F">EDUCATION</h2><div class="edu"><div class="row pop"><div class="logo-tile"><img src="assets/logo-nu.webp" alt="Northwestern University seal" style="width:56px;height:56px;border-radius:50%;object-fit:cover"></div><div><div class="bebas" style="font-size:38px;color:#2A476F;line-height:1">NORTHWESTERN UNIVERSITY</div><div style="font-size:17px;font-weight:300;line-height:1.45;margin-top:4px">M.S. Engineering Design Innovation</div><div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px"><span class="when">Sep 2026 – Mar 2028</span><span class="when" style="background:#FFF4D6;color:#7A5A06">QS Top 45</span></div></div></div>
-<div class="row pop pop2"><div class="logo-tile"><img src="assets/logo-uci.webp" alt="UC Irvine seal" style="width:56px;height:56px;border-radius:50%;object-fit:cover"></div><div><div class="bebas" style="font-size:38px;color:#2A476F;line-height:1">UC IRVINE</div><div style="font-size:17px;font-weight:300;line-height:1.45;margin-top:4px">B.A. Quantitative Economics</div><div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px"><span class="when">Sep 2022 – Mar 2026</span><span class="when" style="background:#FFF4D6;color:#7A5A06">US News Top 32</span></div></div></div></div></section>
-<section class="wrap" style="padding-top:clamp(72px,calc(9vw * var(--k,1)),calc(140px * var(--kc,1)))"><h2 class="bebas rv" style="margin:0 0 28px;font-size:var(--f-2);line-height:.92;color:#2A476F">EXPERIENCE</h2><div class="tl"><div class="tl-line"></div><article class="job gal-in"><div class="job-h"><div class="logo-tile"><img src="assets/logo-tencent.webp" alt="Tencent logo" style="width:66px;height:auto"></div><div class="t"><div class="bebas co">TENCENT</div><div class="ro">Data Analyst</div></div><a class="chip site" href="https://www.tencent.com/" target="_blank" rel="noopener" aria-label="Tencent website">tencent.com ↗</a><span class="when">May – Aug 2026</span></div><div class="pts"><div class="pt"><h4>618 full-cycle e-commerce monitoring system</h4><p>Against a backdrop of soft consumer demand and fading trade-in subsidies, I tracked full-cycle 618 data across Alibaba, JD.com and Pinduoduo and unpacked the structural divergence between platforms. Through in-depth expert interviews, I synthesized user-side (acquisition, repurchase, membership), merchant-side (tiered support, industrial belts), subsidy strategy and platform priorities into a “five-platform strategy benchmark” and a “traffic-field migration framework.” It sharpened the team’s read on the dual-track “content seeding → shelf conversion” logic, and pointed to AI-driven efficiency and membership lock-in as the way out of stock competition.</p></div><div class="pt"><h4>Ad market tracking &amp; monetization strategy</h4><p>Combined major competitors and small-to-mid media ads to break down Tencent Ads’ revenue scale and mix across mainstream internet platforms. Built an ad-expert panel with multi-round validation, consolidated cross-platform information and dissected rivals’ monetization end to end, to find the growth levers behind ad revenue and support business expansion and product strategy.</p></div></div></article><article class="job gal-in"><div class="job-h"><div class="logo-tile"><img src="assets/logo-tiktok.svg" alt="TikTok logo" style="width:34px;height:34px"></div><div class="t"><div class="bebas co">TIKTOK</div><div class="ro">Commercialization Strategy &amp; Operations</div></div><a class="chip site" href="https://www.bytedance.com/" target="_blank" rel="noopener" aria-label="Tiktok website">bytedance.com ↗</a><span class="when">Jul – Nov 2025</span></div><div class="pts"><div class="pt"><h4>Systematic market monitoring</h4><p>Tracked Douyin’s competing media, funding rounds and macro trends end to end, building a continuous market-insight pipeline. Used AI to process information fast and analyze policy, product and cases; read macro data (retail sales, PMI, CPI) alongside platform user data (DAU, time spent, personas) to call industry trends and shifts in user behavior.</p></div><div class="pt"><h4>Competitor media ecosystem benchmarking &amp; growth strategy</h4><p>With the existing business nearing its ceiling, I looked for transformation openings from a commercialization-strategy view. Broke down rivals’ strengths and weaknesses across users, operations and platform; used tiering and attribution analysis to quantify how content types (e.g. short drama) and carriers (e.g. OTV) drive user attention; explained the structural reasons behind competitors’ GMV and take-rate growth; and studied their integrated ad-and-sales collaboration and incentive design, pointing to content and carrier innovation as the key path.</p></div><div class="pt"><h4>Tencent Ads growth attribution</h4><p>When Tencent Ads’ revenue rebounded sharply in H1 2025, I led a systematic teardown of where the growth came from and whether it would last, giving TikTok’s commercialization team a benchmark for quarterly strategy, industry priorities and target setting. Built a three-layer “revenue → structure → drivers” framework and delivered a structured attribution report.</p></div></div></article><article class="job gal-in"><div class="job-h"><div class="logo-tile"><img src="assets/logo-kuaishou.svg" alt="Kuaishou logo" style="width:36px;height:36px"></div><div class="t"><div class="bebas co">KUAISHOU</div><div class="ro">Commercial Product Operations</div></div><a class="chip site" href="https://www.kuaishou.com/en" target="_blank" rel="noopener" aria-label="Kuaishou website">kuaishou.com ↗</a><span class="when">May – Sep 2024</span></div><div class="pts"><div class="pt"><h4>User personas → personalized incentive recommendations</h4><p>The business team had a fuzzy picture of its clients and was allocating resources inefficiently. I built a tiered operating system from client segmentation and personas, pinpointed high-potential and dormant clients, and designed personalized incentives to improve allocation efficiency and close the conversion loop.</p></div><div class="pt"><h4>Kuaishou E-commerce × Magnetic Engine channel co-creation</h4><p>Used data and ecosystem collaboration to find high-potential content-commerce clients and improve their ad experience. Streamlined self-serve ad flows, pushed for more varied incentive mechanisms, and built an industry × scale two-dimensional tiering model to refine rebates and delivery paths.</p></div><div class="pt"><h4>Livestream content risk control</h4><p>Monitored interactions, comments and systems for key-vertical clients in Kuaishou livestreams, and set up a “negative livestream” issue ledger. Mined it for platform and client needs and drove strategy tweaks, system whitelisting and creative adjustments.</p></div></div><div class="stats"><div class="stat"><b><span class="cnt" data-from="0" data-to="49" data-suf="%" data-pre="+">+49%</span></b><span>increase in average daily client spend</span></div><div class="stat"><b style="font-size:var(--f-4);padding-top:.25em">27% → <span class="cnt" data-from="27" data-to="45" data-suf="%" data-pre="">45%</span></b><span>brand-client share of spend</span></div><div class="stat"><b><span class="cnt" data-from="0" data-to="41" data-suf="%" data-pre="+">+41%</span></b><span>year-over-year growth in key clients</span></div><div class="stat"><b><span class="cnt" data-from="0" data-to="65" data-suf="%" data-pre="+">+65%</span></b><span>activation of high-potential clients</span></div><div class="stat"><b><span class="cnt" data-from="0" data-to="92" data-suf="%" data-pre="">92%</span></b><span>ad-creative review pass rate</span></div><div class="stat"><b><span class="cnt" data-from="0" data-to="38" data-suf="%" data-pre="+">+38%</span></b><span>conversion lift on rebate-reached clients</span></div></div></article><article class="job gal-in"><div class="job-h"><div class="logo-tile"><img src="assets/logo-pegasus.webp" alt="Pegasus Tech Ventures logo" style="width:52px;height:52px;object-fit:contain;mix-blend-mode:multiply"></div><div class="t"><div class="bebas co">PEGASUS TECH VENTURES</div><div class="ro">Marketing Intern · Silicon Valley Top 25 VC</div></div><a class="chip site" href="https://www.pegasustechventures.com/" target="_blank" rel="noopener" aria-label="Pegasus Tech Ventures website">pegasustechventures.com ↗</a><span class="when">Jun – Sep 2022</span></div><div class="pts"><div class="pt"><h4>Market research &amp; negotiation support</h4><p>Wrote market research reports across supply chain, technology roadmaps and policy environment, and supplied data and recommendations for senior-leadership negotiations.</p></div><div class="pt"><h4>World-stage events</h4><p>Served as project liaison lead for world-class events including the Startup World Cup and Mobile World Congress.</p></div></div></article></div></section>
-<section class="wrap" style="padding-top:clamp(56px,calc(7vw * var(--k,1)),calc(110px * var(--kc,1)))"><h2 class="bebas rv" style="margin:0 0 28px;font-size:var(--f-2);line-height:.92;color:#2A476F">SKILLS</h2><div class="skills"><div class="sk pop"><h3>DATA ANALYSIS</h3><div class="chips"><span class="chip pop">Python · pandas</span><span class="chip pop">NumPy</span><span class="chip pop">statsmodels</span><span class="chip pop">Excel · Pivot Tables</span><span class="chip pop">Power Query</span><span class="chip pop">XLOOKUP</span><span class="chip pop">GETPIVOTDATA</span></div></div><div class="sk pop pop2"><h3>INDUSTRY &amp; DESIGN TOOLS</h3><div class="chips"><span class="chip pop">QuestMobile</span><span class="chip pop">Wind</span><span class="chip pop">Euromonitor</span><span class="chip pop">ITJuzi</span><span class="chip pop">PowerPoint</span><span class="chip pop">Think-cell</span><span class="chip pop">Flourish</span><span class="chip pop">Figma</span></div></div><div class="sk pop pop3"><h3>LANGUAGES</h3><div class="chips"><span class="chip pop">English · TOEFL 110</span><span class="chip pop">Fluent in daily &amp; work use</span><span class="chip pop">Mandarin · native</span></div></div></div></section>
-</main>
-<section class="wrap" style="padding-top:clamp(72px,calc(9vw * var(--k,1)),calc(140px * var(--kc,1)));padding-bottom:40px">
-<div class="cta-band">
-<h2 class="bebas" style="margin:0;font-size:var(--f-2);line-height:.92;max-width:900px">LET’S MAKE SOMETHING USEFUL.</h2>
-<a class="pill" href="index.html#contact" style="background:#DAA21B;color:#14233A">Say hi :) <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-</div>
-<p style="margin:28px 0 0;font-size:14px;color:#5B6B82;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px"><span>© Wentao Tang</span><span class="hand" style="font-size:16px">serious about the work, not too serious about myself</span></p>
-</section>
-</div>
-<script src="main.js"></script><script src="resume.js"></script><script src="flip.js"></script><script src="mobile.js"></script>
 </body>
 </html>

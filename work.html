@@ -2,97 +2,237 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Work — Wentao Tang</title>
-<meta name="description" content="Wentao Tang works between business and product — turning market and user insights into things worth building.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&amp;family=Bebas+Neue&amp;family=Outfit:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
-<script>document.documentElement.className+=' js'</script>
-<link rel="stylesheet" href="styles.css">
-<link rel="preload" as="image" href="assets/photo-dotdot-blur.webp">
-<link rel="preload" as="image" href="assets/illo-dotdot.webp">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Architects+Daughter&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:inherit;text-decoration:none}
+.big{transition:opacity .6s}.big:hover{opacity:.75}
+.note{font-family:'Architects Daughter',cursive}
+.disp{font-weight:600;letter-spacing:-.06em;line-height:.88;font-size:clamp(96px,14vw,210px)}
+.h2{font-weight:600;letter-spacing:-.05em;line-height:.95;font-size:clamp(56px,7vw,104px)}
+.h3{font-weight:600;letter-spacing:-.03em;line-height:1.1;font-size:26px}
+.lead{font-weight:500;letter-spacing:-.015em;line-height:1.4;font-size:24px}
+.body{font-size:18px;line-height:1.6}
+.hl{box-shadow:inset 0 -.3em 0 #DAA21B}
+/* ---------- hand-drawn menu: one shape that grows from button to panel ---------- */
+:root{--morph:cubic-bezier(.7,0,.2,1)}
+.logo{position:absolute;top:30px;left:32px;font-size:15px;font-weight:600;z-index:9}
+.mn{position:absolute;top:20px;right:32px;z-index:20;outline:none;color:#14233A;width:126px;height:46px;transition:width .8s var(--morph),height .8s var(--morph)}
+.mn:hover,.mn:focus-within{width:330px;height:478px}
+.ln{position:absolute;inset:0;background:#fff;border:2.5px solid #14233A;box-sizing:border-box;border-radius:24px 22px 26px 20px / 21px 26px 20px 24px;box-shadow:3px 4px 0 #2A476F;filter:url(#boil2);transition:border-radius .8s var(--morph),box-shadow .8s var(--morph)}
+.mn:hover .ln,.mn:focus-within .ln{border-radius:34px 28px 36px 26px / 28px 36px 26px 34px;box-shadow:7px 8px 0 #2A476F}
+.mb{position:absolute;left:0;top:0;width:100%;height:46px;display:flex;align-items:center;justify-content:center;gap:10px;font-size:15px;font-weight:600;cursor:pointer;transition:opacity .25s ease .1s}
+.mb i{width:18px;height:11px;border-top:2px solid #14233A;border-bottom:2px solid #14233A;position:relative;border-radius:2px}
+.mb i:after{content:'';position:absolute;left:1px;right:-2px;top:3px;border-top:2px solid #14233A;border-radius:2px}
+.mb .note{display:none}
+.mn:hover .mb,.mn:focus-within .mb{opacity:0;transition:opacity .15s ease;pointer-events:none}
+.in2{position:absolute;left:0;top:0;width:330px;box-sizing:border-box;padding:22px 33px 30px 26px;opacity:0;visibility:hidden;transition:opacity .2s ease,visibility 0s .2s}
+.mn:hover .in2,.mn:focus-within .in2{opacity:1;visibility:visible;transition:opacity .45s ease .35s,visibility 0s .35s}
+.in2 .pt,.in2 .mi,.in2 .pf2{opacity:0;transform:translateY(8px);transition:opacity .2s ease,transform .2s ease}
+.mn:hover .in2 .pt,.mn:hover .in2 .mi,.mn:hover .in2 .pf2,.mn:focus-within .in2 .pt,.mn:focus-within .in2 .mi,.mn:focus-within .in2 .pf2{opacity:1;transform:none;transition:opacity .6s var(--ease),transform .7s var(--ease)}
+.mn:hover .in2 .pt,.mn:focus-within .in2 .pt{transition-delay:.35s}
+.mn:hover .in2 .mi:nth-of-type(1),.mn:focus-within .in2 .mi:nth-of-type(1){transition-delay:.42s}
+.mn:hover .in2 .mi:nth-of-type(2),.mn:focus-within .in2 .mi:nth-of-type(2){transition-delay:.48s}
+.mn:hover .in2 .mi:nth-of-type(3),.mn:focus-within .in2 .mi:nth-of-type(3){transition-delay:.54s}
+.mn:hover .in2 .mi:nth-of-type(4),.mn:focus-within .in2 .mi:nth-of-type(4){transition-delay:.6s}
+.mn:hover .in2 .pf2,.mn:focus-within .in2 .pf2{transition-delay:.68s}
+.pt{font-size:16px;color:#5E77A3;margin-bottom:6px}
+.mi{display:flex;align-items:center;gap:14px;padding:13px 0;border-top:1.5px dashed #C9D6E8;color:#14233A}
+.mn1{width:30px;font-size:16px;color:#5E77A3}
+.mn2{flex:0 1 auto;font-size:30px;font-weight:600;letter-spacing:-.04em;line-height:1;padding-bottom:3px;background:linear-gradient(#DAA21B,#DAA21B) 0 100%/0 3px no-repeat;transition:background-size .6s var(--ease)}
+.mi:hover .mn2,.mi.on .mn2{background-size:100% 3px}
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 4px;box-sizing:border-box;font-size:15px;font-weight:600;border:2px solid #14233A;border-radius:55% 45% 52% 48% / 48% 54% 46% 52%;background:#fff;transition:background .5s var(--ease)}
+.mi .chip{margin-left:auto;visibility:hidden}
+.mi:hover .chip,.mi.on .chip{visibility:visible;background:#E0F1FF}
+.pf2{border-top:1.5px dashed #C9D6E8;padding-top:16px;display:flex;flex-direction:column;gap:12px}
+.mailc{font-size:14px;font-weight:500;box-shadow:inset 0 -1px 0 #14233A;align-self:flex-start}
+.soc{display:flex;gap:10px}
+.soc .chip:hover{background:#DAA21B}
+.cp{font-size:13px;color:#5E77A3}
+@media (prefers-reduced-motion:reduce){.mn,.ln,.in2,.in2 *{transition:none!important}}
+
+/* ---------- illustrations: quiet idle, distinct hover ---------- */
+:root{--ease:cubic-bezier(.22,.61,.36,1)}
+.art{position:relative;filter:url(#boil);cursor:default}
+.art img{position:absolute;display:block;-webkit-user-drag:none;user-select:none}
+.art .base{inset:0;width:100%;height:100%;transform-origin:50% 100%;animation:breathe 9s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:scale(1,1)}50%{transform:scale(1.002,1.005)}}
+.L{will-change:transform,opacity}
+.L.sway{transform-origin:50% 0;animation:swayL 8s ease-in-out infinite}
+@keyframes swayL{0%,100%{transform:rotate(-.8deg)}50%{transform:rotate(.8deg)}}
+.L.blink{transform-origin:50% 50%;animation:sparkL 6s ease-in-out infinite}
+@keyframes sparkL{0%,60%,100%{opacity:1}74%,86%{opacity:.15}}
+.L.heart{transform-origin:50% 100%;opacity:0;animation:heartL 7s var(--ease) infinite}
+@keyframes heartL{0%{opacity:0;transform:translateY(8px)}18%{opacity:1}45%,100%{opacity:0;transform:translateY(-22px)}}
+.L.float{animation:floatL 9s ease-in-out infinite}
+.L.float.b{animation-delay:-3s}.L.float.c{animation-delay:-6s}
+@keyframes floatL{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.L.z{transform-origin:0 100%;animation:zL 8s var(--ease) infinite}
+.L.z2{animation-delay:-2.7s}.L.z3{animation-delay:-5.4s}
+@keyframes zL{0%{opacity:0;transform:translate(0,8px)}25%{opacity:1}70%,100%{opacity:0;transform:translate(12px,-20px)}}
+.L.pulse{transform-origin:50% 50%;animation:pulseL 8s ease-in-out infinite}
+@keyframes pulseL{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+.L.hand{animation:handL 7s var(--ease) infinite}
+@keyframes handL{0%,55%,100%{transform:rotate(0)}65%{transform:rotate(-7deg)}75%{transform:rotate(3deg)}85%{transform:rotate(-4deg)}}
+.L.brush{animation:brushL 8s ease-in-out infinite}
+@keyframes brushL{0%,100%{transform:rotate(-1deg)}50%{transform:rotate(1.2deg)}}
+.tilt{transform-origin:50% 100%;animation:tiltL 10s ease-in-out infinite}
+@keyframes tiltL{0%,100%{transform:rotate(-.6deg)}50%{transform:rotate(.6deg)}}
+
+/* hover: each character answers differently */
+/* wave -- leans in and waves properly */
+.k-wave:hover .base{animation:waveLean 2.4s ease-in-out infinite}
+@keyframes waveLean{0%,100%{transform:rotate(0)}50%{transform:rotate(-.9deg)}}
+.k-wave:hover .L.hand{animation:waveHi 1.5s ease-in-out infinite;transform-origin:50% 100%}
+@keyframes waveHi{0%,100%{transform:rotate(2deg)}30%{transform:rotate(-14deg)}60%{transform:rotate(6deg)}80%{transform:rotate(-8deg)}}
+.k-wave:hover .L.blink{animation-duration:1.4s}
+/* charts -- the pieces drift apart, like a layout being arranged */
+.k-charts .L{transition:transform 1s var(--ease)}
+.k-charts:hover .L.float{animation-play-state:paused}
+.k-charts:hover .n-bar{transform:translate(-14px,-10px)}
+.k-charts:hover .n-line{transform:translate(12px,-12px)}
+.k-charts:hover .n-doc{transform:translate(10px,10px)}
+.k-charts:hover .n-pie{transform:translate(-12px,12px) rotate(8deg)}
+.k-charts:hover .n-numl{transform:translate(-18px,0)}
+.k-charts:hover .n-numr{transform:translate(18px,-4px)}
+/* cat -- hearts rise, a small nod */
+.k-cat:hover .L.heart{animation:heartHi 2.6s var(--ease) infinite}
+@keyframes heartHi{0%{opacity:0;transform:translateY(8px) scale(.96)}25%{opacity:1}100%{opacity:0;transform:translateY(-34px) scale(1.06)}}
+.k-cat:hover .base{animation:nod 2.6s ease-in-out infinite}
+@keyframes nod{0%,100%{transform:scale(1)}50%{transform:scale(1.004,.992)}}
+/* easel -- the brush paints, the sun warms */
+.k-easel:hover .L.brush{animation:paint 1.8s ease-in-out infinite}
+@keyframes paint{0%,100%{transform:rotate(-4deg) translate(-3px,2px)}50%{transform:rotate(5deg) translate(4px,-3px)}}
+.k-easel:hover .L.pulse{animation:glow 2.4s ease-in-out infinite}
+@keyframes glow{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.1) rotate(8deg)}}
+/* sleep -- deeper breath, the Zs drift up faster */
+.k-sleep:hover .base{animation:deep 3.6s ease-in-out infinite}
+@keyframes deep{0%,100%{transform:scale(1)}50%{transform:scale(1.004,1.014)}}
+.k-sleep:hover .L.z{animation-duration:3.4s}
+/* typing -- keys busy, notes flutter */
+.k-typing:hover .L.sway{animation:flutter 1.6s ease-in-out infinite}
+@keyframes flutter{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2.2deg)}}
+.k-typing:hover .base{animation:type 1.1s ease-in-out infinite;transform-origin:50% 100%}
+@keyframes type{0%,100%{transform:translateY(0)}50%{transform:translateY(1.5px)}}
+.k-typing:hover .L.blink{animation-duration:1.2s}
+/* head -- turns to look at you */
+.k-head .base{transition:transform .9s var(--ease)}
+.k-head:hover .base{animation:none;transform:rotate(-3deg) translateY(-6px)}
+
+/* ---------- motion for the page: slow, editorial ---------- */
+.in{opacity:0;animation:inUp 1.3s var(--ease) both}
+.d1{animation-delay:.1s}.d2{animation-delay:.3s}.d3{animation-delay:.5s}.d4{animation-delay:.8s}
+@keyframes inUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@supports (animation-timeline:view()){
+.rv{animation:rvIn linear both;animation-timeline:view();animation-range:entry 0% entry 35%}
+@keyframes rvIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+}
+a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
+.pj{display:block}
+.pj .ph,.wk .ph{position:relative;aspect-ratio:4/3;border-radius:28px;overflow:hidden;background:#E0F1FF}
+.pj .ph img,.wk .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.22,.61,.36,1)}
+.pj:hover .ph img,.wk:hover .ph img{transform:scale(1.025)}
+.scroller{display:flex;gap:24px;overflow-x:auto;padding:0 48px 24px;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#14233A transparent}
+.scroller .pj{flex:0 0 min(680px,78vw);scroll-snap-align:start}
+.pf{position:relative;width:300px;height:380px;border-radius:36px;background:#DAA21B;overflow:hidden}
+.pf img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .5s ease}
+.pf .b{opacity:0;background:#E0F1FF}
+.pf:hover .b{opacity:1}
+.pf:hover .a{opacity:0}
+.ft a.u{box-shadow:inset 0 -.12em 0 #14233A}
+@media (prefers-reduced-motion:reduce){.art .base,.L,.in,.rv{animation:none!important;opacity:1!important}.L.heart{opacity:0!important}}
+.mg{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
+.mg .ph{position:relative;overflow:hidden;border-radius:28px;background:#E0F1FF}
+.mg .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.22,.61,.36,1)}
+.mg .ph:hover img{transform:scale(1.025)}
+.mg .no{font-weight:600;letter-spacing:-.06em;line-height:.85;font-size:clamp(72px,9vw,140px);color:#2A476F}
+.mg .nm{font-weight:600;letter-spacing:-.04em;line-height:1;font-size:clamp(32px,3.4vw,48px);margin-top:14px}
+
+/* ---------- parallax: background / middle / foreground drift at different speeds ---------- */
+@supports (animation-timeline:view()){
+@keyframes pxB{from{translate:0 -70px}to{translate:0 70px}}
+@keyframes pxM{from{translate:0 -26px}to{translate:0 26px}}
+@keyframes pxF{from{translate:0 56px}to{translate:0 -56px}}
+@keyframes hpB1{from{translate:0 0}to{translate:0 190px}}
+@keyframes hpB2{from{translate:0 0}to{translate:0 120px}}
+@keyframes hpM{from{translate:0 0}to{translate:0 50px}}
+@keyframes hpF{from{translate:0 0}to{translate:0 -90px}}
+.art,.mg .ph{animation:pxM linear both;animation-timeline:view()}
+.ft .h2{animation:pxB linear both;animation-timeline:view()}
+.ab .lead{animation:pxF linear both;animation-timeline:view()}
+.ab .art{animation:none}
+.hp1,.hp2,.hp3,.hp4{animation-timeline:auto,view();animation-range:normal,exit 0% exit 100%}
+.hp1{animation:inUp 1.3s var(--ease) .1s both,hpB1 linear both}
+.hp2{animation:inUp 1.3s var(--ease) .3s both,hpB2 linear both}
+.hp3{animation:inUp 1.3s var(--ease) .5s both,hpM linear both}
+.hp4{animation:inUp 1.3s var(--ease) .8s both,hpF linear both}
+.hp1,.hp2,.hp3,.hp4{animation-timeline:auto,view();animation-range:normal,exit 0% exit 100%}
+.hp3 .art{animation:none}
+}
+@media (prefers-reduced-motion:reduce){.art,.ph,.no,.nm,.hp1,.hp2,.hp3,.hp4{animation:none!important;opacity:1!important}}
+
+</style>
 
 </head>
 <body>
-<div id="app" style="position:relative;isolation:isolate;background:#fff;overflow-x:clip">
-<canvas class="brush" aria-hidden="true" style="position:fixed;left:0;top:0;pointer-events:none;z-index:-1"></canvas>
-<header class="wrap" style="position:sticky;top:12px;z-index:50;padding-top:16px;pointer-events:none">
-<div class="nav">
-<a href="index.html" class="hand logo" style="font-size:24px;color:#2A476F;min-height:44px;display:inline-flex;align-items:center">Wentao Tang</a>
-<nav class="navlinks" style="display:flex;gap:2px;margin-left:auto" aria-label="Primary">
-<a class="navlink" href="index.html">HOME</a>
-<a class="navlink on" aria-current="page" href="work.html">WORK</a>
-<a class="navlink" href="about.html">ABOUT</a>
-<a class="navlink" href="index.html#contact" style="background:#14233A;color:#fff">CONTACT</a>
-</nav>
+
+<div style="background:#FFFFFF;color:#14233A;font-family:'Figtree',system-ui,sans-serif;position:relative;overflow-x:clip">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="boil" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="2" seed="1" result="n"><animate attributeName="seed" values="1;2;3;4;5;6;7" dur="1.4s" calcMode="discrete" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="2" xChannelSelector="R" yChannelSelector="G"/></filter><filter id="boil2" x="-10%" y="-10%" width="125%" height="125%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="3" result="n"><animate attributeName="seed" values="1;2;3;4;5;6;7" dur="1.4s" calcMode="discrete" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="2" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
+<div class="mn" tabindex="0"><div class="ln"></div><div class="mb"><i></i>Menu<span class="note">work</span></div><div class="in2"><div class="pt note">where to? :)</div><a class="mi" href="index.html"><span class="mn1 note">01</span><span class="mn2">Home</span><span class="chip">&#8594;</span></a><a class="mi on" href="work.html"><span class="mn1 note">02</span><span class="mn2">Work</span><span class="chip">&#8594;</span></a><a class="mi" href="about.html"><span class="mn1 note">03</span><span class="mn2">About</span><span class="chip">&#8594;</span></a><a class="mi" href="#contact"><span class="mn1 note">04</span><span class="mn2">Contact</span><span class="chip">&#8594;</span></a><div class="pf2"><a class="mailc" href="mailto:wentaotang2028@u.northwestern.edu">wentaotang2028@u.northwestern.edu</a><div class="soc"><a class="chip" href="https://www.linkedin.com/in/wentaotang/">in</a><a class="chip" href="mailto:wentaotang2028@u.northwestern.edu">@</a></div><div class="cp">&copy; Wentao Tang</div></div></div></div>
+<a class="logo" href="index.html">Wentao Tang</a>
+
+<section style="padding:130px 48px 60px">
+<div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px;align-items:center">
+<div>
+<div class="note" style="font-size:20px;color:#5E77A3;margin-bottom:20px">four things I’ve been building</div>
+<p class="h2 rv" style="margin:0;font-size:clamp(34px,3.8vw,54px);line-height:1.1">From mixed reality to hardware to autonomous rides to AI — each one starts from people, then becomes something you can use.</p>
 </div>
-</header>
-<main>
-<section class="wrap pg-hero">
-<p class="hand pg-in" style="margin:0 0 6px;font-size:var(--f-6);color:#5E77A3;transform:rotate(-2deg);transform-origin:left">four things I’ve been building</p>
-<h1 class="bebas pg-in pg-in2" style="margin:0;font-size:var(--f-2);line-height:.85;color:#2A476F">WORK</h1>
-<p class="pg-in pg-in3" style="margin:10px 0 0;font-size:var(--f-6);line-height:1.35;font-weight:300;max-width:760px;text-wrap:pretty">From mixed reality to hardware to autonomous rides to AI — each one starts from people, then becomes something you can use.</p>
+<div>
+<div class="art k-easel " style="width:100%;aspect-ratio:1254/1254" role="img" aria-label="Line drawing of Wentao painting at an easel"><img class="base" src="assets/new/easel_base.png" alt=""><img class="L blink n-spark" src="assets/new/easel_spark.png" alt="" style="left:56.46%;top:23.60%;width:5.74%;height:6.94%"><img class="L pulse n-sun" src="assets/new/easel_sun.png" alt="" style="left:82.30%;top:35.73%;width:5.74%;height:5.66%"><img class="L brush n-brush" src="assets/new/easel_brush.png" alt="" style="left:66.83%;top:46.41%;width:12.60%;height:16.11%;transform-origin:7.6% 117.8%"></div>
+</div>
+</div>
 </section>
-<section class="wrap wk-stack">
-<article id="project-dot" class="wk gal-in" style="background:rgb(224,241,255)">
-<div class="pbg pb-dot"></div>
-<div class="pov-ov" style="background:linear-gradient(90deg, rgba(224,241,255,.94) 0%, rgba(224,241,255,.84) 40%, rgba(224,241,255,.2) 100%)"></div>
-<div class="wk-txt">
-<div style="display:flex;align-items:baseline;gap:14px"><span class="bebas" style="font-size:44px;color:#3C5478">01</span><span style="font-size:13px;font-weight:500;letter-spacing:.14em;color:#3C5478">MR FOCUS COMPANIONSHIP SYSTEM</span></div>
-<h2 class="bebas" style="margin:10px 0 18px;font-size:var(--f-2);line-height:.9">DOTDOT</h2>
-<p style="margin:0 0 22px;font-size:var(--f-6);line-height:1.45;font-weight:300;max-width:460px;text-wrap:pretty">An MR focus companion that keeps you company instead of policing your attention.</p>
-<div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px"><span class="chip">Mixed reality</span><span class="chip">Focus</span><span class="chip">Companionship</span></div>
-<a class="pill" href="#project-dot" style="background:#2A476F;color:#fff">View Case Study <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+<section style="padding:20px 48px 120px">
+<div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px 32px">
+<a class="wk" href="work.html"><div class="ph"><img src="assets/photo-dotdot.jpg" alt="DotDot project photo"></div>
+<div class="h3" style="margin-top:20px">DotDot</div>
+<div style="margin-top:6px;font-size:17px;line-height:1.45;color:#14233A">An MR focus companion that keeps you company instead of policing your attention.</div>
+<div style="margin-top:10px;font-size:14px;color:#5E77A3">Mixed reality, Focus, Companionship</div></a>
+<a class="wk" href="work.html"><div class="ph"><img src="assets/photo-dotty.jpg" alt="Dotty Desk Beacon project photo"></div>
+<div class="h3" style="margin-top:20px">Dotty Desk Beacon</div>
+<div style="margin-top:6px;font-size:17px;line-height:1.45;color:#14233A">A physical focus companion: a desk beacon built and tested as a hardware prototype.</div>
+<div style="margin-top:10px;font-size:14px;color:#5E77A3">Hardware, Prototype, Focus</div></a>
+<a class="wk" href="work.html"><div class="ph"><img src="assets/photo-coride.jpg" alt="Coride Arcade project photo"></div>
+<div class="h3" style="margin-top:20px">Coride Arcade</div>
+<div style="margin-top:6px;font-size:17px;line-height:1.45;color:#14233A">An in-cabin social game system that turns autonomous rides into shared play.</div>
+<div style="margin-top:10px;font-size:14px;color:#5E77A3">Autonomous rides, Games, Social</div></a>
+<a class="wk" href="work.html"><div class="ph"><img src="assets/photo-insight.jpg" alt="Insight AI project photo"></div>
+<div class="h3" style="margin-top:20px">Insight AI</div>
+<div style="margin-top:6px;font-size:17px;line-height:1.45;color:#14233A">An AI-assisted marketing decision system that turns market signals into clear next moves.</div>
+<div style="margin-top:10px;font-size:14px;color:#5E77A3">AI, Marketing, Decisions</div></a>
 </div>
-<div class="wk-art"><div class="im im-dot" role="img" aria-label="DotDot illustration"></div></div>
-</article>
-<article id="project-desk" class="wk rev gal-in" style="background:rgb(255,243,211)">
-<div class="pbg pb-desk"></div>
-<div class="pov-ov" style="background:linear-gradient(270deg, rgba(255,243,211,.94) 0%, rgba(255,243,211,.84) 40%, rgba(255,243,211,.2) 100%)"></div>
-<div class="wk-txt">
-<div style="display:flex;align-items:baseline;gap:14px"><span class="bebas" style="font-size:44px;color:#6B5A2E">02</span><span style="font-size:13px;font-weight:500;letter-spacing:.14em;color:#6B5A2E">PHYSICAL FOCUS COMPANION</span></div>
-<h2 class="bebas" style="margin:10px 0 18px;font-size:var(--f-2);line-height:.9">DOTTY DESK BEACON</h2>
-<p style="margin:0 0 22px;font-size:var(--f-6);line-height:1.45;font-weight:300;max-width:460px;text-wrap:pretty">A physical focus companion: a desk beacon built and tested as a hardware prototype.</p>
-<div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px"><span class="chip">Hardware</span><span class="chip">Prototype</span><span class="chip">Focus</span></div>
-<a class="pill" href="#project-desk" style="background:#2A476F;color:#fff">View Case Study <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-</div>
-<div class="wk-art"><div class="im im-desk" role="img" aria-label="Dotty Desk Beacon illustration"></div></div>
-</article>
-<article id="project-car" class="wk gal-in" style="background:rgb(228,236,249)">
-<div class="pbg pb-car"></div>
-<div class="pov-ov" style="background:linear-gradient(90deg, rgba(228,236,249,.94) 0%, rgba(228,236,249,.84) 40%, rgba(228,236,249,.2) 100%)"></div>
-<div class="wk-txt">
-<div style="display:flex;align-items:baseline;gap:14px"><span class="bebas" style="font-size:44px;color:#3C5478">03</span><span style="font-size:13px;font-weight:500;letter-spacing:.14em;color:#3C5478">IN-CABIN SOCIAL GAME SYSTEM</span></div>
-<h2 class="bebas" style="margin:10px 0 18px;font-size:var(--f-2);line-height:.9">CORIDE ARCADE</h2>
-<p style="margin:0 0 22px;font-size:var(--f-6);line-height:1.45;font-weight:300;max-width:460px;text-wrap:pretty">An in-cabin social game system that turns autonomous rides into shared play.</p>
-<div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px"><span class="chip">Autonomous rides</span><span class="chip">Games</span><span class="chip">Social</span></div>
-<a class="pill" href="#project-car" style="background:#2A476F;color:#fff">View Case Study <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-</div>
-<div class="wk-art"><div class="im im-car" role="img" aria-label="Coride Arcade illustration"></div></div>
-</article>
-<article id="project-insight" class="wk rev gal-in" style="background:rgb(242,246,252)">
-<div class="pbg pb-insight"></div>
-<div class="pov-ov" style="background:linear-gradient(270deg, rgba(242,246,252,.94) 0%, rgba(242,246,252,.84) 40%, rgba(242,246,252,.2) 100%)"></div>
-<div class="wk-txt">
-<div style="display:flex;align-items:baseline;gap:14px"><span class="bebas" style="font-size:44px;color:#3C5478">04</span><span style="font-size:13px;font-weight:500;letter-spacing:.14em;color:#3C5478">AI-ASSISTED DECISION SYSTEM</span></div>
-<h2 class="bebas" style="margin:10px 0 18px;font-size:var(--f-2);line-height:.9">INSIGHT AI</h2>
-<p style="margin:0 0 22px;font-size:var(--f-6);line-height:1.45;font-weight:300;max-width:460px;text-wrap:pretty">An AI-assisted marketing decision system that turns market signals into clear next moves.</p>
-<div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px"><span class="chip">AI</span><span class="chip">Marketing</span><span class="chip">Decisions</span></div>
-<a class="pill" href="#project-insight" style="background:#2A476F;color:#fff">View Case Study <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-</div>
-<div class="wk-art"><div class="im im-insight" role="img" aria-label="Insight AI illustration"></div></div>
-</article>
 </section>
-</main>
-<section class="wrap" style="padding-top:clamp(72px,calc(9vw * var(--k,1)),calc(140px * var(--kc,1)));padding-bottom:40px">
-<div class="cta-band">
-<h2 class="bebas" style="margin:0;font-size:var(--f-2);line-height:.92;max-width:900px">LET’S MAKE SOMETHING USEFUL.</h2>
-<a class="pill" href="index.html#contact" style="background:#DAA21B;color:#14233A">Say hi :) <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+<div style="max-width:860px;margin:0 auto;padding:0 48px 80px">
+<div class="art k-sleep deep" style="width:100%;aspect-ratio:1536/1024" role="img" aria-label="Line drawing of Wentao napping on a sofa"><img class="base" src="assets/new/sleep_base.png" alt=""><img class="L z z1 n-z1" src="assets/new/sleep_z1.png" alt="" style="left:25.78%;top:31.93%;width:4.23%;height:5.08%"><img class="L z z2 n-z2" src="assets/new/sleep_z2.png" alt="" style="left:28.39%;top:26.27%;width:4.49%;height:6.05%"><img class="L z z3 n-z3" src="assets/new/sleep_z3.png" alt="" style="left:32.75%;top:20.41%;width:4.17%;height:5.66%"></div>
 </div>
-<p style="margin:28px 0 0;font-size:14px;color:#5B6B82;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px"><span>© Wentao Tang</span><span class="hand" style="font-size:16px">serious about the work, not too serious about myself</span></p>
+<section id="contact" class="ft" style="border-top:1px solid #14233A;margin:0 48px;padding:56px 0 40px">
+<div style="display:flex;justify-content:space-between;gap:48px;flex-wrap:wrap;align-items:flex-end">
+<h2 class="h2" style="margin:0;font-size:clamp(56px,7.4vw,112px)">Let’s make something <span class="hl">useful.</span></h2>
+<div style="display:flex;flex-direction:column;gap:10px;font-size:18px;font-weight:500;min-width:260px">
+<span class="note" style="font-size:20px;color:#5E77A3">or just say hi :)</span>
+<a class="u" href="mailto:wentaotang2028@u.northwestern.edu" style="align-self:flex-start">wentaotang2028@u.northwestern.edu</a>
+<div style="display:flex;gap:20px"><a class="u" href="https://www.linkedin.com/in/wentaotang/">LinkedIn</a></div>
+</div>
+</div>
+<div style="margin-top:72px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:14px;color:#5E77A3"><span>© Wentao Tang</span><span>serious about the work, not too serious about myself</span></div>
 </section>
 </div>
-<script src="main.js"></script><script src="work.js"></script>
+
 </body>
 </html>
