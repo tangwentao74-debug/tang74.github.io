@@ -56,10 +56,11 @@ a{color:inherit;text-decoration:none}
 
 /* ---------- illustrations: quiet idle, distinct hover ---------- */
 :root{--ease:cubic-bezier(.22,.61,.36,1)}
-.art{position:relative;cursor:default}
+.art{position:relative;cursor:default;animation:jit 1s steps(1) infinite}
+@keyframes jit{0%{translate:0 0;rotate:0deg}25%{translate:1.3px -1px;rotate:.2deg}50%{translate:-1px .9px;rotate:-.18deg}75%{translate:.7px 1.2px;rotate:.15deg}}
 .art img{position:absolute;display:block;-webkit-user-drag:none;user-select:none}
 .art .base{inset:0;width:100%;height:100%;transform-origin:50% 100%;animation:breathe 4.8s ease-in-out infinite}
-@keyframes breathe{0%,100%{transform:scale(1,1)}50%{transform:scale(1.008,1.022)}}
+@keyframes breathe{0%,100%{transform:scale(1,1) rotate(-.5deg)}50%{transform:scale(1.01,1.026) rotate(.5deg)}}
 .L{will-change:transform,opacity}
 .L.sway{transform-origin:50% 0;animation:swayL 4.2s ease-in-out infinite}
 @keyframes swayL{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
@@ -153,11 +154,12 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 
 /* ---------- scroll: plain, calm reveal (fade up once into view) ---------- */
 @supports (animation-timeline:view()){
-.art,.mg .ph,.mg>div:not(.ph),.wk,.rd,.h2.rv,.lead.rv,.pj{animation:rvIn linear both;animation-timeline:view();animation-range:entry 0% entry 30%}
-.ab .art{animation:none}
+.mg .ph,.mg>div:not(.ph),.wk,.rd,.h2.rv,.lead.rv,.pj{animation:rvIn linear both;animation-timeline:view();animation-range:entry 0% entry 30%}
+.art{animation:rvIn linear both,jit 1s steps(1) infinite;animation-timeline:view(),auto;animation-range:entry 0% entry 30%,normal}
+.ab .art{animation:jit 1s steps(1) infinite}
 .hp3{animation:inUp 1.2s var(--ease) .1s both}
 .hp4{animation:inUp 1.2s var(--ease) .5s both}
-.hp3 .art{animation:none}
+.hp3 .art{animation:jit 1s steps(1) infinite}
 }
 @media (prefers-reduced-motion:reduce){.art,.ph,.mg>div,.wk,.rd,.h2,.lead,.hp3,.hp4{animation:none!important;opacity:1!important}}
 
