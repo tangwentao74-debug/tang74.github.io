@@ -19,7 +19,7 @@ a{color:inherit;text-decoration:none}
 .hl{box-shadow:inset 0 -.3em 0 #DAA21B}
 /* ---------- hand-drawn menu: one shape that grows from button to panel ---------- */
 :root{--morph:cubic-bezier(.7,0,.2,1)}
-.logo{position:absolute;top:30px;left:32px;font-size:15px;font-weight:600;z-index:9}
+.logo{position:absolute;top:14px;left:16px;padding:16px 16px;font-size:16px;font-weight:600;z-index:30}
 .mn{position:absolute;top:20px;right:32px;z-index:20;outline:none;color:#14233A;width:126px;height:46px;transition:width .8s var(--morph),height .8s var(--morph)}
 .mn:hover,.mn:focus-within{width:330px;height:478px}
 .ln{position:absolute;inset:0;background:#fff;border:2.5px solid #14233A;box-sizing:border-box;border-radius:24px 22px 26px 20px / 21px 26px 20px 24px;box-shadow:3px 4px 0 #2A476F;filter:url(#boil2);transition:border-radius .8s var(--morph),box-shadow .8s var(--morph)}
@@ -164,7 +164,7 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 /* ---------- name entrance: letters rise out of a mask, then spring on hover ---------- */
 .chw{display:inline-block;overflow:hidden;padding:.14em .08em .3em;margin:-.14em -.08em -.3em}
 .ch{display:inline-block;transition:translate .55s cubic-bezier(.34,1.56,.64,1),rotate .55s cubic-bezier(.34,1.56,.64,1),color .4s ease}
-.chw:hover .ch{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+
 
 /* ---------- progressive blur fixed to the bottom of the viewport ---------- */
 .vfade{position:fixed;left:0;right:0;bottom:0;height:170px;z-index:15;pointer-events:none}
@@ -184,6 +184,20 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 .big:hover{transform:translate(2px,2px);box-shadow:1px 2px 0 #2A476F;background:#E0F1FF}
 .big span{transition:transform .5s var(--ease)}
 .big:hover span{transform:translateX(3px)}
+
+/* hit layer: letters respond even where the character sits in front */
+.hw{display:inline-block;pointer-events:auto;cursor:default;padding:.1em 0 .2em;margin:-.1em 0 -.2em}
+.hit-block{pointer-events:none}
+.hero:has(.hw:hover .hc[style*="--i:0"]) .ch[style*="--i:0"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+.hero:has(.hw:hover .hc[style*="--i:1"]) .ch[style*="--i:1"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+.hero:has(.hw:hover .hc[style*="--i:2"]) .ch[style*="--i:2"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+.hero:has(.hw:hover .hc[style*="--i:3"]) .ch[style*="--i:3"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+.hero:has(.hw:hover .hc[style*="--i:4"]) .ch[style*="--i:4"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+.hero:has(.hw:hover .hc[style*="--i:5"]) .ch[style*="--i:5"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+.hero:has(.hw:hover .hc[style*="--i:6"]) .ch[style*="--i:6"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+.hero:has(.hw:hover .hc[style*="--i:7"]) .ch[style*="--i:7"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+.hero:has(.hw:hover .hc[style*="--i:8"]) .ch[style*="--i:8"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+.hero:has(.hw:hover .hc[style*="--i:9"]) .ch[style*="--i:9"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
 
 </style>
 

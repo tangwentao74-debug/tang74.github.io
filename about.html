@@ -19,7 +19,7 @@ a{color:inherit;text-decoration:none}
 .hl{box-shadow:inset 0 -.3em 0 #DAA21B}
 /* ---------- hand-drawn menu: one shape that grows from button to panel ---------- */
 :root{--morph:cubic-bezier(.7,0,.2,1)}
-.logo{position:absolute;top:30px;left:32px;font-size:15px;font-weight:600;z-index:9}
+.logo{position:absolute;top:14px;left:16px;padding:16px 16px;font-size:16px;font-weight:600;z-index:30}
 .mn{position:absolute;top:20px;right:32px;z-index:20;outline:none;color:#14233A;width:126px;height:46px;transition:width .8s var(--morph),height .8s var(--morph)}
 .mn:hover,.mn:focus-within{width:330px;height:478px}
 .ln{position:absolute;inset:0;background:#fff;border:2.5px solid #14233A;box-sizing:border-box;border-radius:24px 22px 26px 20px / 21px 26px 20px 24px;box-shadow:3px 4px 0 #2A476F;filter:url(#boil2);transition:border-radius .8s var(--morph),box-shadow .8s var(--morph)}
@@ -164,7 +164,7 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 /* ---------- name entrance: letters rise out of a mask, then spring on hover ---------- */
 .chw{display:inline-block;overflow:hidden;padding:.14em .08em .3em;margin:-.14em -.08em -.3em}
 .ch{display:inline-block;transition:translate .55s cubic-bezier(.34,1.56,.64,1),rotate .55s cubic-bezier(.34,1.56,.64,1),color .4s ease}
-.chw:hover .ch{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+
 
 /* ---------- progressive blur fixed to the bottom of the viewport ---------- */
 .vfade{position:fixed;left:0;right:0;bottom:0;height:170px;z-index:15;pointer-events:none}
@@ -184,6 +184,20 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 .big:hover{transform:translate(2px,2px);box-shadow:1px 2px 0 #2A476F;background:#E0F1FF}
 .big span{transition:transform .5s var(--ease)}
 .big:hover span{transform:translateX(3px)}
+
+/* hit layer: letters respond even where the character sits in front */
+.hw{display:inline-block;pointer-events:auto;cursor:default;padding:.1em 0 .2em;margin:-.1em 0 -.2em}
+.hit-block{pointer-events:none}
+.hero:has(.hw:hover .hc[style*="--i:0"]) .ch[style*="--i:0"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+.hero:has(.hw:hover .hc[style*="--i:1"]) .ch[style*="--i:1"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+.hero:has(.hw:hover .hc[style*="--i:2"]) .ch[style*="--i:2"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+.hero:has(.hw:hover .hc[style*="--i:3"]) .ch[style*="--i:3"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+.hero:has(.hw:hover .hc[style*="--i:4"]) .ch[style*="--i:4"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+.hero:has(.hw:hover .hc[style*="--i:5"]) .ch[style*="--i:5"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+.hero:has(.hw:hover .hc[style*="--i:6"]) .ch[style*="--i:6"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+.hero:has(.hw:hover .hc[style*="--i:7"]) .ch[style*="--i:7"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+.hero:has(.hw:hover .hc[style*="--i:8"]) .ch[style*="--i:8"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+.hero:has(.hw:hover .hc[style*="--i:9"]) .ch[style*="--i:9"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
 
 .ab{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
 .ab p{margin:0 0 30px}
@@ -209,11 +223,11 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 
 <section style="padding:140px 48px 140px">
 <div class="ab" style="max-width:1280px;margin:0 auto;align-items:start">
-<div style="grid-column:1/5;position:sticky;top:48px">
-<div style="width:100%;max-width:340px"><div class="art k-head" style="width:100%;aspect-ratio:693/777" role="img" aria-label="Line drawing portrait of Wentao"><img class="base tilt" src="assets/new/me_head.png" alt=""></div></div>
+<div style="grid-column:1/4;position:sticky;top:48px">
+<div style="width:100%;max-width:290px"><div class="art k-head" style="width:100%;aspect-ratio:693/777" role="img" aria-label="Line drawing portrait of Wentao"><img class="base tilt" src="assets/new/me_head.png" alt=""></div></div>
 <div class="note" style="margin-top:14px;font-size:18px;color:#5E77A3">hi, it’s me :)</div>
 </div>
-<div style="grid-column:6/13">
+<div style="grid-column:5/13">
 <p style="font-size:26px;line-height:1.45;font-weight:500;letter-spacing:-.015em;color:#14233A;margin-bottom:44px">Why do advertisers leave after their first campaign? At TikTok, the data said small education advertisers were pulling back, and the dashboard called it “retention.” Wentao went to visit them and heard what the dashboard never showed: they couldn’t make sense of their own ad reports. The numbers told him what happened. Only the people could tell him why.</p>
 <p class="rd rv">He has trained for both halves. With a degree in Quantitative Economics from UC Irvine and monetization strategy internships at Kuaishou, TikTok and Tencent, he reads numbers at scale: at Tencent, he mapped China’s online advertising market for the first half of 2026, from the biggest platforms to the long tail, and tested his findings with industry experts, earning strong recognition from the Head of Tencent Ads.</p>
 <p class="rd rv">Numbers could tell him what happened, but not how it felt, so he started designing for the people behind them. His projects DotDot and Dotty Desk Beacon are a pair: a mixed-reality focus companion and a physical desk beacon, both built to keep you company instead of policing your attention. Now at Northwestern’s Engineering Design Innovation program, he adds research, prototyping and design to that analytical base. His belief: “I don’t want numbers to be the end of my work.”</p>

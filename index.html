@@ -19,7 +19,7 @@ a{color:inherit;text-decoration:none}
 .hl{box-shadow:inset 0 -.3em 0 #DAA21B}
 /* ---------- hand-drawn menu: one shape that grows from button to panel ---------- */
 :root{--morph:cubic-bezier(.7,0,.2,1)}
-.logo{position:absolute;top:30px;left:32px;font-size:15px;font-weight:600;z-index:9}
+.logo{position:absolute;top:14px;left:16px;padding:16px 16px;font-size:16px;font-weight:600;z-index:30}
 .mn{position:absolute;top:20px;right:32px;z-index:20;outline:none;color:#14233A;width:126px;height:46px;transition:width .8s var(--morph),height .8s var(--morph)}
 .mn:hover,.mn:focus-within{width:330px;height:478px}
 .ln{position:absolute;inset:0;background:#fff;border:2.5px solid #14233A;box-sizing:border-box;border-radius:24px 22px 26px 20px / 21px 26px 20px 24px;box-shadow:3px 4px 0 #2A476F;filter:url(#boil2);transition:border-radius .8s var(--morph),box-shadow .8s var(--morph)}
@@ -164,7 +164,7 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 /* ---------- name entrance: letters rise out of a mask, then spring on hover ---------- */
 .chw{display:inline-block;overflow:hidden;padding:.14em .08em .3em;margin:-.14em -.08em -.3em}
 .ch{display:inline-block;transition:translate .55s cubic-bezier(.34,1.56,.64,1),rotate .55s cubic-bezier(.34,1.56,.64,1),color .4s ease}
-.chw:hover .ch{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+
 
 /* ---------- progressive blur fixed to the bottom of the viewport ---------- */
 .vfade{position:fixed;left:0;right:0;bottom:0;height:170px;z-index:15;pointer-events:none}
@@ -185,6 +185,20 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 .big span{transition:transform .5s var(--ease)}
 .big:hover span{transform:translateX(3px)}
 
+/* hit layer: letters respond even where the character sits in front */
+.hw{display:inline-block;pointer-events:auto;cursor:default;padding:.1em 0 .2em;margin:-.1em 0 -.2em}
+.hit-block{pointer-events:none}
+.hero:has(.hw:hover .hc[style*="--i:0"]) .ch[style*="--i:0"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+.hero:has(.hw:hover .hc[style*="--i:1"]) .ch[style*="--i:1"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+.hero:has(.hw:hover .hc[style*="--i:2"]) .ch[style*="--i:2"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+.hero:has(.hw:hover .hc[style*="--i:3"]) .ch[style*="--i:3"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+.hero:has(.hw:hover .hc[style*="--i:4"]) .ch[style*="--i:4"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+.hero:has(.hw:hover .hc[style*="--i:5"]) .ch[style*="--i:5"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+.hero:has(.hw:hover .hc[style*="--i:6"]) .ch[style*="--i:6"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+.hero:has(.hw:hover .hc[style*="--i:7"]) .ch[style*="--i:7"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+.hero:has(.hw:hover .hc[style*="--i:8"]) .ch[style*="--i:8"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+.hero:has(.hw:hover .hc[style*="--i:9"]) .ch[style*="--i:9"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+
 </style>
 
 </head>
@@ -196,7 +210,7 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 <a class="logo" href="index.html">Wentao Tang</a><div class="vfade" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
 
 <!-- HERO -->
-<section style="position:relative;height:clamp(680px,100svh,1100px);overflow:hidden">
+<section class="hero" style="position:relative;height:clamp(680px,100svh,1100px);overflow:hidden">
 <div style="position:relative;max-width:1440px;height:100%;margin:0 auto">
 <div style="position:absolute;left:-1vw;right:-1vw;top:clamp(50px,7vh,90px);z-index:1;font-size:clamp(200px,29vw,430px);line-height:.8;letter-spacing:-.07em;white-space:nowrap">
 <div class="disp" aria-label="Wentao" style="font-size:inherit;line-height:inherit;color:#2A476F"><span class="chw" aria-hidden="true"><span class="ch" style="--i:0">W</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:1">e</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:2">n</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:3">t</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:4">a</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:5">o</span></span></div>
@@ -205,11 +219,16 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 <div class="in d3 hp3" style="position:absolute;left:50%;bottom:0;width:min(62vw,900px);transform-origin:50% 100%;margin-left:calc(min(62vw,900px) / -2);z-index:2">
 <div class="art k-wave " style="width:100%;aspect-ratio:1254/1254" role="img" aria-label="Line drawing of Wentao waving hello"><img class="base" src="assets/new/wave_base.png" alt=""><img class="L blink n-spark" src="assets/new/wave_spark.png" alt="" style="left:15.39%;top:33.41%;width:9.57%;height:8.13%"><img class="L hand n-hand" src="assets/new/wave_hand.png" alt="" style="left:20.57%;top:36.84%;width:15.79%;height:15.47%;transform-origin:51.5% 96.9%"></div>
 </div>
+<!-- hover hit-layer for the big name -->
+<div style="position:absolute;left:-1vw;right:-1vw;top:clamp(50px,7vh,90px);z-index:4;pointer-events:none;font-size:clamp(200px,29vw,430px);line-height:.8;letter-spacing:-.07em;white-space:nowrap">
+<div class="disp" aria-hidden="true"  style="font-size:inherit;line-height:inherit;color:transparent"><span class="hw" aria-hidden="true"><span class="hc" style="--i:0">W</span></span><span class="hw" aria-hidden="true"><span class="hc" style="--i:1">e</span></span><span class="hw" aria-hidden="true"><span class="hc" style="--i:2">n</span></span><span class="hw" aria-hidden="true"><span class="hc" style="--i:3">t</span></span><span class="hw" aria-hidden="true"><span class="hc" style="--i:4">a</span></span><span class="hw" aria-hidden="true"><span class="hc" style="--i:5">o</span></span></div>
+<div class="disp" aria-hidden="true"  style="font-size:inherit;line-height:inherit;color:transparent;text-align:right;margin-top:-.11em"><span class="hw" aria-hidden="true"><span class="hc" style="--i:6">T</span></span><span class="hw" aria-hidden="true"><span class="hc" style="--i:7">a</span></span><span class="hw" aria-hidden="true"><span class="hc" style="--i:8">n</span></span><span class="hw" aria-hidden="true"><span class="hc" style="--i:9">g</span></span></div>
+</div>
 <div class="in d4 hp4" style="position:absolute;left:48px;bottom:110px;max-width:380px;z-index:7">
 <p class="lead rv" style="margin:0;font-size:22px">I work between business and product — turning market and user insights into things worth building.</p>
 <div style="margin-top:18px;font-size:13px;letter-spacing:.16em;font-weight:600;color:#5E77A3">STRATEGY × PRODUCT × DESIGN</div>
 </div>
-<div class="note" style="position:absolute;right:48px;bottom:56px;z-index:7;font-size:18px;color:#5E77A3">keep scrolling ↓</div>
+<div class="note" style="position:absolute;right:48px;bottom:110px;z-index:7;font-size:18px;line-height:1;color:#5E77A3">keep scrolling ↓</div>
 </div>
 </section>
 
