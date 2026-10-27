@@ -152,15 +152,6 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 .mg .no{font-weight:600;letter-spacing:-.06em;line-height:.85;font-size:clamp(72px,9vw,140px);color:#2A476F}
 .mg .nm{font-weight:600;letter-spacing:-.04em;line-height:1;font-size:clamp(32px,3.4vw,48px);margin-top:14px}
 
-/* ---------- progressive blur at the foot of the hero ---------- */
-.fade{position:absolute;left:0;right:0;bottom:0;height:260px;z-index:5;pointer-events:none}
-.fade i{position:absolute;inset:0}
-.fade i:nth-child(1){backdrop-filter:blur(1px);-webkit-backdrop-filter:blur(1px);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 25%,#000 40%,transparent 55%);mask-image:linear-gradient(to bottom,transparent 0%,#000 25%,#000 40%,transparent 55%)}
-.fade i:nth-child(2){backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);-webkit-mask-image:linear-gradient(to bottom,transparent 20%,#000 45%,#000 60%,transparent 75%);mask-image:linear-gradient(to bottom,transparent 20%,#000 45%,#000 60%,transparent 75%)}
-.fade i:nth-child(3){backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);-webkit-mask-image:linear-gradient(to bottom,transparent 40%,#000 65%,#000 80%,transparent 92%);mask-image:linear-gradient(to bottom,transparent 40%,#000 65%,#000 80%,transparent 92%)}
-.fade i:nth-child(4){backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);-webkit-mask-image:linear-gradient(to bottom,transparent 60%,#000 85%);mask-image:linear-gradient(to bottom,transparent 60%,#000 85%)}
-.fade i:nth-child(5){background:linear-gradient(to bottom,rgba(255,255,255,0) 40%,rgba(255,255,255,.92) 100%)}
-
 /* ---------- parallax: far / middle / near layers move at clearly different speeds ---------- */
 @supports (animation-timeline:view()){
 @keyframes pxB{from{translate:0 -150px}to{translate:0 150px}}
@@ -178,14 +169,43 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 .lead.rv{animation:rvIn linear both,pxM linear both;animation-timeline:view(),view();animation-range:entry 0% entry 35%,cover 0% cover 100%}
 .ft .h2.rv{animation:rvIn linear both,pxB linear both;animation-timeline:view(),view();animation-range:entry 0% entry 35%,cover 0% cover 100%}
 .ab .art{animation:none}
-.hp1{animation:inUp 1.3s var(--ease) .1s both,hpB1 linear both}
-.hp2{animation:inUp 1.3s var(--ease) .3s both,hpB2 linear both}
+.hp1{animation:hpB1 linear both}
+.hp2{animation:hpB2 linear both}
 .hp3{animation:inUp 1.3s var(--ease) .5s both,hpM linear both}
 .hp4{animation:inUp 1.3s var(--ease) .8s both,hpF linear both}
-.hp1,.hp2,.hp3,.hp4{animation-timeline:auto,view();animation-range:normal,exit 0% exit 100%}
+.hp3,.hp4{animation-timeline:auto,view();animation-range:normal,exit 0% exit 100%}
+.hp1,.hp2{animation-timeline:view();animation-range:exit 0% exit 100%}
 .hp3 .art{animation:none}
 }
 @media (prefers-reduced-motion:reduce){.art,.ph,.mg>div,.wk,.h2,.lead,.hp1,.hp2,.hp3,.hp4{animation:none!important;opacity:1!important}}
+
+/* ---------- name typed out of numbers ---------- */
+.ch{position:relative;display:inline-block;opacity:0;animation:chIn .01s linear forwards;animation-delay:calc(.5s + var(--i)*.22s + .9s)}
+@keyframes chIn{to{opacity:1}}
+.ch::before{content:"4";position:absolute;left:0;right:0;text-align:center;opacity:0;animation:numA .9s steps(1) forwards;animation-delay:calc(.5s + var(--i)*.22s)}
+.ch[data-n="1"]::before{animation-name:numB}
+.ch[data-n="2"]::before{animation-name:numC}
+@keyframes numA{0%{content:"4";opacity:1}12%{content:"1"}25%{content:"8"}37%{content:"3"}50%{content:"6"}62%{content:"9"}75%{content:"2"}87%{content:"0"}99%{content:"7";opacity:1}100%{opacity:0}}
+@keyframes numB{0%{content:"7";opacity:1}12%{content:"2"}25%{content:"5"}37%{content:"9"}50%{content:"0"}62%{content:"3"}75%{content:"8"}87%{content:"1"}99%{content:"4";opacity:1}100%{opacity:0}}
+@keyframes numC{0%{content:"0";opacity:1}12%{content:"6"}25%{content:"3"}37%{content:"7"}50%{content:"1"}62%{content:"9"}75%{content:"4"}87%{content:"8"}99%{content:"2";opacity:1}100%{opacity:0}}
+.ch::after{content:"";position:absolute;right:-.02em;top:.06em;bottom:.02em;width:.045em;background:currentColor;opacity:0;animation:car 1.12s steps(1) forwards;animation-delay:calc(.5s + var(--i)*.22s)}
+@keyframes car{0%{opacity:1}99%{opacity:1}100%{opacity:0}}
+.ch[data-last]::after{animation:carEnd 1s steps(1) infinite;animation-delay:calc(.5s + var(--i)*.22s)}
+@keyframes carEnd{0%{opacity:1}50%{opacity:0}100%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.ch{opacity:1!important;animation:none!important}.ch::before,.ch::after{display:none}}
+
+/* ---------- progressive blur fixed to the bottom of the viewport ---------- */
+.vfade{position:fixed;left:0;right:0;bottom:0;height:150px;z-index:15;pointer-events:none}
+.vfade i{position:absolute;inset:0}
+.vfade i:nth-child(1){backdrop-filter:blur(1px);-webkit-backdrop-filter:blur(1px);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 30%,#000 45%,transparent 60%);mask-image:linear-gradient(to bottom,transparent 0%,#000 30%,#000 45%,transparent 60%)}
+.vfade i:nth-child(2){backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);-webkit-mask-image:linear-gradient(to bottom,transparent 20%,#000 50%,#000 65%,transparent 80%);mask-image:linear-gradient(to bottom,transparent 20%,#000 50%,#000 65%,transparent 80%)}
+.vfade i:nth-child(3){backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);-webkit-mask-image:linear-gradient(to bottom,transparent 40%,#000 70%,#000 85%,transparent 95%);mask-image:linear-gradient(to bottom,transparent 40%,#000 70%,#000 85%,transparent 95%)}
+.vfade i:nth-child(4){backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);-webkit-mask-image:linear-gradient(to bottom,transparent 60%,#000 90%);mask-image:linear-gradient(to bottom,transparent 60%,#000 90%)}
+.vfade i:nth-child(5){background:linear-gradient(to bottom,rgba(255,255,255,0) 45%,rgba(255,255,255,.75) 100%)}
+@supports (animation-timeline:scroll()){
+.vfade{animation:vfOut linear both;animation-timeline:scroll(root block);animation-range:calc(100% - 260px) 100%}
+@keyframes vfOut{from{opacity:1}to{opacity:0}}
+}
 
 .ab{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
 .ab p{margin:0 0 30px}
@@ -200,7 +220,7 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 <div style="background:#FFFFFF;color:#14233A;font-family:'Figtree',system-ui,sans-serif;position:relative;overflow-x:clip">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="boil" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="2" seed="1" result="n"><animate attributeName="seed" values="1;2;3;4;5;6;7" dur="1.4s" calcMode="discrete" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="2" xChannelSelector="R" yChannelSelector="G"/></filter><filter id="boil2" x="-10%" y="-10%" width="125%" height="125%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="3" result="n"><animate attributeName="seed" values="1;2;3;4;5;6;7" dur="1.4s" calcMode="discrete" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="2" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
 <div class="mn" tabindex="0"><div class="ln"></div><div class="mb"><i></i>Menu<span class="note">about</span></div><div class="in2"><div class="pt note">where to? :)</div><a class="mi" href="index.html"><span class="mn1 note">01</span><span class="mn2">Home</span><span class="chip">&#8594;</span></a><a class="mi" href="work.html"><span class="mn1 note">02</span><span class="mn2">Work</span><span class="chip">&#8594;</span></a><a class="mi on" href="about.html"><span class="mn1 note">03</span><span class="mn2">About</span><span class="chip">&#8594;</span></a><a class="mi" href="#contact"><span class="mn1 note">04</span><span class="mn2">Contact</span><span class="chip">&#8594;</span></a><div class="pf2"><a class="mailc" href="mailto:wentaotang2028@u.northwestern.edu">wentaotang2028@u.northwestern.edu</a><div class="soc"><a class="chip" href="https://www.linkedin.com/in/wentaotang/">in</a><a class="chip" href="mailto:wentaotang2028@u.northwestern.edu">@</a></div><div class="cp">&copy; Wentao Tang</div></div></div></div>
-<a class="logo" href="index.html">Wentao Tang</a>
+<a class="logo" href="index.html">Wentao Tang</a><div class="vfade" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
 
 <section style="padding:190px 48px 0">
 <div style="max-width:1200px;margin:0 auto">
