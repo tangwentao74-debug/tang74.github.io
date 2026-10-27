@@ -199,24 +199,6 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 .hero:has(.hw:hover .hc[style*="--i:8"]) .ch[style*="--i:8"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
 .hero:has(.hw:hover .hc[style*="--i:9"]) .ch[style*="--i:9"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
 
-/* ---------- pets that live on the covers ---------- */
-.pet{position:absolute;pointer-events:none;z-index:3}
-.sleepcat{right:10%;bottom:100%;width:34%;margin-bottom:-3px}
-.sleepcat img{display:block;width:100%;transform-origin:50% 100%;animation:catBreathe 5s ease-in-out infinite}
-@keyframes catBreathe{0%,100%{transform:scale(1,1)}50%{transform:scale(1.012,1.035)}}
-.zz{position:absolute;left:66%;top:6%;font-style:normal;font-size:22px;color:#5E77A3;opacity:0;animation:zzUp 6s ease-out infinite}
-.zz.z2{animation-delay:2s;font-size:18px}.zz.z3{animation-delay:4s;font-size:26px}
-@keyframes zzUp{0%{opacity:0;transform:translate(0,10px)}20%{opacity:1}80%,100%{opacity:0;transform:translate(26px,-46px)}}
-.wk{position:relative}
-.walkwrap{position:absolute;left:0;right:0;bottom:100%;height:0;pointer-events:none;z-index:3}
-.walkcat{position:absolute;bottom:-3px;left:0;width:96px;animation:walkX 26s linear infinite}
-.walkcat.w2{animation-delay:-13s}
-.walkcat img{display:block;width:100%;transform-origin:50% 100%;animation:catStep .8s ease-in-out infinite}
-@keyframes walkX{0%{left:0;transform:scaleX(1)}46%{left:calc(100% - 96px);transform:scaleX(1)}50%{left:calc(100% - 96px);transform:scaleX(-1)}96%{left:0;transform:scaleX(-1)}100%{left:0;transform:scaleX(1)}}
-@keyframes catStep{0%,50%,100%{transform:translateY(0) rotate(0)}25%{transform:translateY(-3px) rotate(-1.4deg)}75%{transform:translateY(-3px) rotate(1.4deg)}}
-.wk:hover .walkcat{animation-play-state:paused}
-@media (prefers-reduced-motion:reduce){.sleepcat img,.zz,.walkcat,.walkcat img{animation:none!important}.zz{display:none}}
-
 </style>
 
 </head>
@@ -291,7 +273,7 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 <div style="margin-top:12px;font-size:14px;color:#5E77A3">Hardware, Prototype, Focus</div></div>
 <div class="ph" style="grid-column:7/13;grid-row:1;aspect-ratio:1/1"><img src="assets/photo-dotty.jpg" alt="Dotty Desk Beacon project photo"></div></a>
 <a class="mg" href="work.html" style="align-items:center">
-<div style="grid-column:2/7;grid-row:1;position:relative"><div class="pet sleepcat" aria-hidden="true"><img src="assets/new/pet_sleep.png" alt=""><i class="zz note z1">z</i><i class="zz note z2">z</i><i class="zz note z3">Z</i></div><div class="ph" style="aspect-ratio:4/3"><img src="assets/photo-coride.jpg" alt="Coride Arcade project photo"></div></div>
+<div class="ph" style="grid-column:2/7;grid-row:1;aspect-ratio:4/3"><img src="assets/photo-coride.jpg" alt="Coride Arcade project photo"></div>
 <div style="grid-column:8/12;grid-row:1"><div class="no">03</div><div class="nm">Coride Arcade</div>
 <div style="margin-top:12px;font-size:18px;line-height:1.45;color:#14233A">An in-cabin social game system that turns autonomous rides into shared play.</div>
 <div style="margin-top:12px;font-size:14px;color:#5E77A3">Autonomous rides, Games, Social</div></div></a>
