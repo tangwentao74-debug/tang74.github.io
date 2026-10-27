@@ -10,7 +10,6 @@
 <style>
 body{margin:0;background:#FFFFFF}
 a{color:inherit;text-decoration:none}
-.big{transition:opacity .6s}.big:hover{opacity:.75}
 .note{font-family:'Architects Daughter',cursive}
 .disp{font-weight:600;letter-spacing:-.06em;line-height:.88;font-size:clamp(96px,14vw,210px)}
 .h2{font-weight:600;letter-spacing:-.05em;line-height:.95;font-size:clamp(56px,7vw,104px)}
@@ -152,47 +151,22 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 .mg .no{font-weight:600;letter-spacing:-.06em;line-height:.85;font-size:clamp(72px,9vw,140px);color:#2A476F}
 .mg .nm{font-weight:600;letter-spacing:-.04em;line-height:1;font-size:clamp(32px,3.4vw,48px);margin-top:14px}
 
-/* ---------- parallax: far / middle / near layers move at clearly different speeds ---------- */
+/* ---------- scroll: plain, calm reveal (fade up once into view) ---------- */
 @supports (animation-timeline:view()){
-@keyframes pxB{from{translate:0 -150px}to{translate:0 150px}}
-@keyframes pxM{from{translate:0 -60px}to{translate:0 60px}}
-@keyframes pxF{from{translate:0 130px}to{translate:0 -130px}}
-@keyframes hpB1{from{translate:0 0}to{translate:0 400px}}
-@keyframes hpB2{from{translate:0 0}to{translate:0 270px}}
-@keyframes hpM{from{translate:0 0}to{translate:0 130px}}
-@keyframes hpF{from{translate:0 0}to{translate:0 -280px}}
-.art{animation:pxM linear both;animation-timeline:view()}
-.mg .ph{animation:pxB linear both;animation-timeline:view()}
-.mg>div{animation:pxF linear both;animation-timeline:view()}
-.wk{animation:pxM linear both;animation-timeline:view()}
-.h2.rv{animation:rvIn linear both,pxF linear both;animation-timeline:view(),view();animation-range:entry 0% entry 35%,cover 0% cover 100%}
-.lead.rv{animation:rvIn linear both,pxM linear both;animation-timeline:view(),view();animation-range:entry 0% entry 35%,cover 0% cover 100%}
-.ft .h2.rv{animation:rvIn linear both,pxB linear both;animation-timeline:view(),view();animation-range:entry 0% entry 35%,cover 0% cover 100%}
+.art,.mg .ph,.mg>div:not(.ph),.wk,.rd,.h2.rv,.lead.rv,.pj{animation:rvIn linear both;animation-timeline:view();animation-range:entry 0% entry 30%}
 .ab .art{animation:none}
-.hp1{animation:hpB1 linear both}
-.hp2{animation:hpB2 linear both}
-.hp3{animation:inUp 1.3s var(--ease) .5s both,hpM linear both}
-.hp4{animation:inUp 1.3s var(--ease) .8s both,hpF linear both}
-.hp3,.hp4{animation-timeline:auto,view();animation-range:normal,exit 0% exit 100%}
-.hp1,.hp2{animation-timeline:view();animation-range:exit 0% exit 100%}
+.hp3{animation:inUp 1.3s var(--ease) .9s both}
+.hp4{animation:inUp 1.3s var(--ease) 1.2s both}
 .hp3 .art{animation:none}
 }
-@media (prefers-reduced-motion:reduce){.art,.ph,.mg>div,.wk,.h2,.lead,.hp1,.hp2,.hp3,.hp4{animation:none!important;opacity:1!important}}
+@media (prefers-reduced-motion:reduce){.art,.ph,.mg>div,.wk,.rd,.h2,.lead,.hp3,.hp4{animation:none!important;opacity:1!important}}
 
-/* ---------- name typed out of numbers ---------- */
-.ch{position:relative;display:inline-block;opacity:0;animation:chIn .01s linear forwards;animation-delay:calc(.5s + var(--i)*.22s + .9s)}
-@keyframes chIn{to{opacity:1}}
-.ch::before{content:"4";position:absolute;left:0;right:0;text-align:center;opacity:0;animation:numA .9s steps(1) forwards;animation-delay:calc(.5s + var(--i)*.22s)}
-.ch[data-n="1"]::before{animation-name:numB}
-.ch[data-n="2"]::before{animation-name:numC}
-@keyframes numA{0%{content:"4";opacity:1}12%{content:"1"}25%{content:"8"}37%{content:"3"}50%{content:"6"}62%{content:"9"}75%{content:"2"}87%{content:"0"}99%{content:"7";opacity:1}100%{opacity:0}}
-@keyframes numB{0%{content:"7";opacity:1}12%{content:"2"}25%{content:"5"}37%{content:"9"}50%{content:"0"}62%{content:"3"}75%{content:"8"}87%{content:"1"}99%{content:"4";opacity:1}100%{opacity:0}}
-@keyframes numC{0%{content:"0";opacity:1}12%{content:"6"}25%{content:"3"}37%{content:"7"}50%{content:"1"}62%{content:"9"}75%{content:"4"}87%{content:"8"}99%{content:"2";opacity:1}100%{opacity:0}}
-.ch::after{content:"";position:absolute;right:-.02em;top:.06em;bottom:.02em;width:.045em;background:currentColor;opacity:0;animation:car 1.12s steps(1) forwards;animation-delay:calc(.5s + var(--i)*.22s)}
-@keyframes car{0%{opacity:1}99%{opacity:1}100%{opacity:0}}
-.ch[data-last]::after{animation:carEnd 1s steps(1) infinite;animation-delay:calc(.5s + var(--i)*.22s)}
-@keyframes carEnd{0%{opacity:1}50%{opacity:0}100%{opacity:1}}
-@media (prefers-reduced-motion:reduce){.ch{opacity:1!important;animation:none!important}.ch::before,.ch::after{display:none}}
+/* ---------- name entrance: letters rise out of a mask, then spring on hover ---------- */
+.chw{display:inline-block;overflow:hidden;padding:.14em .08em .3em;margin:-.14em -.08em -.3em}
+.ch{display:inline-block;transform:translateY(112%) rotate(7deg);transform-origin:0 100%;animation:rise 1.15s cubic-bezier(.16,.84,.24,1) forwards;animation-delay:calc(.2s + var(--i)*.075s);transition:translate .55s cubic-bezier(.34,1.56,.64,1),rotate .55s cubic-bezier(.34,1.56,.64,1),color .4s ease}
+@keyframes rise{to{transform:none}}
+.chw:hover .ch{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+@media (prefers-reduced-motion:reduce){.ch{transform:none!important;animation:none!important}}
 
 /* ---------- progressive blur fixed to the bottom of the viewport ---------- */
 .vfade{position:fixed;left:0;right:0;bottom:0;height:150px;z-index:15;pointer-events:none}
@@ -207,6 +181,12 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 @keyframes vfOut{from{opacity:1}to{opacity:0}}
 }
 
+/* ---------- one button style for the whole site (same as Menu) ---------- */
+.big{display:inline-flex;align-items:center;gap:10px;padding:13px 24px;font-size:15px;font-weight:600;color:#14233A;background:#fff;border:2px solid #14233A;border-radius:28px 24px 30px 22px / 24px 30px 22px 28px;box-shadow:3px 4px 0 #2A476F;transition:transform .5s var(--ease),box-shadow .5s var(--ease),background .5s var(--ease)}
+.big:hover{transform:translate(2px,2px);box-shadow:1px 2px 0 #2A476F;background:#E0F1FF}
+.big span{transition:transform .5s var(--ease)}
+.big:hover span{transform:translateX(3px)}
+
 </style>
 
 </head>
@@ -220,8 +200,8 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 <!-- HERO -->
 <section style="position:relative;height:clamp(680px,100svh,1100px);overflow:hidden">
 <div style="position:relative;max-width:1440px;height:100%;margin:0 auto">
-<div class="disp hp1" aria-label="Wentao" style="position:absolute;left:-1vw;top:50px;z-index:1;white-space:nowrap;font-size:clamp(200px,29vw,430px);line-height:.8;letter-spacing:-.07em;color:#2A476F"><span class="ch c0" style="--i:0" data-n="0" aria-hidden="true">W</span><span class="ch c1" style="--i:1" data-n="1" aria-hidden="true">e</span><span class="ch c2" style="--i:2" data-n="2" aria-hidden="true">n</span><span class="ch c3" style="--i:3" data-n="0" aria-hidden="true">t</span><span class="ch c4" style="--i:4" data-n="1" aria-hidden="true">a</span><span class="ch c5" style="--i:5" data-n="2" aria-hidden="true">o</span></div>
-<div class="disp hp2" aria-label="Tang" style="position:absolute;right:-1vw;top:340px;z-index:1;white-space:nowrap;font-size:clamp(200px,29vw,430px);line-height:.8;letter-spacing:-.07em;color:#5E77A3"><span class="ch c6" style="--i:6" data-n="0" aria-hidden="true">T</span><span class="ch c7" style="--i:7" data-n="1" aria-hidden="true">a</span><span class="ch c8" style="--i:8" data-n="2" aria-hidden="true">n</span><span class="ch c9" style="--i:9" data-last="1" data-n="0" aria-hidden="true">g</span></div>
+<div class="disp hp1" aria-label="Wentao" style="position:absolute;left:-1vw;top:50px;z-index:1;white-space:nowrap;font-size:clamp(200px,29vw,430px);line-height:.8;letter-spacing:-.07em;color:#2A476F"><span class="chw" aria-hidden="true"><span class="ch" style="--i:0">W</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:1">e</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:2">n</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:3">t</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:4">a</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:5">o</span></span></div>
+<div class="disp hp2" aria-label="Tang" style="position:absolute;right:-1vw;top:340px;z-index:1;white-space:nowrap;font-size:clamp(200px,29vw,430px);line-height:.8;letter-spacing:-.07em;color:#5E77A3"><span class="chw" aria-hidden="true"><span class="ch" style="--i:6">T</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:7">a</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:8">n</span></span><span class="chw" aria-hidden="true"><span class="ch" style="--i:9">g</span></span></div>
 <div class="in d3 hp3" style="position:absolute;left:50%;bottom:0;margin-left:-450px;z-index:2">
 <div class="art k-wave " style="width:900px;aspect-ratio:1254/1254" role="img" aria-label="Line drawing of Wentao waving hello"><img class="base" src="assets/new/wave_base.png" alt=""><img class="L blink n-spark" src="assets/new/wave_spark.png" alt="" style="left:15.39%;top:33.41%;width:9.57%;height:8.13%"><img class="L hand n-hand" src="assets/new/wave_hand.png" alt="" style="left:20.57%;top:36.84%;width:15.79%;height:15.47%;transform-origin:51.5% 96.9%"></div>
 </div>
@@ -284,7 +264,7 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 <div style="margin-top:12px;font-size:14px;color:#5E77A3">AI, Marketing, Decisions</div></div>
 <div class="ph" style="grid-column:5/13;grid-row:1;aspect-ratio:16/10"><img src="assets/photo-insight.jpg" alt="Insight AI project photo"></div></a>
 </div>
-<div style="margin-top:100px;text-align:center"><a class="big" href="work.html" style="display:inline-block;padding:16px 30px;border-radius:999px;background:#14233A;color:#fff;font-size:16px;font-weight:500">More work</a></div>
+<div style="margin-top:100px;text-align:center"><a class="big" href="work.html">More work <span aria-hidden="true">&#8594;</span></a></div>
 </div>
 </section>
 
@@ -292,7 +272,7 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 <section style="padding:20px 48px 120px;display:flex;flex-direction:column;align-items:center;text-align:center">
 <div style="width:200px;height:200px;border-radius:50%;background:#E0F1FF;overflow:hidden;display:flex;align-items:flex-end;justify-content:center"><div style="width:92%;margin-bottom:-6%"><div class="art k-head" style="width:100%;aspect-ratio:693/777" role="img" aria-label="Line drawing portrait of Wentao"><img class="base tilt" src="assets/new/me_head.png" alt=""></div></div></div>
 <p class="lead rv" style="margin:40px 0 0;max-width:780px;font-size:clamp(26px,2.7vw,38px)">I studied Quantitative Economics at UC Irvine, and I’m now pursuing an M.S. in Engineering Design Innovation at Northwestern — learning to build the things my analysis used to only point at.</p>
-<a class="big" href="about.html" style="margin-top:32px;padding:14px 26px;border-radius:999px;background:#fff;font-size:16px;font-weight:500">More about me</a>
+<a class="big" href="about.html" style="margin-top:32px">More about me <span aria-hidden="true">&#8594;</span></a>
 <div style="margin-top:80px;width:100%;max-width:780px;display:flex;flex-direction:column;border-top:1px solid #14233A;text-align:left">
 <div style="display:flex;justify-content:space-between;align-items:baseline;padding:22px 0;border-bottom:1px solid #C9D6E8;gap:16px;flex-wrap:wrap"><span class="h3">Tencent</span><span style="font-size:16px;color:#5E77A3">Data Analyst · May – Aug 2026</span></div>
 <div style="display:flex;justify-content:space-between;align-items:baseline;padding:22px 0;border-bottom:1px solid #C9D6E8;gap:16px;flex-wrap:wrap"><span class="h3">TikTok</span><span style="font-size:16px;color:#5E77A3">Commercialization Strategy &amp; Operations · Jul – Nov 2025</span></div>

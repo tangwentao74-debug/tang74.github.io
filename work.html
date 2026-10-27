@@ -10,7 +10,6 @@
 <style>
 body{margin:0;background:#FFFFFF}
 a{color:inherit;text-decoration:none}
-.big{transition:opacity .6s}.big:hover{opacity:.75}
 .note{font-family:'Architects Daughter',cursive}
 .disp{font-weight:600;letter-spacing:-.06em;line-height:.88;font-size:clamp(96px,14vw,210px)}
 .h2{font-weight:600;letter-spacing:-.05em;line-height:.95;font-size:clamp(56px,7vw,104px)}
@@ -152,47 +151,22 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 .mg .no{font-weight:600;letter-spacing:-.06em;line-height:.85;font-size:clamp(72px,9vw,140px);color:#2A476F}
 .mg .nm{font-weight:600;letter-spacing:-.04em;line-height:1;font-size:clamp(32px,3.4vw,48px);margin-top:14px}
 
-/* ---------- parallax: far / middle / near layers move at clearly different speeds ---------- */
+/* ---------- scroll: plain, calm reveal (fade up once into view) ---------- */
 @supports (animation-timeline:view()){
-@keyframes pxB{from{translate:0 -150px}to{translate:0 150px}}
-@keyframes pxM{from{translate:0 -60px}to{translate:0 60px}}
-@keyframes pxF{from{translate:0 130px}to{translate:0 -130px}}
-@keyframes hpB1{from{translate:0 0}to{translate:0 400px}}
-@keyframes hpB2{from{translate:0 0}to{translate:0 270px}}
-@keyframes hpM{from{translate:0 0}to{translate:0 130px}}
-@keyframes hpF{from{translate:0 0}to{translate:0 -280px}}
-.art{animation:pxM linear both;animation-timeline:view()}
-.mg .ph{animation:pxB linear both;animation-timeline:view()}
-.mg>div{animation:pxF linear both;animation-timeline:view()}
-.wk{animation:pxM linear both;animation-timeline:view()}
-.h2.rv{animation:rvIn linear both,pxF linear both;animation-timeline:view(),view();animation-range:entry 0% entry 35%,cover 0% cover 100%}
-.lead.rv{animation:rvIn linear both,pxM linear both;animation-timeline:view(),view();animation-range:entry 0% entry 35%,cover 0% cover 100%}
-.ft .h2.rv{animation:rvIn linear both,pxB linear both;animation-timeline:view(),view();animation-range:entry 0% entry 35%,cover 0% cover 100%}
+.art,.mg .ph,.mg>div:not(.ph),.wk,.rd,.h2.rv,.lead.rv,.pj{animation:rvIn linear both;animation-timeline:view();animation-range:entry 0% entry 30%}
 .ab .art{animation:none}
-.hp1{animation:hpB1 linear both}
-.hp2{animation:hpB2 linear both}
-.hp3{animation:inUp 1.3s var(--ease) .5s both,hpM linear both}
-.hp4{animation:inUp 1.3s var(--ease) .8s both,hpF linear both}
-.hp3,.hp4{animation-timeline:auto,view();animation-range:normal,exit 0% exit 100%}
-.hp1,.hp2{animation-timeline:view();animation-range:exit 0% exit 100%}
+.hp3{animation:inUp 1.3s var(--ease) .9s both}
+.hp4{animation:inUp 1.3s var(--ease) 1.2s both}
 .hp3 .art{animation:none}
 }
-@media (prefers-reduced-motion:reduce){.art,.ph,.mg>div,.wk,.h2,.lead,.hp1,.hp2,.hp3,.hp4{animation:none!important;opacity:1!important}}
+@media (prefers-reduced-motion:reduce){.art,.ph,.mg>div,.wk,.rd,.h2,.lead,.hp3,.hp4{animation:none!important;opacity:1!important}}
 
-/* ---------- name typed out of numbers ---------- */
-.ch{position:relative;display:inline-block;opacity:0;animation:chIn .01s linear forwards;animation-delay:calc(.5s + var(--i)*.22s + .9s)}
-@keyframes chIn{to{opacity:1}}
-.ch::before{content:"4";position:absolute;left:0;right:0;text-align:center;opacity:0;animation:numA .9s steps(1) forwards;animation-delay:calc(.5s + var(--i)*.22s)}
-.ch[data-n="1"]::before{animation-name:numB}
-.ch[data-n="2"]::before{animation-name:numC}
-@keyframes numA{0%{content:"4";opacity:1}12%{content:"1"}25%{content:"8"}37%{content:"3"}50%{content:"6"}62%{content:"9"}75%{content:"2"}87%{content:"0"}99%{content:"7";opacity:1}100%{opacity:0}}
-@keyframes numB{0%{content:"7";opacity:1}12%{content:"2"}25%{content:"5"}37%{content:"9"}50%{content:"0"}62%{content:"3"}75%{content:"8"}87%{content:"1"}99%{content:"4";opacity:1}100%{opacity:0}}
-@keyframes numC{0%{content:"0";opacity:1}12%{content:"6"}25%{content:"3"}37%{content:"7"}50%{content:"1"}62%{content:"9"}75%{content:"4"}87%{content:"8"}99%{content:"2";opacity:1}100%{opacity:0}}
-.ch::after{content:"";position:absolute;right:-.02em;top:.06em;bottom:.02em;width:.045em;background:currentColor;opacity:0;animation:car 1.12s steps(1) forwards;animation-delay:calc(.5s + var(--i)*.22s)}
-@keyframes car{0%{opacity:1}99%{opacity:1}100%{opacity:0}}
-.ch[data-last]::after{animation:carEnd 1s steps(1) infinite;animation-delay:calc(.5s + var(--i)*.22s)}
-@keyframes carEnd{0%{opacity:1}50%{opacity:0}100%{opacity:1}}
-@media (prefers-reduced-motion:reduce){.ch{opacity:1!important;animation:none!important}.ch::before,.ch::after{display:none}}
+/* ---------- name entrance: letters rise out of a mask, then spring on hover ---------- */
+.chw{display:inline-block;overflow:hidden;padding:.14em .08em .3em;margin:-.14em -.08em -.3em}
+.ch{display:inline-block;transform:translateY(112%) rotate(7deg);transform-origin:0 100%;animation:rise 1.15s cubic-bezier(.16,.84,.24,1) forwards;animation-delay:calc(.2s + var(--i)*.075s);transition:translate .55s cubic-bezier(.34,1.56,.64,1),rotate .55s cubic-bezier(.34,1.56,.64,1),color .4s ease}
+@keyframes rise{to{transform:none}}
+.chw:hover .ch{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
+@media (prefers-reduced-motion:reduce){.ch{transform:none!important;animation:none!important}}
 
 /* ---------- progressive blur fixed to the bottom of the viewport ---------- */
 .vfade{position:fixed;left:0;right:0;bottom:0;height:150px;z-index:15;pointer-events:none}
@@ -206,6 +180,12 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 .vfade{animation:vfOut linear both;animation-timeline:scroll(root block);animation-range:calc(100% - 260px) 100%}
 @keyframes vfOut{from{opacity:1}to{opacity:0}}
 }
+
+/* ---------- one button style for the whole site (same as Menu) ---------- */
+.big{display:inline-flex;align-items:center;gap:10px;padding:13px 24px;font-size:15px;font-weight:600;color:#14233A;background:#fff;border:2px solid #14233A;border-radius:28px 24px 30px 22px / 24px 30px 22px 28px;box-shadow:3px 4px 0 #2A476F;transition:transform .5s var(--ease),box-shadow .5s var(--ease),background .5s var(--ease)}
+.big:hover{transform:translate(2px,2px);box-shadow:1px 2px 0 #2A476F;background:#E0F1FF}
+.big span{transition:transform .5s var(--ease)}
+.big:hover span{transform:translateX(3px)}
 
 </style>
 
