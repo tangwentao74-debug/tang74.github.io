@@ -200,6 +200,15 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 .hero:has(.hw:hover .hc[style*="--i:8"]) .ch[style*="--i:8"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
 .hero:has(.hw:hover .hc[style*="--i:9"]) .ch[style*="--i:9"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
 
+/* magic-move between pages (cross-document view transition) */
+@view-transition{navigation:auto}
+.pgc{view-transition-name:pgcover;animation:none!important;opacity:1!important}
+::view-transition-group(pgcover){animation-duration:.85s;animation-timing-function:cubic-bezier(.7,0,.2,1)}
+::view-transition-old(pgcover),::view-transition-new(pgcover){height:100%;animation-duration:.85s}
+::view-transition-old(root){animation-duration:.3s}
+::view-transition-new(root){animation-duration:.5s;animation-delay:.15s}
+@media (prefers-reduced-motion:reduce){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}}
+
 </style>
 
 </head>

@@ -200,6 +200,15 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 .hero:has(.hw:hover .hc[style*="--i:8"]) .ch[style*="--i:8"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
 .hero:has(.hw:hover .hc[style*="--i:9"]) .ch[style*="--i:9"]{translate:0 -.05em;rotate:-4deg;color:#DAA21B}
 
+/* magic-move between pages (cross-document view transition) */
+@view-transition{navigation:auto}
+.pgc{view-transition-name:pgcover;animation:none!important;opacity:1!important}
+::view-transition-group(pgcover){animation-duration:.85s;animation-timing-function:cubic-bezier(.7,0,.2,1)}
+::view-transition-old(pgcover),::view-transition-new(pgcover){height:100%;animation-duration:.85s}
+::view-transition-old(root){animation-duration:.3s}
+::view-transition-new(root){animation-duration:.5s;animation-delay:.15s}
+@media (prefers-reduced-motion:reduce){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}}
+
 .cs{max-width:1280px;margin:0 auto}
 .g12{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
 .sk{background:#E0F1FF;border-radius:28px}
@@ -269,7 +278,7 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 <div class="cs">
 <div class="note" style="font-size:19px;color:#5E77A3;margin-bottom:22px">a P&amp;G sponsored project · under NDA</div>
 <h1 class="h2 rv" style="margin:0;max-width:1000px">Reimagining a packaging experience.</h1>
-<div class="sk rv" style="margin-top:64px;aspect-ratio:1200/560;display:flex;align-items:center;justify-content:center"><img src="assets/new/pg_logo.png" alt="P&amp;G logo" style="height:46%;width:auto;display:block"></div>
+<div class="sk pgc" style="margin-top:64px;aspect-ratio:16/7;display:flex;align-items:center;justify-content:center"><img src="assets/new/pg_logo.png" alt="P&amp;G logo" style="height:50%;width:auto;display:block"></div>
 </div>
 </section>
 
