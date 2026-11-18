@@ -266,28 +266,103 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 </style>
 
 <style>
+.dd-i{display:block;width:100%;height:auto}
+.stage{background:linear-gradient(180deg,#F5FAFF,#E8F3FF);border-radius:28px;padding:22px}
+.stage img{display:block;width:100%;height:auto}
+.dk{background:radial-gradient(120% 120% at 70% 0%,#3b352d,#14110e);border-radius:28px;padding:0;overflow:hidden}
+.dk img{display:block;width:100%;height:auto}
 .figs{display:grid;gap:16px;width:100%;align-content:start}
-.figs img,.wide img{width:100%;display:block;border-radius:22px;border:1px solid #E3EAF4;background:#fff}
-.figs .dk,.wide .dk{border-color:#14233A}
-.fg2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.fg2 img{height:100%;object-fit:cover}
+.gl{background:#fff;border:1px solid #DCE7F4;border-radius:24px;box-shadow:0 14px 40px rgba(42,71,111,.07)}
+.sky{background:#EEF6FF;border-radius:24px}
 .wide{max-width:1280px;margin:56px auto 0}
-.wide .cap2{margin-top:12px;font-size:14px;color:#5E77A3}
+.wide.sp{margin-top:88px}
+.wl{font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#5E77A3;margin:0 0 18px}
+.wh{font-size:clamp(26px,2.6vw,34px);font-weight:600;letter-spacing:-.035em;color:#14233A;margin:0 0 28px;line-height:1.1}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.g5{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.iv{padding:24px}
+.iv .w{font-size:12px;font-weight:600;letter-spacing:.14em;color:#5E77A3}
+.iv .r{font-size:15px;color:#3C5478;margin:4px 0 16px}
+.iv q{display:block;quotes:none;font-size:19px;line-height:1.4;font-weight:500;letter-spacing:-.015em;color:#14233A;margin-bottom:18px}
+.tg2{display:flex;flex-wrap:wrap;gap:8px}
+.tg2 span{font-size:13px;color:#2A476F;background:#E0F1FF;border-radius:999px;padding:5px 11px}
+.pt{padding:22px}
+.pt b{display:block;font-size:17px;letter-spacing:-.01em;color:#14233A;margin-bottom:6px}
+.pt p{margin:0;font-size:15px;line-height:1.55;color:#3C5478}
+.pn{padding:22px;position:relative}
+.pn .n{font-size:13px;font-weight:600;letter-spacing:.12em;color:#5E77A3;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.pn .n i{flex:1;height:1px;background:#C9D6E8;display:block}
+.pn b{display:block;font-size:17px;color:#14233A;letter-spacing:-.01em;margin-bottom:6px}
+.pn p{margin:0;font-size:14px;line-height:1.55;color:#3C5478}
+.ins{margin-top:16px;padding:40px 44px;background:#2A476F;border-radius:28px;color:#fff}
+.ins p{margin:0;font-size:clamp(26px,2.8vw,38px);line-height:1.18;font-weight:600;letter-spacing:-.035em;max-width:980px}
+.ins p span{color:#E0F1FF}
+.ins em{display:block;margin-top:14px;font-style:normal;font-size:13px;font-weight:600;letter-spacing:.16em;color:#9CB4D6}
+.pc{display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+.pc .ph2{position:relative;min-height:100%}
+.pc .ph2 img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pc .bd{padding:28px 28px 26px}
+.pc h4{margin:0;font-size:34px;font-weight:600;letter-spacing:-.04em;color:#14233A}
+.pc .sb{font-size:15px;color:#5E77A3;margin:4px 0 18px}
+.pc .qq{font-size:18px;line-height:1.4;font-weight:500;color:#14233A;margin:0 0 18px;padding-left:14px;border-left:2px solid #DAA21B}
+.pc ul{list-style:none;margin:0 0 16px;padding:0;font-size:15px;color:#3C5478}
+.pc li{padding:7px 0;border-top:1px solid #E3EAF4}
+.pc p{margin:0;font-size:15px;line-height:1.6;color:#3C5478}
+.pc p b{color:#14233A}
+.qt{margin:0 0 14px;padding-left:16px;border-left:2px solid #DAA21B;font-size:17px;line-height:1.55;color:#14233A}
+.qt span{display:block;margin-top:4px;font-size:13px;letter-spacing:.08em;color:#5E77A3;font-weight:600}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cmp>div{padding:30px 32px}
+.cmp h5{margin:0 0 16px;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#5E77A3}
+.cmp .row2{font-size:22px;font-weight:500;letter-spacing:-.02em;color:#14233A;padding:12px 0;border-top:1px solid #E3EAF4}
+.cmp .row2:first-of-type{border-top:0}
+.cmp .on{background:#EEF6FF;border-color:#EEF6FF}
+.fl{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.fl .lbl{font-size:13px;font-weight:600;letter-spacing:.14em;color:#5E77A3;margin-right:6px}
+.fl span.c{font-size:15px;color:#14233A;background:#fff;border:1px solid #DCE7F4;border-radius:999px;padding:7px 14px}
+.ev{background:#fff;border:1px solid #DCE7F4;border-radius:24px;overflow:hidden}
+.ev .im{background:#14110e}
+.ev .im{aspect-ratio:1/1;overflow:hidden}
+.ev img{width:100%;height:100%;object-fit:cover;display:block}
+.ev .tx2{padding:16px 18px 20px;background:#fff;height:100%}
+.ev .lv{font-size:12px;font-weight:600;letter-spacing:.14em;color:#5E77A3}
+.ev b{display:block;font-size:17px;color:#14233A;margin:4px 0 6px;letter-spacing:-.01em}
+.ev p{margin:0;font-size:14px;line-height:1.5;color:#3C5478}
+.lp{border-radius:22px;overflow:hidden;background:#fff;border:1px solid #DCE7F4}
+.lp .fr{aspect-ratio:16/9;background:#14110e;overflow:hidden}
+.lp img{display:block;width:100%;height:100%;object-fit:cover}
+.lp .cap3{background:#fff;padding:14px 16px 18px;font-size:15px;color:#14233A;font-weight:600;letter-spacing:-.01em}
+.lp .cap3 i{font-style:normal;color:#5E77A3;font-size:12px;letter-spacing:.14em;margin-right:8px}
+.sp3 figure{margin:0}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:24px 16px}
+.fr2{aspect-ratio:16/10;border-radius:22px;overflow:hidden;background:#14110e}
+.sp3 img{display:block;width:100%;height:100%;object-fit:cover}
+.sp3 figcaption{font-size:14px;color:#5E77A3;margin-top:10px}
+.cv{position:relative;border-radius:32px;overflow:hidden;aspect-ratio:2/1;background:radial-gradient(70% 90% at 62% 40%,#fff 0%,rgba(255,255,255,0) 60%),linear-gradient(135deg,#F4FAFF 0%,#D6EAFB 55%,#BFD9F3 100%)}
+.cv svg{position:absolute;inset:0;width:100%;height:100%}
+.cv .dy{position:absolute;left:50%;top:53%;width:22.5%;transform:translate(-50%,-50%);animation:ddf 7s ease-in-out infinite;filter:drop-shadow(0 26px 34px rgba(42,71,111,.28))}
+.cv .nt{position:absolute;left:5%;bottom:7%;font-size:22px;color:#2A476F;opacity:.9}
+@keyframes ddf{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,-54%)}}
+.cv .o1,.cv .o2,.cv .o3,.cv .o4,.cv .o5{animation:ddb 9s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.cv .o2{animation-delay:-1.8s}.cv .o3{animation-delay:-3.6s}.cv .o4{animation-delay:-5.4s}.cv .o5{animation-delay:-7.2s}
+@keyframes ddb{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 .ddc{view-transition-name:ddcover;animation:none!important;opacity:1!important}
 ::view-transition-group(ddcover){animation-duration:.85s;animation-timing-function:cubic-bezier(.7,0,.2,1)}
 ::view-transition-old(ddcover),::view-transition-new(ddcover){width:100%;height:100%;object-fit:cover;animation-duration:.85s}
-.qt{margin:0 0 14px;padding-left:16px;border-left:2px solid #DAA21B;font-size:17px;line-height:1.55;color:#14233A}
-.qt span{display:block;margin-top:4px;font-size:13px;letter-spacing:.08em;color:#5E77A3;font-weight:600}
 .tk{display:grid;grid-template-columns:64px 1fr;gap:12px;padding:22px 0;border-top:1px solid #C9D6E8;align-items:baseline}
 .tk:first-child{border-top-color:#14233A}
 .tk b{font-size:30px;font-weight:600;letter-spacing:-.04em;color:#2A476F}
 .tk p{margin:0;font-size:22px;line-height:1.4;font-weight:500;letter-spacing:-.015em;color:#14233A}
 @supports (animation-timeline:view()){
-.figs>*,.wide,.tk{animation:rvIn linear both;animation-timeline:view();animation-range:entry 0% entry 30%}
-.figs>*:nth-child(2){animation-range:entry 8% entry 38%}
-.figs>*:nth-child(3){animation-range:entry 14% entry 44%}
+.figs>*,.wide>*,.tk,.stg>*{animation:rvIn linear both;animation-timeline:view();animation-range:entry 0% entry 30%}
+.stg>*:nth-child(2){animation-range:entry 5% entry 35%}.stg>*:nth-child(3){animation-range:entry 10% entry 40%}
+.stg>*:nth-child(4){animation-range:entry 15% entry 45%}.stg>*:nth-child(5){animation-range:entry 20% entry 50%}
+.stg>*:nth-child(6){animation-range:entry 25% entry 55%}
+.stg>*:nth-child(n+7){animation-range:entry 12% entry 42%}
 }
-@media (prefers-reduced-motion:reduce){.figs>*,.wide,.tk{animation:none!important;opacity:1!important}}
+@media (prefers-reduced-motion:reduce){.figs>*,.wide>*,.tk,.stg>*{animation:none!important;opacity:1!important}.cv .dy,.cv [class^=o]{animation:none!important}}
+@media (max-width:820px){.g2,.g3,.g4,.g5,.cmp,.pc{grid-template-columns:1fr}.pc .ph2{aspect-ratio:16/10}}
 </style>
 </head>
 <body>
@@ -302,7 +377,9 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 <div class="cs">
 <div class="note" style="font-size:19px;color:#5E77A3;margin-bottom:22px">DotDot · a mixed-reality focus companion</div>
 <h1 class="h2 rv" style="margin:0;max-width:1100px">A focus companion that stays when your mind drifts.</h1>
-<div class="ddc" style="margin-top:64px;border-radius:28px;overflow:hidden"><img src="assets/dotdot/cover.jpg" alt="DotDot, an MR focus companion, with its floating controls" style="width:100%;display:block"></div>
+<div style="margin-top:64px"><div class="ddc cv" role="img" aria-label="DotDot, a mixed-reality focus companion, floating with its soft controls"><svg viewBox="0 0 1600 800" aria-hidden="true"><defs><linearGradient id="gl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".78"/><stop offset="1" stop-color="#fff" stop-opacity=".32"/></linearGradient><filter id="sh" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#2A476F" flood-opacity=".16"/></filter></defs>
+<g class="o1"><g transform="translate(330 205)"><rect x="-175" y="-58" width="350" height="116" rx="58" fill="url(#gl)" stroke="#fff" stroke-opacity=".95" stroke-width="2.5" filter="url(#sh)"/><text x="-140" y="14" font-size="44" font-weight="500" fill="#14233A" font-family="Figtree,system-ui,sans-serif">10:49 <tspan font-size="34" fill="#2A476F">AM</tspan></text><g transform="translate(118 0)"><circle r="34" fill="none" stroke="#2A476F" stroke-opacity=".18" stroke-width="7"/><circle r="34" fill="none" stroke="#2A476F" stroke-width="7" stroke-linecap="round" stroke-dasharray="150 214" transform="rotate(-90)"/><text y="9" text-anchor="middle" font-size="26" font-weight="600" fill="#14233A" font-family="Figtree,system-ui,sans-serif">36</text></g></g></g>
+<g class="o1"><g transform="translate(800 158)"><circle r="64" fill="url(#gl)" stroke="#fff" stroke-opacity=".95" stroke-width="2.5" filter="url(#sh)"/><g stroke="#2A476F" stroke-opacity=".85" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="-9" y="-24" width="18" height="30" rx="9"/><path d="M-18 -4a18 18 0 0 0 36 0M0 14v12M-10 26h20"/></g></g></g><g class="o2"><g transform="translate(985 235)"><circle r="64" fill="url(#gl)" stroke="#fff" stroke-opacity=".95" stroke-width="2.5" filter="url(#sh)"/><g stroke="#2A476F" stroke-opacity=".85" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="-24" y="-22" width="48" height="20" rx="10"/><rect x="-24" y="4" width="48" height="20" rx="10"/><circle cx="-14" cy="-12" r="4" fill="#2A476F" fill-opacity=".85"/><circle cx="14" cy="14" r="4" fill="#2A476F" fill-opacity=".85"/></g></g></g><g class="o3"><g transform="translate(1062 420)"><circle r="64" fill="url(#gl)" stroke="#fff" stroke-opacity=".95" stroke-width="2.5" filter="url(#sh)"/><g stroke="#2A476F" stroke-opacity=".85" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M-8 14V-16L14 -21V10"/><circle cx="-14" cy="14" r="6"/><circle cx="8" cy="10" r="6"/></g></g></g><g class="o4"><g transform="translate(985 605)"><circle r="64" fill="url(#gl)" stroke="#fff" stroke-opacity=".95" stroke-width="2.5" filter="url(#sh)"/><g stroke="#2A476F" stroke-opacity=".35" stroke-width="3" fill="#2A476F" fill-opacity=".10"><circle cx="11.0" cy="0.0" r="12"/><circle cx="5.5" cy="9.5" r="12"/><circle cx="-5.5" cy="9.5" r="12"/><circle cx="-11.0" cy="0.0" r="12"/><circle cx="-5.5" cy="-9.5" r="12"/><circle cx="5.5" cy="-9.5" r="12"/></g></g></g><g class="o5"><g transform="translate(800 682)"><circle r="64" fill="url(#gl)" stroke="#fff" stroke-opacity=".95" stroke-width="2.5" filter="url(#sh)"/><g stroke="#2A476F" stroke-opacity=".85" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M-14 -14L14 14M14 -14L-14 14"/></g></g></g></svg><img class="dy" src="assets/dotdot/dotty.webp" alt=""><div class="nt note">a calm presence, not a coach</div></div></div>
 </div>
 </section>
 
@@ -352,18 +429,17 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 <div class="row"><div class="lb">WHERE TOOLS BREAK</div><div class="tx">Timers, streaks and task lists assume steady self-control. For people who already struggle to concentrate, they turn into <b>pressure, guilt, and eventually avoidance</b>. They optimize time, not attention.</div></div>
 <div class="row"><div class="lb">WHO I LISTENED TO</div><div class="tx">I interviewed three students who struggle with sustained focus, including a graduate student with ADHD and a neurodivergent learner. I wasn’t testing a solution. I wanted to hear <b>the moments where focus breaks</b>, and what people did next.</div></div>
 
-<div class="call"><span class="note">the call I made</span><p>Treat distraction as a condition of the environment, not a failure of discipline.</p></div></div><div class="figs"><img src="assets/dotdot/overload.jpg" alt="Notifications and devices competing for attention" loading="lazy"><img src="assets/dotdot/failtools.jpg" alt="Timer, streak and task-list tools leading to anxiety, guilt and avoidance" loading="lazy"></div></div></section>
-<section style="padding:0 48px"><div class="wide"><div class="fg2"><img src="assets/dotdot/interviews.jpg" alt="Three interview summaries with quotes" loading="lazy"><img src="assets/dotdot/patterns.jpg" alt="Four patterns across interviews" loading="lazy"></div><div class="cap2">“Most of the time I don’t notice I’m distracted until it’s already happened.” · “I don’t need something to push me harder. I need something that stays when my brain drifts.”</div></div></section>
+<div class="call"><span class="note">the call I made</span><p>Treat distraction as a condition of the environment, not a failure of discipline.</p></div></div><div class="figs"><div class="stage"><img class="dd-i" src="assets/dotdot/overload.webp" alt="Notifications and devices competing for attention" loading="lazy"></div><div class="stg" style="display:grid;gap:16px"><div class="gl pt"><b>Timers → Anxiety</b><p>A countdown makes every lapse feel like falling behind.</p></div><div class="gl pt"><b>Punishment → Avoidance</b><p>Losing a streak turns a slip into self-blame.</p></div><div class="gl pt"><b>Rigid task lists → Drop-off</b><p>A plan that assumes stable attention gets abandoned.</p></div></div></div></div></section>
+<section style="padding:0 48px"><div class="wide"><div class="wl">What three interviews said</div><div class="g3 stg"><div class="gl iv"><div class="w">INTERVIEW A</div><div class="r">Student, 20 · self-reported attention difficulties</div><q>“Most of the time I don’t notice I’m distracted until it’s already happened.”</q><div class="tg2"><span>Multi-device studying</span><span>Passive distraction</span><span>Late awareness</span></div></div><div class="gl iv"><div class="w">INTERVIEW B</div><div class="r">Graduate student · ADHD</div><q>“Timers make me anxious. Once I break the streak, I feel like I’ve already failed.”</q><div class="tg2"><span>Avoids timers</span><span>High sensitivity</span><span>Drops tools quickly</span></div></div><div class="gl iv"><div class="w">INTERVIEW C</div><div class="r">Neurodivergent learner</div><q>“I don’t need something to push me harder. I need something that stays when my brain drifts.”</q><div class="tg2"><span>Seeks presence</span><span>Responds to companionship</span><span>Avoids punitive systems</span></div></div></div><div class="wl" style="margin-top:44px">The pattern across them</div><div class="g4 stg"><div class="sky pt"><b>Breakdown is gradual, not deliberate</b><p>Distraction emerges quietly, often without conscious intent.</p></div><div class="sky pt"><b>Presence reduces friction</b><p>Participants consistently describe wanting companionship.</p></div><div class="sky pt"><b>Rigid structures increase emotional cost</b><p>Timers and streaks amplify guilt rather than recovery.</p></div><div class="sky pt"><b>Punishment accelerates abandonment</b><p>Once a tool induces shame, it is often permanently dropped.</p></div></div></div></section>
 <!-- 02 -->
-<section style="padding:150px 48px 0"><div class="cs ch ch-b"><div class="figs"><img src="assets/dotdot/persona.jpg" alt="Persona card for Nathan" loading="lazy"></div><div><div class="no2">02</div>
+<section style="padding:150px 48px 0"><div class="cs ch ch-b"><div class="figs"><div class="gl pc"><div class="ph2"><img class="" src="assets/dotdot/nathan.webp" alt="Nathan studying at a laptop, resting his cheek on his hand" loading="lazy"></div><div class="bd"><h4>Nathan</h4><div class="sb">A learner with unstable attention</div><div class="qq">“Most of the time I don’t notice I’m distracted until it’s already happened.”</div><ul><li>21 · Undergraduate student</li><li>Reading, writing and analysis-heavy major</li><li>Dorm · Library · Café · Transit</li></ul><p>Can enter deep focus, but not consistently. Highly sensitive to interruption. Emotionally reactive to failure framing.</p></div></div></div><div><div class="no2">02</div>
 <h3 class="ttl">Where exactly does focus break?</h3>
 <div class="tg">Persona · Journey mapping · Insight</div>
-<div class="row"><div class="lb">MEET NATHAN</div><div class="tx">A composite persona from the interviews: a 21-year-old undergraduate in a reading-heavy major. He can enter deep focus, but not consistently, and he reacts strongly to interruption and to being told he failed.</div></div>
-<div class="row"><div class="lb">NINE PHASES OF ONE SESSION</div><div class="tx">I mapped a single study session from planning to aftermath. Focus doesn’t snap in one moment. It <b>erodes</b> through fatigue, an unstructured break, loneliness and self-judgment, and ends with failure silently recorded.</div></div>
-<div class="row"><div class="lb">THE INSIGHT</div><div class="tx">Focus breaks not because of distraction, but because <b>fatigue, loneliness, and transitions are unsupported</b>.</div></div>
+<div class="row"><div class="lb">MEET NATHAN</div><div class="tx">A composite persona from the interviews. <b>He is a motivated learner whose attention breaks down not from lack of discipline, but from environments and tools that assume a stability his mind doesn’t have.</b></div></div>
+<div class="row"><div class="lb">TEN PHASES OF ONE SESSION</div><div class="tx">I mapped a single study session from planning to aftermath. Focus doesn’t snap in one moment. It <b>erodes</b> through fatigue, an unstructured break, loneliness and self-judgment, and ends with failure silently recorded.</div></div>
 
 <div class="call"><span class="note">the call I made</span><p>Design for the moment of breakdown, not for the plan.</p></div></div></div></section>
-<section style="padding:0 48px"><div class="wide"><img src="assets/dotdot/journey.jpg" alt="Nine-phase user journey of a study session, with design focus" loading="lazy"><div class="cap2">The nine-phase journey and the design focus that came out of it.</div></div></section>
+<section style="padding:0 48px"><div class="wide"><div class="wl">One study session, step by step</div><div class="g5 stg"><div class="gl pn"><div class="n">00<i></i></div><b>Pre-working planning</b><p>Planning reduces uncertainty, not execution. Lists comfort but don’t lower the barrier to starting.</p></div><div class="gl pn"><div class="n">01<i></i></div><b>Attempting to start</b><p>Mild resistance. The phone stays within reach, unnoticed.</p></div><div class="gl pn"><div class="n">02<i></i></div><b>Early engagement</b><p>Focus appears briefly but stays fragile, sustained only by effort.</p></div><div class="gl pn"><div class="n">03<i></i></div><b>Fatigue awareness</b><p>Cognitive fatigue surfaces before distraction. Willing, but with reduced capacity.</p></div><div class="gl pn"><div class="n">04<i></i></div><b>Unstructured break</b><p>Rest lacks structure and quietly turns into escape.</p></div><div class="gl pn"><div class="n">05<i></i></div><b>Loneliness</b><p>Not a desire to chat, but a desire not to work alone.</p></div><div class="gl pn"><div class="n">06<i></i></div><b>Self-judgment</b><p>Awareness returns with guilt. The emotional cost of returning rises.</p></div><div class="gl pn"><div class="n">07<i></i></div><b>Forced control attempt</b><p>Structure is imposed too late. Tools assume a readiness that no longer exists.</p></div><div class="gl pn"><div class="n">08<i></i></div><b>Collapse</b><p>The session ends early, or continues through unsustainable hyperfocus.</p></div><div class="gl pn"><div class="n">09<i></i></div><b>Aftermath reflection</b><p>Output exists, but accomplishment doesn’t. Failure is silently recorded.</p></div></div><div class="ins"><p>Focus breaks not because of distraction, but because <span>fatigue, loneliness, and transitions are unsupported.</span></p><em>THE INSIGHT</em></div><div class="wl" style="margin-top:44px">What that asks of the design</div><div class="g3 stg"><div class="sky pt"><b>Fluctuating attention</b><p>Tools adapt to changing energy and capacity instead of demanding a fixed state of readiness.</p></div><div class="sky pt"><b>Emotional safety</b><p>Lapses are normalized and met with gentle recovery, not judgment.</p></div><div class="sky pt"><b>Externalized support</b><p>Non-intrusive scaffolding and social presence bridge gaps in motivation.</p></div></div></div></section>
 <!-- 03 -->
 <section style="padding:150px 48px 0"><div class="cs ch ch-a"><div><div class="no2">03</div>
 <h3 class="ttl">What should support feel like?</h3>
@@ -372,18 +448,22 @@ a.u,.lk,.hl{transition:box-shadow .5s var(--ease)}
 <div class="row"><div class="lb">WHY MIXED REALITY</div><div class="tx">Screen apps cost attention to open, and switching context is hardest during a breakdown. A companion in the room is <b>peripheral, continuous and co-present</b>, so it stays with you instead of waiting to be activated.</div></div>
 <div class="row"><div class="lb">DOTTY IS NOT AN ASSISTANT</div><div class="tx">Dotty doesn’t judge, direct or enforce. It responds to breakdown: it notices fatigue and offers rest, nudges softly when attention drifts, and stays quietly beside you. It grows over twenty levels based on <b>returning, not finishing</b>.</div></div>
 
-<div class="call"><span class="note">the call I made</span><p>Dotty doesn’t reward productivity. It acknowledges effort.</p></div></div><div class="figs"><div class="fg2" style="aspect-ratio:632/420"><img src="assets/dotdot/roomphoto.jpg" alt="Dotty on the wall beside a desk" loading="lazy"><img src="assets/dotdot/laptopphoto.jpg" alt="Dotty beside a laptop" loading="lazy"></div></div></div></section>
-<section style="padding:0 48px"><div class="wide"><img src="assets/dotdot/mechanism.jpg" alt="Six-step core mechanism of DotDot" loading="lazy"><div style="height:16px"></div><img src="assets/dotdot/evolution.jpg" alt="Dotty evolving across five stages" loading="lazy"><div class="cap2">The core mechanism, and how Dotty changes with shared time.</div></div></section>
+<div class="call"><span class="note">the call I made</span><p>Dotty doesn’t reward productivity. It acknowledges effort.</p></div></div><div class="figs"><div class="stage"><img class="dd-i" src="assets/dotdot/scene_room.webp" alt="A student studying at a desk, with Dotty floating softly beside him" loading="lazy"></div><div class="stage"><img class="dd-i" src="assets/dotdot/scene_laptop.webp" alt="Dotty beside a laptop" loading="lazy"></div></div></div></section>
+<section style="padding:0 48px"><div class="wide"><div class="wl">Why this can’t be “just an app”</div><div class="cmp"><div class="gl"><h5>A screen app</h5><div class="row2">Requires activation</div><div class="row2">Takes central attention</div><div class="row2">Works in discrete sessions</div></div><div class="gl on"><h5>Dotty in the room</h5><div class="row2">Peripheral</div><div class="row2">Continuous</div><div class="row2">Co-present</div></div></div></div></section>
+<section style="padding:0 48px"><div class="wide sp"><div class="wl">The core mechanism</div><div class="g3 stg"><div class="gl pn"><div class="n">01<i></i></div><b>Entering focus</b><p>Dotty appears and says Focus Mode is standing by. No setup or planning needed.</p></div><div class="gl pn"><div class="n">02<i></i></div><b>Attention drifts</b><p>Attention naturally fluctuates. These moments are treated as signals, not failures.</p></div><div class="gl pn"><div class="n">03<i></i></div><b>Time to rest</b><p>Dotty offers rest or a short meditation, framing recovery as a transition, not escape.</p></div><div class="gl pn"><div class="n">04<i></i></div><b>Too much motion</b><p>Dotty gently notes the restlessness. The goal is awareness, not correction.</p></div><div class="gl pn"><div class="n">05<i></i></div><b>Being with you</b><p>Dotty stays quietly present throughout, supporting body doubling and reducing loneliness.</p></div><div class="gl pn"><div class="n">06<i></i></div><b>Ending with care</b><p>At session end, Dotty reflects time, consistency and effort with nonjudgmental feedback.</p></div></div><div class="fl"><span class="lbl">SUPPORT SPACES · ACCESSIBLE ANYTIME</span><span class="c">Tasks</span><span class="c">Meditation</span><span class="c">Sugar Cubes</span><span class="c">Dashboard</span><span class="c">Settings</span></div></div></section>
+<section style="padding:0 48px"><div class="wide sp"><div class="wl">Dotty grows with shared time</div><div class="g5 stg" style="align-items:stretch"><div class="ev"><div class="im"><img class="" src="assets/dotdot/ev1.webp" alt="Hesitant stage of Dotty" loading="lazy"></div><div class="tx2"><div class="lv">LV. 1–4</div><b>Hesitant</b><p>A quiet, minimal sphere with a shy blush, nearly still, present without intruding.</p></div></div><div class="ev"><div class="im"><img class="" src="assets/dotdot/ev2.webp" alt="Emerging expression stage of Dotty" loading="lazy"></div><div class="tx2"><div class="lv">LV. 5–8</div><b>Emerging expression</b><p>It glows a bit brighter and shows subtle expressions, feeling less shy and more at ease.</p></div></div><div class="ev"><div class="im"><img class="" src="assets/dotdot/ev3.webp" alt="Comfortable co-presence stage of Dotty" loading="lazy"></div><div class="tx2"><div class="lv">LV. 9–12</div><b>Comfortable co-presence</b><p>It moves more freely, revealing new gestures that reflect shared time.</p></div></div><div class="ev"><div class="im"><img class="" src="assets/dotdot/ev4.webp" alt="Playful identity stage of Dotty" loading="lazy"></div><div class="tx2"><div class="lv">LV. 13–16</div><b>Playful identity</b><p>It gains subtle customization and new gestures, reflecting familiarity.</p></div></div><div class="ev"><div class="im"><img class="" src="assets/dotdot/ev5.webp" alt="Established companion stage of Dotty" loading="lazy"></div><div class="tx2"><div class="lv">LV. 17–20</div><b>Established companion</b><p>Dotty feels at home, calm and confident, blending in as a steady presence.</p></div></div></div></div></section>
 <!-- 04 -->
-<section style="padding:150px 48px 0"><div class="cs ch ch-b"><div class="figs"><img class="dk" src="assets/dotdot/focusloop.jpg" alt="Focus loop: six moments from entering focus to session reflection" loading="lazy"><img class="dk" src="assets/dotdot/dashboard.jpg" alt="Dotty dashboard with focus time, streak and level progress" loading="lazy"><img class="dk" src="assets/dotdot/spaces.jpg" alt="Support spaces: mindfulness, to-do, number-grid break, settings" loading="lazy"></div><div><div class="no2">04</div>
+<section style="padding:150px 48px 0"><div class="cs ch ch-b"><div class="figs"><div class="dk"><img class="dd-i" src="assets/dotdot/dash_person.webp" alt="Dotty dashboard in mixed reality: focus time, streak, weekly hours, level progress and unlockable items" loading="lazy"></div></div><div><div class="no2">04</div>
 <h3 class="ttl">What did it become?</h3>
 <div class="tg">Interaction design · High-fidelity prototype · Testing</div>
 <div class="row"><div class="lb">THE FOCUS LOOP</div><div class="tx">Six moments from entering focus to reflecting on the session. Dotty appears with nothing to set up, the room dims, drift is noticed gently, rest is offered as a transition, and the session closes with encouragement instead of a score.</div></div>
-<div class="row"><div class="lb">SUPPORT SPACES</div><div class="tx">Meditation, a to-do board, a small number-grid break and settings sit in the room as quiet places you can reach any time.</div></div>
+<div class="row"><div class="lb">SUPPORT SPACES</div><div class="tx">Meditation, a to-do board, a small number game and settings sit in the room as quiet places you can reach any time.</div></div>
 <div class="row"><div class="lb">DOTTY’S DASHBOARD</div><div class="tx">Focus hours, days showing up and a weekly view sit beside Dotty, who levels up and unlocks small accessories as time together builds.</div></div>
 <div class="row"><div class="lb">WHAT TESTERS SAID</div><div class="tx"><div class="qt">“Dotty feels grounding. When I drift, I’d trust it to nudge me back gently.”<span>WIESEL</span></div><div class="qt" style="margin:0">“I like that Dotty feels supportive, not strict. The streak and weekly view make progress visible without guilt.”<span>STEVEN</span></div></div></div>
 
 <div class="call"><span class="note">the call I made</span><p>Make progress felt, not measured.</p></div></div></div></section>
+<section style="padding:0 48px"><div class="wide"><div class="wl">The focus loop</div><div class="g3 stg"><div class="lp"><div class="fr"><img class="" src="assets/dotdot/loop1.webp" alt="Entering focus" loading="lazy"></div><div class="cap3"><i>01</i>Entering focus</div></div><div class="lp"><div class="fr"><img class="" src="assets/dotdot/loop2.webp" alt="Environment dimming" loading="lazy"></div><div class="cap3"><i>02</i>Environment dimming</div></div><div class="lp"><div class="fr"><img class="" src="assets/dotdot/loop3.webp" alt="Time to rest" loading="lazy"></div><div class="cap3"><i>03</i>Time to rest</div></div><div class="lp"><div class="fr"><img class="" src="assets/dotdot/loop4.webp" alt="Attention drift detected" loading="lazy"></div><div class="cap3"><i>04</i>Attention drift detected</div></div><div class="lp"><div class="fr"><img class="" src="assets/dotdot/loop5.webp" alt="Sustained attention drift" loading="lazy"></div><div class="cap3"><i>05</i>Sustained attention drift</div></div><div class="lp"><div class="fr"><img class="" src="assets/dotdot/loop6.webp" alt="Session reflection" loading="lazy"></div><div class="cap3"><i>06</i>Session reflection</div></div></div></div></section>
+<section style="padding:0 48px"><div class="wide sp"><div class="wl">Support spaces and settings</div><div class="g2 sp3 stg"><figure><div class="fr2"><img class="" src="assets/dotdot/sp_mind.webp" alt="Mindfulness space with guided sessions" loading="lazy"></div><figcaption>Meditation</figcaption></figure><figure><div class="fr2"><img class="" src="assets/dotdot/sp_todo.webp" alt="To-do space with projects and a daily timeline" loading="lazy"></div><figcaption>Tasks</figcaption></figure><figure><div class="fr2"><img class="" src="assets/dotdot/sp_puzzle.webp" alt="Sugar Cubes, a 5 by 5 number game beside a laptop" loading="lazy"></div><figcaption>Sugar Cubes</figcaption></figure><figure><div class="fr2"><img class="" src="assets/dotdot/settings.webp" alt="Settings panel with timer, playlist and reminders" loading="lazy"></div><figcaption>Settings</figcaption></figure></div></div></section>
 <!-- TAKEAWAYS -->
 <section style="padding:170px 48px 0">
 <div class="cs g12" style="align-items:start">
