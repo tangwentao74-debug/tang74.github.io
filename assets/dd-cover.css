@@ -1,0 +1,27 @@
+/* DotDot visionOS-style cover — shared by index, work, dotdot */
+.cv{position:relative;border-radius:32px;overflow:hidden;aspect-ratio:2/1;background:radial-gradient(70% 90% at 62% 40%,#fff 0%,rgba(255,255,255,0) 60%),linear-gradient(135deg,#F4FAFF 0%,#D6EAFB 55%,#BFD9F3 100%);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.cv.card{position:absolute;inset:0;aspect-ratio:auto;border-radius:0}
+.cv .sg{position:absolute;left:50%;top:50%;width:100%;aspect-ratio:2/1;transform:translate(-50%,-50%)}
+.cv.card .sg{width:142%}
+.cv.card .tm{display:none}
+.cv svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.cv .dw{position:absolute;left:50%;top:53%;width:22.5%;translate:-50% -50%;animation:ddf 7s ease-in-out infinite}
+.cv .dy{position:relative;translate:calc(var(--tx,0)*1%) calc(var(--ty,0)*1%);rotate:calc(var(--r,0)*1deg);transform-origin:50% 90%;transition:translate .35s cubic-bezier(.2,.8,.2,1),rotate .35s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 26px 34px rgba(42,71,111,.28))}
+.cv .dy img{display:block;height:auto;-webkit-user-drag:none;user-select:none}
+.cv .dy img.db{width:100%}
+.cv .de{position:absolute;left:24.11%;top:34.63%;width:46.89%;translate:calc(var(--ex,0)*1%) calc(var(--ey,0)*1%);transition:translate .25s cubic-bezier(.2,.8,.2,1);animation:ddblink 5.6s infinite;transform-origin:50% 50%}
+.cv .dy.hop{animation:ddhop .75s cubic-bezier(.3,.7,.3,1)}
+.cv .nt{position:absolute;left:5%;bottom:7%;font-size:22px;color:#2A476F;opacity:.9;pointer-events:none}
+@keyframes ddf{0%,100%{translate:-50% -50%}50%{translate:-50% -54%}}
+@keyframes ddblink{0%,91%,100%{scale:1 1}94%{scale:1 .07}97%{scale:1 1}}
+@keyframes ddhop{0%{transform:scale(1,1)}18%{transform:scale(1.07,.9)}45%{transform:translateY(-14%) scale(.96,1.06)}70%{transform:translateY(0) scale(1.05,.93)}100%{transform:scale(1,1)}}
+.cv .o1,.cv .o2,.cv .o3,.cv .o4,.cv .o5{animation:ddb 9s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.cv .o2{animation-delay:-1.8s}.cv .o3{animation-delay:-3.6s}.cv .o4{animation-delay:-5.4s}.cv .o5{animation-delay:-7.2s}
+@keyframes ddb{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@media (prefers-reduced-motion:reduce){.cv .dw,.cv .de,.cv [class^=o],.cv .dy.hop{animation:none!important}}
+/* beat page-level ".ph img" cover rules */
+.ph .cv .dy img{position:static;inset:auto;height:auto;object-fit:fill;transform:none!important;transition:none}
+.ph .cv .dy img.db{width:100%}
+.ph .cv .dy img.de{position:absolute;left:24.11%;top:34.63%;width:46.89%;transition:translate .25s cubic-bezier(.2,.8,.2,1)}
+::view-transition-group(ddcover){animation-duration:.85s;animation-timing-function:cubic-bezier(.7,0,.2,1)}
+::view-transition-old(ddcover),::view-transition-new(ddcover){width:100%;height:100%;object-fit:cover;animation-duration:.85s}
