@@ -20,9 +20,9 @@
 #buddy .dyb{position:relative;display:block;filter:drop-shadow(0 14px 16px rgba(42,71,111,.28));transition:rotate .3s;rotate:calc(var(--r,0)*1deg)}
 #buddy .dyb img{display:block;width:100%;height:auto;-webkit-user-drag:none;user-select:none}
 #buddy .dyb .de{position:absolute;left:24.11%;top:34.63%;width:46.89%;translate:calc(var(--ex,0)*1%) calc(var(--ey,0)*1%);transition:translate .2s;animation:ddblink 5.2s infinite}
-#buddy .cos{display:none}
+#buddy .dyb img.cos{display:none}
 #buddy.dressed .cl{display:none}
-#buddy.dressed .cos{display:block}
+#buddy.dressed .dyb img.cos{display:block}
 #buddy.rest .bd{transform:translateY(46%)}
 #buddy.rest .de{animation:none;scale:1 .12}
 #buddy.rest .fl3{animation-duration:9s}
